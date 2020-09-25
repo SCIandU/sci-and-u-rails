@@ -1,0 +1,14 @@
+%div{:class=> @department.name}
+ .container.resource
+  .row
+   .col-xs-12.resource-title-row
+    .title 
+     Do you have a new resource to recommend for the #{@department.name} section?  
+     %p
+     We want to know!
+   .col-xs-12
+    = render 'form'
+  .row.link
+   .col-xs-12.resource-title-row
+    .title
+     = link_to "Back to #{@department.name} Department", "/departments/#{@department.id}"

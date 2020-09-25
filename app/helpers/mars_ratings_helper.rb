@@ -1,0 +1,2 @@
+module MarsRatingsHelper
+end

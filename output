@@ -1,0 +1,299 @@
+                                Prefix Verb     URI Pattern                                                          Controller#Action
+                      new_user_session GET      /users/sign_in(.:format)                                             devise/sessions#new
+                          user_session POST     /users/sign_in(.:format)                                             devise/sessions#create
+                  destroy_user_session GET      /users/sign_out(.:format)                                            devise/sessions#destroy
+                     new_user_password GET      /users/password/new(.:format)                                        devise/passwords#new
+                    edit_user_password GET      /users/password/edit(.:format)                                       devise/passwords#edit
+                         user_password PATCH    /users/password(.:format)                                            devise/passwords#update
+                                       PUT      /users/password(.:format)                                            devise/passwords#update
+                                       POST     /users/password(.:format)                                            devise/passwords#create
+              cancel_user_registration GET      /users/cancel(.:format)                                              registrations#cancel
+                 new_user_registration GET      /users/sign_up(.:format)                                             registrations#new
+                edit_user_registration GET      /users/edit(.:format)                                                registrations#edit
+                     user_registration PATCH    /users(.:format)                                                     registrations#update
+                                       PUT      /users(.:format)                                                     registrations#update
+                                       DELETE   /users(.:format)                                                     registrations#destroy
+                                       POST     /users(.:format)                                                     registrations#create
+                 new_user_confirmation GET      /users/confirmation/new(.:format)                                    confirmations#new
+                     user_confirmation GET      /users/confirmation(.:format)                                        confirmations#show
+                                       POST     /users/confirmation(.:format)                                        confirmations#create
+               new_api_v1_user_session GET      /api/v1/auth/sign_in(.:format)                                       devise_token_auth/sessions#new
+                   api_v1_user_session POST     /api/v1/auth/sign_in(.:format)                                       devise_token_auth/sessions#create
+           destroy_api_v1_user_session GET      /api/v1/auth/sign_out(.:format)                                      devise_token_auth/sessions#destroy
+              new_api_v1_user_password GET      /api/v1/auth/password/new(.:format)                                  devise_token_auth/passwords#new
+             edit_api_v1_user_password GET      /api/v1/auth/password/edit(.:format)                                 devise_token_auth/passwords#edit
+                  api_v1_user_password PATCH    /api/v1/auth/password(.:format)                                      devise_token_auth/passwords#update
+                                       PUT      /api/v1/auth/password(.:format)                                      devise_token_auth/passwords#update
+                                       POST     /api/v1/auth/password(.:format)                                      devise_token_auth/passwords#create
+       cancel_api_v1_user_registration GET      /api/v1/auth/cancel(.:format)                                        devise_token_auth/registrations#cancel
+          new_api_v1_user_registration GET      /api/v1/auth/sign_up(.:format)                                       devise_token_auth/registrations#new
+         edit_api_v1_user_registration GET      /api/v1/auth/edit(.:format)                                          devise_token_auth/registrations#edit
+              api_v1_user_registration PATCH    /api/v1/auth(.:format)                                               devise_token_auth/registrations#update
+                                       PUT      /api/v1/auth(.:format)                                               devise_token_auth/registrations#update
+                                       DELETE   /api/v1/auth(.:format)                                               devise_token_auth/registrations#destroy
+                                       POST     /api/v1/auth(.:format)                                               devise_token_auth/registrations#create
+          new_api_v1_user_confirmation GET      /api/v1/auth/confirmation/new(.:format)                              devise_token_auth/confirmations#new
+              api_v1_user_confirmation GET      /api/v1/auth/confirmation(.:format)                                  devise_token_auth/confirmations#show
+                                       POST     /api/v1/auth/confirmation(.:format)                                  devise_token_auth/confirmations#create
+            api_v1_auth_validate_token GET      /api/v1/auth/validate_token(.:format)                                devise_token_auth/token_validations#validate_token
+                   api_v1_auth_failure GET      /api/v1/auth/failure(.:format)                                       devise_token_auth/omniauth_callbacks#omniauth_failure
+                                       GET      /api/v1/auth/:provider/callback(.:format)                            devise_token_auth/omniauth_callbacks#omniauth_success
+                                       GET|POST /omniauth/:provider/callback(.:format)                               devise_token_auth/omniauth_callbacks#redirect_callbacks
+                      omniauth_failure GET|POST /omniauth/failure(.:format)                                          devise_token_auth/omniauth_callbacks#omniauth_failure
+                                       GET      /api/v1/auth/:provider(.:format)                                     redirect(301)
+               api_v1_health_resources GET      /api/v1/health_resources(.:format)                                   api/v1/health_resources#index
+                api_v1_health_resource GET      /api/v1/health_resources/:id(.:format)                               api/v1/health_resources#show
+               api_v1_scripts_and_tips GET      /api/v1/scripts_and_tips(.:format)                                   api/v1/scripts_and_tips#index
+                api_v1_scripts_and_tip GET      /api/v1/scripts_and_tips/:id(.:format)                               api/v1/scripts_and_tips#show
+                        api_v1_surveys GET      /api/v1/surveys(.:format)                                            api/v1/surveys#index
+                         api_v1_survey GET      /api/v1/surveys/:id(.:format)                                        api/v1/surveys#show
+                   api_v1_salon_events GET      /api/v1/salon_events(.:format)                                       api/v1/salon_events#index
+                    api_v1_salon_event GET      /api/v1/salon_events/:id(.:format)                                   api/v1/salon_events#show
+                           api_v1_user GET      /api/v1/users/:id(.:format)                                          api/v1/users#show
+                       api_v1_sessions POST     /api/v1/sessions(.:format)                                           api/v1/sessions#create
+                        api_v1_session DELETE   /api/v1/sessions/:id(.:format)                                       api/v1/sessions#destroy
+       salon_event_event_registrations GET      /salon_events/:salon_event_id/event_registrations(.:format)          event_registrations#index
+                                       POST     /salon_events/:salon_event_id/event_registrations(.:format)          event_registrations#create
+    new_salon_event_event_registration GET      /salon_events/:salon_event_id/event_registrations/new(.:format)      event_registrations#new
+   edit_salon_event_event_registration GET      /salon_events/:salon_event_id/event_registrations/:id/edit(.:format) event_registrations#edit
+        salon_event_event_registration GET      /salon_events/:salon_event_id/event_registrations/:id(.:format)      event_registrations#show
+                                       PATCH    /salon_events/:salon_event_id/event_registrations/:id(.:format)      event_registrations#update
+                                       PUT      /salon_events/:salon_event_id/event_registrations/:id(.:format)      event_registrations#update
+                                       DELETE   /salon_events/:salon_event_id/event_registrations/:id(.:format)      event_registrations#destroy
+                  archive_salon_events GET      /salon_events/archive(.:format)                                      salon_events#archive
+                          salon_events GET      /salon_events(.:format)                                              salon_events#index
+                                       POST     /salon_events(.:format)                                              salon_events#create
+                       new_salon_event GET      /salon_events/new(.:format)                                          salon_events#new
+                      edit_salon_event GET      /salon_events/:id/edit(.:format)                                     salon_events#edit
+                           salon_event GET      /salon_events/:id(.:format)                                          salon_events#show
+                                       PATCH    /salon_events/:id(.:format)                                          salon_events#update
+                                       PUT      /salon_events/:id(.:format)                                          salon_events#update
+                                       DELETE   /salon_events/:id(.:format)                                          salon_events#destroy
+                         coaches_users GET      /users/coaches(.:format)                                             users#coaches
+                         experts_users GET      /users/experts(.:format)                                             users#experts
+            badge_administration_users GET      /users/badge_administration(.:format)                                users#badge_administration
+         resource_administration_users GET      /users/resource_administration(.:format)                             users#resource_administration
+                                 users GET      /users(.:format)                                                     users#index
+                                       POST     /users(.:format)                                                     users#create
+                              new_user GET      /users/new(.:format)                                                 users#new
+                             edit_user GET      /users/:id/edit(.:format)                                            users#edit
+                                  user GET      /users/:id(.:format)                                                 users#show
+                                       PATCH    /users/:id(.:format)                                                 users#update
+                                       PUT      /users/:id(.:format)                                                 users#update
+                                       DELETE   /users/:id(.:format)                                                 users#destroy
+                           mark_survey POST     /surveys/:id/mark(.:format)                                          surveys#mark
+                               surveys GET      /surveys(.:format)                                                   surveys#index
+                                       POST     /surveys(.:format)                                                   surveys#create
+                            new_survey GET      /surveys/new(.:format)                                               surveys#new
+                           edit_survey GET      /surveys/:id/edit(.:format)                                          surveys#edit
+                                survey GET      /surveys/:id(.:format)                                               surveys#show
+                                       PATCH    /surveys/:id(.:format)                                               surveys#update
+                                       PUT      /surveys/:id(.:format)                                               surveys#update
+                                       DELETE   /surveys/:id(.:format)                                               surveys#destroy
+                   event_registrations GET      /event_registrations(.:format)                                       event_registrations#index
+                                       POST     /event_registrations(.:format)                                       event_registrations#create
+                new_event_registration GET      /event_registrations/new(.:format)                                   event_registrations#new
+               edit_event_registration GET      /event_registrations/:id/edit(.:format)                              event_registrations#edit
+                    event_registration GET      /event_registrations/:id(.:format)                                   event_registrations#show
+                                       PATCH    /event_registrations/:id(.:format)                                   event_registrations#update
+                                       PUT      /event_registrations/:id(.:format)                                   event_registrations#update
+                                       DELETE   /event_registrations/:id(.:format)                                   event_registrations#destroy
+                      health_resources GET      /health_resources(.:format)                                          health_resources#index
+                                       POST     /health_resources(.:format)                                          health_resources#create
+                   new_health_resource GET      /health_resources/new(.:format)                                      health_resources#new
+                  edit_health_resource GET      /health_resources/:id/edit(.:format)                                 health_resources#edit
+                       health_resource GET      /health_resources/:id(.:format)                                      health_resources#show
+                                       PATCH    /health_resources/:id(.:format)                                      health_resources#update
+                                       PUT      /health_resources/:id(.:format)                                      health_resources#update
+                                       DELETE   /health_resources/:id(.:format)                                      health_resources#destroy
+                                       GET      /surveys(.:format)                                                   surveys#index
+                                       POST     /surveys(.:format)                                                   surveys#create
+                                       GET      /surveys/new(.:format)                                               surveys#new
+                                       GET      /surveys/:id/edit(.:format)                                          surveys#edit
+                                       GET      /surveys/:id(.:format)                                               surveys#show
+                                       PATCH    /surveys/:id(.:format)                                               surveys#update
+                                       PUT      /surveys/:id(.:format)                                               surveys#update
+                                       DELETE   /surveys/:id(.:format)                                               surveys#destroy
+                      survey_questions GET      /survey_questions(.:format)                                          survey_questions#index
+                                       POST     /survey_questions(.:format)                                          survey_questions#create
+                   new_survey_question GET      /survey_questions/new(.:format)                                      survey_questions#new
+                  edit_survey_question GET      /survey_questions/:id/edit(.:format)                                 survey_questions#edit
+                       survey_question GET      /survey_questions/:id(.:format)                                      survey_questions#show
+                                       PATCH    /survey_questions/:id(.:format)                                      survey_questions#update
+                                       PUT      /survey_questions/:id(.:format)                                      survey_questions#update
+                                       DELETE   /survey_questions/:id(.:format)                                      survey_questions#destroy
+                               reviews GET      /reviews(.:format)                                                   reviews#index
+                                       POST     /reviews(.:format)                                                   reviews#create
+                            new_review GET      /reviews/new(.:format)                                               reviews#new
+                           edit_review GET      /reviews/:id/edit(.:format)                                          reviews#edit
+                                review GET      /reviews/:id(.:format)                                               reviews#show
+                                       PATCH    /reviews/:id(.:format)                                               reviews#update
+                                       PUT      /reviews/:id(.:format)                                               reviews#update
+                                       DELETE   /reviews/:id(.:format)                                               reviews#destroy
+                              sponsors GET      /sponsors(.:format)                                                  sponsors#index
+                                       POST     /sponsors(.:format)                                                  sponsors#create
+                           new_sponsor GET      /sponsors/new(.:format)                                              sponsors#new
+                          edit_sponsor GET      /sponsors/:id/edit(.:format)                                         sponsors#edit
+                               sponsor GET      /sponsors/:id(.:format)                                              sponsors#show
+                                       PATCH    /sponsors/:id(.:format)                                              sponsors#update
+                                       PUT      /sponsors/:id(.:format)                                              sponsors#update
+                                       DELETE   /sponsors/:id(.:format)                                              sponsors#destroy
+                          mars_ratings GET      /mars_ratings(.:format)                                              mars_ratings#index
+                                       POST     /mars_ratings(.:format)                                              mars_ratings#create
+                       new_mars_rating GET      /mars_ratings/new(.:format)                                          mars_ratings#new
+                      edit_mars_rating GET      /mars_ratings/:id/edit(.:format)                                     mars_ratings#edit
+                           mars_rating GET      /mars_ratings/:id(.:format)                                          mars_ratings#show
+                                       PATCH    /mars_ratings/:id(.:format)                                          mars_ratings#update
+                                       PUT      /mars_ratings/:id(.:format)                                          mars_ratings#update
+                                       DELETE   /mars_ratings/:id(.:format)                                          mars_ratings#destroy
+                          intake_forms GET      /intake_forms(.:format)                                              intake_forms#index
+                                       POST     /intake_forms(.:format)                                              intake_forms#create
+                       new_intake_form GET      /intake_forms/new(.:format)                                          intake_forms#new
+                      edit_intake_form GET      /intake_forms/:id/edit(.:format)                                     intake_forms#edit
+                           intake_form GET      /intake_forms/:id(.:format)                                          intake_forms#show
+                                       PATCH    /intake_forms/:id(.:format)                                          intake_forms#update
+                                       PUT      /intake_forms/:id(.:format)                                          intake_forms#update
+                                       DELETE   /intake_forms/:id(.:format)                                          intake_forms#destroy
+                           basic_pages GET      /basic_pages(.:format)                                               basic_pages#index
+                                       POST     /basic_pages(.:format)                                               basic_pages#create
+                        new_basic_page GET      /basic_pages/new(.:format)                                           basic_pages#new
+                       edit_basic_page GET      /basic_pages/:id/edit(.:format)                                      basic_pages#edit
+                            basic_page GET      /basic_pages/:id(.:format)                                           basic_pages#show
+                                       PATCH    /basic_pages/:id(.:format)                                           basic_pages#update
+                                       PUT      /basic_pages/:id(.:format)                                           basic_pages#update
+                                       DELETE   /basic_pages/:id(.:format)                                           basic_pages#destroy
+                         blog_comments GET      /blog_comments(.:format)                                             blog_comments#index
+                                       POST     /blog_comments(.:format)                                             blog_comments#create
+                      new_blog_comment GET      /blog_comments/new(.:format)                                         blog_comments#new
+                     edit_blog_comment GET      /blog_comments/:id/edit(.:format)                                    blog_comments#edit
+                          blog_comment GET      /blog_comments/:id(.:format)                                         blog_comments#show
+                                       PATCH    /blog_comments/:id(.:format)                                         blog_comments#update
+                                       PUT      /blog_comments/:id(.:format)                                         blog_comments#update
+                                       DELETE   /blog_comments/:id(.:format)                                         blog_comments#destroy
+                               stories GET      /stories(.:format)                                                   stories#index
+                                       POST     /stories(.:format)                                                   stories#create
+                             new_story GET      /stories/new(.:format)                                               stories#new
+                            edit_story GET      /stories/:id/edit(.:format)                                          stories#edit
+                                 story GET      /stories/:id(.:format)                                               stories#show
+                                       PATCH    /stories/:id(.:format)                                               stories#update
+                                       PUT      /stories/:id(.:format)                                               stories#update
+                                       DELETE   /stories/:id(.:format)                                               stories#destroy
+                             questions GET      /questions(.:format)                                                 questions#index
+                                       POST     /questions(.:format)                                                 questions#create
+                          new_question GET      /questions/new(.:format)                                             questions#new
+                         edit_question GET      /questions/:id/edit(.:format)                                        questions#edit
+                              question GET      /questions/:id(.:format)                                             questions#show
+                                       PATCH    /questions/:id(.:format)                                             questions#update
+                                       PUT      /questions/:id(.:format)                                             questions#update
+                                       DELETE   /questions/:id(.:format)                                             questions#destroy
+                                rating PATCH    /ratings/:id(.:format)                                               ratings#update
+                                       PUT      /ratings/:id(.:format)                                               ratings#update
+                      scripts_and_tips GET      /scripts_and_tips(.:format)                                          scripts_and_tips#index
+                                       POST     /scripts_and_tips(.:format)                                          scripts_and_tips#create
+                   new_scripts_and_tip GET      /scripts_and_tips/new(.:format)                                      scripts_and_tips#new
+                  edit_scripts_and_tip GET      /scripts_and_tips/:id/edit(.:format)                                 scripts_and_tips#edit
+                       scripts_and_tip GET      /scripts_and_tips/:id(.:format)                                      scripts_and_tips#show
+                                       PATCH    /scripts_and_tips/:id(.:format)                                      scripts_and_tips#update
+                                       PUT      /scripts_and_tips/:id(.:format)                                      scripts_and_tips#update
+                                       DELETE   /scripts_and_tips/:id(.:format)                                      scripts_and_tips#destroy
+                              problems GET      /problems(.:format)                                                  problems#index
+                                       POST     /problems(.:format)                                                  problems#create
+                           new_problem GET      /problems/new(.:format)                                              problems#new
+                          edit_problem GET      /problems/:id/edit(.:format)                                         problems#edit
+                               problem GET      /problems/:id(.:format)                                              problems#show
+                                       PATCH    /problems/:id(.:format)                                              problems#update
+                                       PUT      /problems/:id(.:format)                                              problems#update
+                                       DELETE   /problems/:id(.:format)                                              problems#destroy
+                   solution_categories GET      /solution_categories(.:format)                                       solution_categories#index
+                                       POST     /solution_categories(.:format)                                       solution_categories#create
+                 new_solution_category GET      /solution_categories/new(.:format)                                   solution_categories#new
+                edit_solution_category GET      /solution_categories/:id/edit(.:format)                              solution_categories#edit
+                     solution_category GET      /solution_categories/:id(.:format)                                   solution_categories#show
+                                       PATCH    /solution_categories/:id(.:format)                                   solution_categories#update
+                                       PUT      /solution_categories/:id(.:format)                                   solution_categories#update
+                                       DELETE   /solution_categories/:id(.:format)                                   solution_categories#destroy
+                           rails_admin          /admin                                                               RailsAdmin::Engine
+               health_resource_reviews GET      /health_resources/:health_resource_id/reviews(.:format)              reviews#index
+                                       POST     /health_resources/:health_resource_id/reviews(.:format)              reviews#create
+            new_health_resource_review GET      /health_resources/:health_resource_id/reviews/new(.:format)          reviews#new
+           edit_health_resource_review GET      /health_resources/:health_resource_id/reviews/:id/edit(.:format)     reviews#edit
+                health_resource_review GET      /health_resources/:health_resource_id/reviews/:id(.:format)          reviews#show
+                                       PATCH    /health_resources/:health_resource_id/reviews/:id(.:format)          reviews#update
+                                       PUT      /health_resources/:health_resource_id/reviews/:id(.:format)          reviews#update
+                                       DELETE   /health_resources/:health_resource_id/reviews/:id(.:format)          reviews#destroy
+                                       POST     /health_resources(.:format)                                          health_resources#create
+                                       GET      /health_resources/new(.:format)                                      health_resources#new
+                                       GET      /health_resources/:id/edit(.:format)                                 health_resources#edit
+                                       GET      /health_resources/:id(.:format)                                      health_resources#show
+                                       PATCH    /health_resources/:id(.:format)                                      health_resources#update
+                                       PUT      /health_resources/:id(.:format)                                      health_resources#update
+           department_health_resources GET      /departments/:department_id/health_resources(.:format)               health_resources#index
+                                       POST     /departments/:department_id/health_resources(.:format)               health_resources#create
+        new_department_health_resource GET      /departments/:department_id/health_resources/new(.:format)           health_resources#new
+       edit_department_health_resource GET      /departments/:department_id/health_resources/:id/edit(.:format)      health_resources#edit
+            department_health_resource GET      /departments/:department_id/health_resources/:id(.:format)           health_resources#show
+                                       PATCH    /departments/:department_id/health_resources/:id(.:format)           health_resources#update
+                                       PUT      /departments/:department_id/health_resources/:id(.:format)           health_resources#update
+                                       DELETE   /departments/:department_id/health_resources/:id(.:format)           health_resources#destroy
+                           departments POST     /departments(.:format)                                               departments#create
+                        new_department GET      /departments/new(.:format)                                           departments#new
+                       edit_department GET      /departments/:id/edit(.:format)                                      departments#edit
+                            department GET      /departments/:id(.:format)                                           departments#show
+                                       PATCH    /departments/:id(.:format)                                           departments#update
+                                       PUT      /departments/:id(.:format)                                           departments#update
+               blog_post_blog_comments GET      /blog_posts/:blog_post_id/blog_comments(.:format)                    blog_comments#index
+                                       POST     /blog_posts/:blog_post_id/blog_comments(.:format)                    blog_comments#create
+            new_blog_post_blog_comment GET      /blog_posts/:blog_post_id/blog_comments/new(.:format)                blog_comments#new
+           edit_blog_post_blog_comment GET      /blog_posts/:blog_post_id/blog_comments/:id/edit(.:format)           blog_comments#edit
+                blog_post_blog_comment GET      /blog_posts/:blog_post_id/blog_comments/:id(.:format)                blog_comments#show
+                                       PATCH    /blog_posts/:blog_post_id/blog_comments/:id(.:format)                blog_comments#update
+                                       PUT      /blog_posts/:blog_post_id/blog_comments/:id(.:format)                blog_comments#update
+                                       DELETE   /blog_posts/:blog_post_id/blog_comments/:id(.:format)                blog_comments#destroy
+                            blog_posts GET      /blog_posts(.:format)                                                blog_posts#index
+                                       POST     /blog_posts(.:format)                                                blog_posts#create
+                         new_blog_post GET      /blog_posts/new(.:format)                                            blog_posts#new
+                        edit_blog_post GET      /blog_posts/:id/edit(.:format)                                       blog_posts#edit
+                             blog_post GET      /blog_posts/:id(.:format)                                            blog_posts#show
+                                       PATCH    /blog_posts/:id(.:format)                                            blog_posts#update
+                                       PUT      /blog_posts/:id(.:format)                                            blog_posts#update
+         create_blog_post_blog_comment POST     /blog_posts/:blog_post_id/blog_comments(.:format)                    blog_comments#create
+       create_salon_event_registration POST     /salon_events/:salon_event_id/event_registrations(.:format)          event_registrations#create
+event_registrations_you_are_registered GET      /event_registrations/you_are_registered(.:format)                    event_registrations#you_are_registered
+             event_registrations_sorry GET      /event_registrations/sorry(.:format)                                 event_registrations#sorry
+                     favorite_resource POST     /favorite/:id(.:format)                                              health_resources#favorite
+                            add_badges POST     /badge_administration/add_badges(.:format)                           users#add_badges
+                         add_resources POST     /resource_administration/add_resources(.:format)                     users#add_resources
+                            home_index GET      /home/index(.:format)                                                home#index
+                            home_about GET      /home/about(.:format)                                                home#about
+                        home_thank_you GET      /home/thank_you(.:format)                                            home#thank_you
+                      home_mars_thanks GET      /home/mars_thanks(.:format)                                          home#mars_thanks
+                home_mars_will_contact GET      /home/mars_will_contact(.:format)                                    home#mars_will_contact
+                           home_search GET      /home/search(.:format)                                               home#search
+                             home_rest GET      /home/rest(.:format)                                                 home#rest
+                                  feed GET      /feed(.:format)                                                      home#feed
+                              coaching GET      /coaching(.:format)                                                  home#coaching
+                           coachportal GET      /coachportal(.:format)                                               home#coachportal
+                  home_forgot_password GET      /home/forgot_password(.:format)                                      home#forgot_password
+      home_generate_new_password_email POST     /home/generate_new_password_email(.:format)                          home#generate_new_password_email
+             home_password_reset_email GET      /home/password_reset_email(.:format)                                 home#password_reset_email
+                              contacts GET      /contacts(.:format)                                                  contacts#new
+                                       POST     /contacts(.:format)                                                  contacts#create
+                           new_contact GET      /contacts/new(.:format)                                              contacts#new
+                    contacts_coachform GET      /contacts/coachform(.:format)                                        contacts#coachform
+                     contacts_feedback GET      /contacts/feedback(.:format)                                         contacts#feedback
+                  contacts_mars_thanks GET      /contacts/mars_thanks(.:format)                                      contacts#mars_thanks
+                    contacts_mars_help GET      /contacts/mars_help(.:format)                                        contacts#mars_help
+                                  root GET      /                                                                    home#index
+
+Routes for RailsAdmin::Engine:
+  dashboard GET         /                                      rails_admin/main#dashboard
+      index GET|POST    /:model_name(.:format)                 rails_admin/main#index
+        new GET|POST    /:model_name/new(.:format)             rails_admin/main#new
+     export GET|POST    /:model_name/export(.:format)          rails_admin/main#export
+bulk_delete POST|DELETE /:model_name/bulk_delete(.:format)     rails_admin/main#bulk_delete
+     import GET|POST    /:model_name/import(.:format)          rails_admin/main#import
+bulk_action POST        /:model_name/bulk_action(.:format)     rails_admin/main#bulk_action
+       show GET         /:model_name/:id(.:format)             rails_admin/main#show
+       edit GET|PUT     /:model_name/:id/edit(.:format)        rails_admin/main#edit
+     delete GET|DELETE  /:model_name/:id/delete(.:format)      rails_admin/main#delete
+show_in_app GET         /:model_name/:id/show_in_app(.:format) rails_admin/main#show_in_app

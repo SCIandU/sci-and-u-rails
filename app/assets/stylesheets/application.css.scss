@@ -1,0 +1,1168 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per @mediastyle scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require jquery.Jcrop.min
+ *= require bootstrap-datepicker
+ */
+
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "cropper.min";
+@import url(https://fonts.googleapis.com/css?family=Oxygen);
+
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//fonts
+@font-face {
+  font-family: 'Oxygen', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// default fonts
+body {
+    font-family: 'Oxygen';
+    font-size: 12pt;
+    background: #eeeeee;
+}
+p.content-to-resize { font-size: 12pt; }
+p, .main { font-family: 'Oxygen'; }
+
+
+//other defaults
+
+a{ color: #333; }
+a:hover { background: none; text-transform: underline; color: #ccc; }
+a:visited { color: #666; }
+a.btn { margin: 10px 5px 5px 0; color:#333!important; border-color:#333!important; background: #fff; text-transform: uppercase; }
+.actions a.btn { display: none; }
+.col-xs-6 p a{ color: #ffffff; }
+a.red { color: #cc0000; }
+li.white { background-color: #fff; color: #000; };
+li.white a:hover { background: #333; }
+
+.button_area { text-transform: uppercase; color: #fff; }
+.big-grey-row { width: 100%; text-align: center; text-transform: uppercase; background-color: #999999; color: #fff; padding: 15px; margin-bottom: 2px; min-height: 65px;}
+.row-top { height: 50px; }
+.hidden { display: none; }
+.page-content { padding-top: 20px; }
+.row {padding: 0px; margin: 0px;}
+.column.right a, .column.right a:visited { color: #fff; }
+button.btn { margin: 12px 5px 5px 0; background: #fff !important; color:#333 !important; border-color:#333 !important; text-transform: uppercase;  }
+h1, h4, .author_name, .link_area, .title, button, .new, .resource-button-col, .resource-add-row-grey, .control-label { font-family: 'Oxygen'; }
+.link_area {color: #cc0000; padding: 10px;}
+//buttons
+.button_area a { color: #fff; }
+.button_area{
+    text-transform: uppercase;
+    width: 100%;
+    background-color: #666666;
+    height: 45px;
+    clear: both;
+    text-align: center;
+    padding-top: 10px;
+}
+//spacers
+span.spacer { padding-right: 10%; }
+.row.spacer { height: 10px; }
+
+form input { color: #333; }
+.text-center { text-align: center; }
+label { margin-top: 10px; }
+input:focus { outline:none !important; }
+input.btn { font-size: 100%; padding: 10px; color: #333; background: #fff; border: 1px solid #c00; text-transform: uppercase; }
+img.right { float: right; }
+
+.resource-filter-col ul.dropdown-menu li {font-size: 10px; }
+hr.separator { width: 100%; height: 5px; }
+
+img.left {
+    width: 50%;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+img.left.small { width: 25%; }
+img.author { border: 2px solid #333;  }
+img.padded { padding: 20px; }
+
+//alerts, warnings and modals
+.alert-notice, .alert, .alert-error, .alert-alert, .alert-success, .alert-notice {
+    background: #CC6666;
+    width: 100%;
+    min-height: 50px;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.alert a { color: #333; }
+.modal-dialog { padding-top:10px; }
+.modal-open { overflow: scroll; }
+.field_with_errors {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  outline: none !important;
+  border: none !important;
+  background-color: #CC6666;
+  color: #fff;
+  display: inline;
+  input[type=text], input[type=password], input[type=email], select, textarea {
+    border: 2px solid #CC6666;
+  }
+}
+
+//center column on front page
+.col-lg-6 {
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    padding-left: 0px;
+    padding-right: 0px;
+    min-height: 480px;
+}
+.middle-col { overflow: hidden; }
+
+//row styles
+.row.question-panel {
+        clear: both;
+        color: #fff; background-color: #666;
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+        margin-bottom: 10px; margin-top: 10px;
+}
+
+.row.question-panel.white { background-color: #fff; color: #333;  }
+.row.question-panel.red { background-color: #CC6666; color: #fff;  }
+.row.question-panel a, .row.question-panel a:visited { color: #fff; }
+.row.image { margin-top: 10px; }
+.row.image img {float: left; margin-right: 10px; margin-bottom: 10px; }
+.row.sponsors { color: #333; background: #fff; text-align: center;  text-transform: uppercase; }
+
+//pagination settings
+.pagination { text-align: center; width: 100%; padding: 0px; position: relative; top: -20px; }
+.pagination a { display: none; }
+span.disabled {display: none;}
+.pagination .current { display: none;}
+.pagination a.previous_page{ border: 2px solid #999; padding: 5px 10px 5px 10px; color: #333; border-radius: 25px; display: inline; margin-right:20px; }
+.pagination a.next_page{ border: 2px solid #999; padding: 5px 10px 5px 10px; color: #333; border-radius: 25px; display: inline; margin-left:20px; }
+
+
+//navbar settings
+.navbar a, .navbar a:visited, .button a, .button a:visited {color: #fff; }
+
+//Top navigation Bar
+.navbar-fixed-top {  height: 65px; width: 100%; background: #000; }
+.navbar-fixed-top .btn-group  {padding-top: 5px;}
+.navbar-fixed-top .navbar-toggle { display: block !important;}
+.navbar-collapse ul { }
+.navbar-collapse ul li { background: #000; position: relative; left: 0px; width: 250px; }
+.navbar-collapse ul li a { background: #000; color: #fff;}
+.navbar-collapse a.dropdown-toggle { background: #000; }
+.navbar li a { color: #fff; }
+.navbar li a img { color: #fff; }
+.navbar li.search { padding-top: 20px; margin-right: 20px;}
+.navbar-fixed-top ul.navbar-right {  height: 60px; position: absolute; top: 0px; right: 10px;}
+
+.navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+
+}
+
+.navbar-top .logo-container {
+  height: 100%;
+  vertical-align: middle;
+  padding: 10px 0px 0px 0px;
+  position: absolute;
+  left: 60px;
+  top: 0px;
+}
+
+.navbar-fixed-top .burger-container {
+  width: 100%;
+}
+.navbar-fixed-top .burger-container ul.dropdown-menu a {
+  color: #000;
+}
+
+.navbar-fixed-top .burger-container ul.dropdown-menu a:hover {
+  color: #ccc;
+}
+
+.navbar-fixed-top .burger-container ul.dropdown-menu a {
+  background: #fff;
+}
+
+.navbar-fixed-top .hamburger .stripe {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+
+//icons on top navbar
+.portal-icons {
+  text-align: right;
+  width: 100%;
+  padding-top: 5px;
+}
+.portal-icon a { color: #fff; text-transform: uppercase;  }
+.portal-icon a:hover { color: #ccc; }
+.portal-icon { text-transform: uppercase; float: right; padding-right: 10px; padding-left: 10px; text-align: center; height: 100%; overflow: hidden; }
+.portal-icon button.smallbtn {text-transform: uppercase; background: none; height: auto; width: auto; color: #fff; border: none; padding: 0px; margin: 0px; }
+.accessibility { padding-right: 25px; padding-left: 25px; padding-top: 0px; height: 40px; border-left: 2px solid #fff; margin-left: 20px; margin-top: 15px; vertical-align: bottom; }
+#text-resize-increase { background-color: Transparent; color: white; border: none; font-size: 250%; padding-left: 10px; }
+#text-resize-decrease { background-color: Transparent; color: white; border: none; font-size: 100%; padding-left: 10px; }
+.portal-icon.search form.navbar-search { width: 100%; border: 2px solid #c00;}
+
+.portal-icon.search {
+    padding-top: 5px;
+    margin-right: 50px;
+    width: auto;
+}
+
+.portal-icon.search form input {
+    min-width: 400px;
+    height: 35px;
+    color: #333;
+    padding-right: 30px;
+}
+
+.portal-icon.user img, .col-lg-4 img {
+    height:28px;
+    width:28px;
+    border-radius: 50%;
+    border: 1px solid #666666;
+    padding: 0px;
+    margin-top: 5px;
+}
+
+.col-lg-4 img {
+    height:auto;
+    width:100%;
+    border-radius: 50%;
+    border: 1px solid #666666;
+    padding: 0px;
+    margin-top: 15px;
+}
+
+.navbar-top-button {
+  border: none;
+  background-color: Transparent;
+  color: white;
+  display: inline-block; /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
+  position: relative; /* All 'absolute'ly positioned elements are relative to this one */
+  padding: 15px 5px; /* Add some padding so it looks nice */
+}
+
+/* Make the badge float in the top right corner of the button */
+.navbar-top .button__badge {
+  background-color: #ff3333;
+  border-radius: 50%;
+  color: white;
+  padding: 0px 4px;
+  font-size: 30%;
+  position: absolute; /* Position the badge within the relatively positioned button */
+  top: 0;
+  right: 0;
+}
+
+#mobile-login {
+  margin-top: -10px;
+  text-align: right;
+  padding-right: 20px;
+  text-transform: uppercase;
+}
+
+.navbar .center-container-big {
+  text-align: right;
+  height: 60px;
+  padding-right: 20px;
+  padding-top: 7px;
+  text-transform: uppercase;
+}
+
+.navbar .center-container-big a,
+.navbar .center-container-big  button.login {
+    backround: #000;
+    display: inline;
+    height: 36px;
+    color: #fff;
+    padding: 6px;
+    border: 2px solid #fff;
+    margin-top: 5px;
+}
+
+// left navigation
+.navbar.left { text-transform: uppercase; }
+.navbar.left .box { background: #ffffff; padding: 10px; text-align: right; list-style: none; }
+.navbar.left .box.top {margin-bottom: 30px;}
+.navbar.left .box.bottom {margin-top: 30px;}
+.navbar.left ul.box li {margin: 5px 0;}
+.navbar.left ul.box li a { width: 100%; padding: 5px 20px; color: #000; }
+.navbar.left ul.box li.chosen { background: #aaaaaa;  }
+.navbar.left ul.box li.chosen a { color: #666;  }
+.navbar.left div.row {padding-left: 20px; padding-right: 20px; margin-bottom: 10px;}
+.navbar.left .rect { color: #fff; border: 1px solid; width: 32%;  height: 35px; padding-top: 5px; float: left; text-align: center; }
+.navbar.left .rect.middle { margin-left: 2%; margin-right: 2%; }
+.navbar.left li.padded { padding-right: 20px; padding-bottom: 20px;}
+.navbar.left li img { margin-bottom: 20px;}
+
+// right navigation
+.navbar.right .eventbox.user .description .details { margin-top: 10px; margin-bottom: 10px;  }
+.navbar.right .eventbox .imagearea input {  width: 100%;  }
+.navbar.right .eventbox.user .description { padding-right: 20px;  padding-left: 20px; }
+
+.navbar.right .eventbox .imagearea {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+.navbar.right .eventbox .date {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.navbar.right .eventbox.user img {
+    width:50%;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #666666;
+    float: left;
+    margin-right: 20px;
+}
+
+.navbar.right .eventbox.user .description .name a {
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+//submenu navbar
+span.caret{
+    color: #fff;
+}
+
+.dropdown-submenu { position: relative; }
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+    background: #fff;
+    color: #000;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+    background: #fff;    
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+    background: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+li.logo {
+  padding-top: 0px;
+  padding-right: 10px;  
+}
+
+/* event boxes */
+.eventbox .title a {color: #fff;}
+.eventbox .subtitle a { color: #333; }
+.eventbox .textarea input, .eventbox .textarea img.left { float: left; margin-right: 20px; max-width:50%; max-height: 250px; max-width: 250px;}
+.eventbox .textarea img.left { padding: 0px; margin-top: 0px; max-height: 250px; max-width: 250px;}
+.eventbox .textarea button { width:40%; padding: 10px;  background: none; border: 1px solid #c00; color: #333; margin-top: 20px; white-space: normal; }
+.eventbox .textarea img.small { width:30%; }
+.eventbox .textarea .right { text-align: center; }
+.eventbox .textarea .right .details {width: 100%; text-align: left; }
+.eventbox .textarea .right .uppercase {text-transform: uppercase; }
+.eventbox .textarea .right .content_name {font-weight: bold; text-align: left; text-transform: uppercase; margin-bottom: 10px;}
+.eventbox.event .textarea .right .content_name { text-align: center; }
+.eventbox .textarea .right .content_name a { color: #c00; }
+.eventbox.blog .textarea .right .content_name { margin-bottom: 0px; }
+.eventbox.blog .textarea .right .author { text-align: left;  margin-bottom: 10px; }
+.eventbox .footer a { color: #fff; }
+.eventbox .stars { text-align: left; margin-bottom: 10px; }
+
+.eventbox .container {
+    width: 100%;
+    clear: both;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 20px;
+    background: #fff;
+}
+.eventbox .title {
+    color: #fff;
+    min-height: 10px;
+    text-transform: uppercase;
+    padding-top: 2px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.eventbox .subtitle {
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+.eventbox .textarea {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+.eventbox .footer {
+    clear: both;
+    background: #999;
+    color: #fff;
+    min-height: 10px;
+    text-align: right;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+//jumpnav settings (for stories pages)
+.stories-nav .container, .jump-nav .container { padding: 0px; width: 100%; text-align: center; margin-bottom: 10px; }
+.stories-nav .container .button { color: #fff; width: 11%; height: 35px; margin-left: 0.5px; padding-top: 5px; float: left; text-align: center; text-transform: uppercase; }
+.jump-nav .container { margin-bottom: 0px; }
+.jump-nav .container .button { color: #fff; width: 33%; height: 35px; margin-left: 0.5px; padding-top: 5px; float: left; text-align: center; text-transform: uppercase; }
+
+//stories pages
+.story-col { padding: 5px; }
+.story-col.eventbox .imagearea {text-align: center; }
+.story-col.eventbox input { width:80%; }
+.imagearea button{ min-height: 70px; overflow: hidden; width:100%; background: #333; border: none; color: #fff; white-space: normal;  }
+
+//Default home page (when not logged in)
+#top { position: relative; top: -50px; }
+.sectionb img { padding: 10px; }
+.sectione img { padding: 10px; }
+.sectiona { background-color: #fff; background-image: url("/images/city-overlay2.png"); background-size: cover; background-position: top;  background-repeat: no-repeat; min-height: 80vh; }
+.sectionb { background-color: #6699FF; min-height: 100vh;  }
+.sectionc { background-color: #CC6666; min-height: 100vh;  }
+.sectiond { background-color: #cc6600; min-height: 100vh;  }
+.sectione { background-color: #fff; min-height: 100vh;  }
+.bloc .intro { background-color: #fff; padding: 10px; }
+.bloc p { font-size: 130%; line-height: 110%; }
+.bloc {
+    padding: 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+//this is the welcome message (first time you log in)
+.welcome {
+    background: #CC6666;
+    border: 2px solid #cc0000;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-size: 130%;
+    margin-bottom: 20px;
+}
+
+.welcome button {
+    background: #fff;
+    border: 2px solid #cc0000;
+    color: #333;
+    margin: 10px;
+}
+
+//thank you page for resource submission
+.thankyou {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #999;
+    text-align: center;
+}
+
+//registration forms
+.coaching form input, .coaching form textarea {
+    width: 40%;
+}
+
+.stories.share .title, .coaching .title {
+    margin-top: 0px;
+}
+
+.coaching .row.right {
+    padding:10px;
+}
+
+.stories.share form textarea, form textarea  {
+    min-height: 300px;
+}
+
+.stories.share .StoryForm {
+    text-align: center;
+}
+
+.stories.share input.button,  .coaching input.button{
+    background: #fff;
+    border: 1px solid #c00;
+    padding: 10px;
+    color: #333;
+}
+
+.info-pages {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#rating-form.col-sm-12.resource-title-row {
+    height: 100px;
+    border: 10px solid;
+}
+
+.coachtitle {
+    background-color: #999;
+    color: #fff;
+    width:100%;
+    padding:10px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+//Review Page
+.user-row { font-size: 130%; }
+.form-area { margin: 10px; }
+
+.review-title {
+    width: 100%;
+    text-align: center;
+}
+
+.review-comment {
+    font-style: italic;
+    text-align: right;
+}
+
+.pdf-link {
+    clear: both;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.pdf-link.closeup {
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+
+.col-xs-12.blank {
+    min-height: 150px;
+    width: 100%;
+}
+
+.contacts.stories.share .container { width: 100%; }
+.contacts.stories.share input { padding: 0px; margin: 0px; }
+
+//resource pages
+.resource-button-col a { color: #fff; }
+.resource-button-col.left{ border-right: 1px solid #ffffff;  }
+.resource-button-col.right{ border-left: 1px solid #ffffff;  }
+.add-resource-col a, .add-resource-col a:visited { color: #ccc; }
+.add-resource-col {border-right: 5px solid #eee; }
+.top-section.container { padding:0px; margin: 0px; width: 100%; }
+.department-tabs ul.nav.nav-tabs li { width: 50%; height: 45px; text-transform: uppercase; text-align: center; padding-top: 10px; }
+.department-tabs ul.nav.nav-tabs li.active { color: #fff; }
+.department-tabs ul.nav.nav-tabs li.active a { border: 0px; color: #fff; }
+.department-tabs ul.nav.nav-tabs li a:hover { background: none; border: none; }
+
+//tabs on the resource, blog and coaches pages
+.resource-filter-col, .add-resource-col {
+    width: 50%;
+    background-color: #666666;
+    height: 45px;
+    text-align: center;
+    padding-top: 5px;
+    text-transform: uppercase;
+    border-top: 5px solid #eee;
+    border-bottom: 5px solid #eee;
+}
+.resource-filter-col li.title { color: #333; margin-top: 10px; padding-left: 10px; font-size: 100%; }
+.resource-filter-col .dropdown-toggle {
+    background-color: #666666;
+    color: #ffffff;
+    font-size: 100%;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.department-title { clear: both; width: 100%; height: 45px; font-size: 200%; padding-top: 0px; text-align: center; color: #fff; text-transform: uppercase; }
+
+//area for videos that toggles
+.department-area-video {
+    text-align: center;
+    text-transform: uppercase;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    width: 100%;
+    background: #333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.department-area-video .title, .department-area-video a { clear: both; padding-top: 10px; }
+.department-area-video .title button { background: #333; border: 0px; padding: 0px; position: absolute; top: 10px; right: 0px; }
+.department-area-video a { color: #fff; }
+
+// this is all code for icons at the bottom of resources
+.user-profile .resource-add-row-red a {
+    color: #fff;
+}
+
+.user-profile input[type=submit] {
+    padding:5px 15px;
+    background: none;
+    border:0 none;
+    cursor:pointer;
+}
+
+.col-xs-12.sponsors {
+    text-align: center;
+}
+
+.col-xs-12.sponsors img {
+    padding: 10px;
+}
+
+.row.logo {
+    text-align: center;
+    padding: 20px;
+}
+
+.row.logo img {
+    width:50%;
+    height: auto;
+}
+
+.rating-author, .registration-author {
+    clear: both;
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+}
+
+.registration-author a, .registration-author a:visited {color: #333;}
+
+.rating-author img, .registration-author img {
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
+}
+
+.rating-author p{
+    color: #666;
+    clear: both;
+    padding-top:10px;
+}
+
+.rating-author {
+    border-bottom: 5px solid #999999;
+    font-size: 100%;
+    font-style: italic;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.rating-author a {
+    color: #333;
+}
+
+.bottom-link {
+    padding-bottom: 50px;
+}
+
+/*  listing of blog posts */
+.post-wrap
+{
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.post-wrap .title a { color: #000; text-transform: uppercase; font-weight: bold; }
+
+.post-outer
+{
+  padding: 20px;
+  margin: 0;
+  position: relative;
+  z-index: 3;
+}
+
+.post-outer .post-content
+{
+  position: relative;
+  z-index: 4;
+}
+
+.post-outer img
+{
+  float: left;
+  margin: 10px;
+  position: relative;
+}
+
+.post-wrap p.view
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.img_area .container { text-align: center; }
+
+.coach .img_area {
+    width: 20%;
+    height: 100%;
+    margin-right: 20px;
+    float: left;
+    vertical-align: middle;
+}
+
+.coach img{
+    float: left;
+    padding-right: 10px;
+    margin-top: 0px;
+    padding: 0px;
+ }
+
+//devise registration forms
+.container.devise p {
+    font-size: 110%;
+}
+
+.container.devise select {
+    color: #333;
+}
+
+.container.devise form input {
+    width: 100%;
+    height: 35px;
+    color: #333;
+}
+
+.container.devise .field.checkbox {
+    padding: 20px;
+}
+
+.container.devise {
+    width: 100%;
+    padding-left: 15%; padding-right: 15%;
+    padding-top: 20px; padding-bottom: 20px;
+    background-image: url("/images/city-overlay2.png");
+    color: #fff;
+    background-size: cover;
+}
+
+.container.devise input[type=submit] {
+    background-color: #999;
+    color: #fff;
+}
+
+.container.coaching { width: 100%; }
+
+span.inline.big { font-size: 130%; margin-right: 20px;}
+span.inline { display: inline; font-size: 100%; }
+span.inline a { border: 2px solid #fff; padding: 5px 10px 5px 10px; color: #fff; border-radius: 25px; }
+.resource-add-row-grey { background-color: #999999; }
+.resource-title-row { background-color: #999999; }
+.coach { background-color: #cccccc; border: 5px solid #333333; }
+.coach .body_area .author { text-transform: uppercase; font-weight: bold; }
+.navbar.left li.on a { color: #fff; }
+.navbar.left button, .navbar.left button:hover, .navbar.left button:focus, .navbar.left button:visited, .navbar.left button:active { background: #333; color: #fff; border: 2px solid #333; }
+
+//COLORS for departments
+.navbar .Bladder, .title.Bladder, .button.Bladder { background: #cc6600;}
+.navbar .Skin, .title.Skin, .button.Skin   { background: #6699FF; }
+.navbar .Bowel, .title.Bowel, .button.Bowel  { background: #669966; }
+.navbar .Exercise, .title.Exercise, .button.Exercise  { background: #CC6666; }
+.navbar .Sexuality, .title.Sexuality, .button.Sexuality  { background: #115577;}
+.navbar .Diet, .title.Diet, .button.Diet   { background: #99aa88; }
+.navbar .Caring, .title.Caring, .button.Caring  { background: #aa8844; }
+.navbar .Pain, .title.Pain, .button.Pain  { background: #669999; }
+.navbar .Family, .title.Family, .button.Family   { background: #aa8844; }
+.navbar .Health, .navbar .SCI, .title.Health, .title.SCI, .button.Health, .button.SCI   { background: #999; }
+
+.Bowel .big-grey-row { background: #669966; }
+.Skin .big-grey-row { background: #6699FF; }
+.Exercise .big-grey-row { background: #CC6666; }
+.Bladder .big-grey-row { background: #cc6600; }
+.SCI .big-grey-row { background: #999999; }
+.Introduction .big-grey-row { background: #999999; }
+.Pain .big-grey-row { background: #669999; }
+.Sexuality .big-grey-row { background: #115577; }
+.Caring .big-grey-row { background: #aa8844; }
+.Diet .big-grey-row { background: #99aa88; }
+.Health .big-grey-row { background: #999999; }
+
+.Bowel .resource-title-row, .Bowel .resource-add-row, .Bowel .resource-none-row { background-color: #669966; }
+.Skin .resource-title-row, .Skin .resource-add-row, .Skin .resource-none-row { background-color: #6699FF; }
+.Exercise .resource-title-row, .Exercise .resource-add-row,  .Exercise .resource-none-row { background-color: #CC6666; }
+.Bladder .resource-title-row, .Bladder .resource-add-row,  .Bladder .resource-none-row { background-color: #cc6600; }
+.SCI .resource-title-row, .SCI .resource-add-row, .SCI .resource-none-row { background-color: #999999; }
+.Introduction .resource-title-row, .Introduction .resource-add-row, .Introduction .resource-none-row { background-color: #999999; }
+.Caring .resource-title-row, .Caring .resource-add-row, .Caring .resource-none-row { background-color: #aa8844; }
+.Pain .resource-title-row, .Pain .resource-add-row, .Pain .resource-none-row { background-color: #669999; }
+.Sexuality .resource-title-row, .Sexuality .resource-add-row,  .Sexuality .resource-none-row { background-color: #115577; }
+.Diet .resource-title-row, .Diet .resource-add-row,  .Diet .resource-none-row { background-color: #99aa88; }
+.Health .resource-title-row, .Health .resource-add-row, .Health .resource-none-row { background-color: #999999; }
+
+.post-wrap .Bladder { border: 5px solid #cc6600; }
+.post-wrap .Skin { border: 5px solid #6699FF; }
+.post-wrap .Bowel { border: 5px solid #669966; }
+.post-wrap .Exercise { border: 5px solid #CC6666; }
+.post-wrap .SCI { border: 5px solid #999999; }
+.post-wrap .Pain { border: 5px solid #669999; }
+.post-wrap .Sexuality { border: 5px solid #115577; }
+.post-wrap .Caring { border: 5px solid #aa8844; }
+.post-wrap .Diet { border: 5px solid #99aa88; }
+.post-wrap .Health { border: 5px solid #999999; }
+
+.Bowel .blog-author { border-top: 5px solid #669966; }
+.Bowel .resource.teaser { padding-bottom: 10px; border-bottom: 5px solid #669966; }
+.Bowel img.resource { border-bottom: none; }
+.Bladder .blog-author { border-top: 5px solid #cc6600; }
+.Bladder .resource.teaser { padding-bottom: 10px; border-bottom: 5px solid #cc6600; }
+.Bladder img.resource { border-bottom: none; }
+.Skin .blog-author { border-top: 5px solid #6699FF; }
+.Skin .resource.teaser { padding-bottom: 10px; border-bottom: 5px solid #6699FF; }
+.Skin img.resource { border-bottom: none; }
+.Exercise .blog-author { border-top: 5px solid #CC6666; }
+.Exercise .resource.teaser { padding-bottom: 10px; border-bottom: 5px solid #CC6666; }
+.Exercise img.resource { border-bottom: none; }
+.SCI .blog-author { border-top: 5px solid #999999; }
+.SCI .resource.teaser { padding-bottom: 10px; border-bottom: 5px solid #999999; }
+.SCI img.resource { border-bottom: none; }
+.Pain .blog-author { border-top: 5px solid #669999; }
+.Pain .resource.teaser { padding-bottom: 10px; border-bottom: 5px solid #669999; }
+.Pain img.resource { border-bottom: none; }
+.Sexuality .blog-author { border-top: 5px solid #115577; }
+.Sexuality .resource.teaser { padding-bottom: 10px; border-bottom: 5px solid #115577; }
+.Sexuality img.resource { border-bottom: none; }
+.Caring .blog-author { border-top: 5px solid #aa8844; }
+.Caring .resource.teaser { padding-bottom: 10px; border-bottom: 5px solid #aa8844; }
+.Caring img.resource { border-bottom: none; }
+.Diet .blog-author { border-top: 5px solid #99aa88; }
+.Diet .resource.teaser { padding-bottom: 10px; border-bottom: 5px solid #99aa88; }
+.Diet img.resource { border-bottom: none; }
+.Health .blog-author { border-top: 5px solid #999999; }
+.Health .resource.teaser { padding-bottom: 10px; border-bottom: 5px solid #999999; }
+.Health img.resource { border-bottom: none; }
+
+.Bowel .blog-author img{ border: 5px solid #669966; }
+.Skin .blog-author img{ border: 5px solid #6699FF; }
+.Exercise .blog-author img{ border: 5px solid #CC6666; }
+.Bladder .blog-author img{ border: 5px solid #cc6600; }
+.SCI .blog-author img{ border: 5px solid #999999; }
+.Pain .blog-author img{ border: 5px solid #669999; }
+.Sexuality .blog-author img{ border: 5px solid #115577; }
+.Caring .blog-author img{ border: 5px solid #aa8844; }
+.Diet .blog-author img{ border: 5px solid #99aa88; }
+.Health .blog-author img{ border: 5px solid #999999; }
+
+li.Bowel a, ul.dropdown-menu li.Bowel a{ color: #669966; }
+li.Skin a, ul.dropdown-menu li.Skin a { color: #6699FF; }
+li.Exercise a, ul.dropdown-menu li.Exercise a { color: #CC6666; }
+li.Bladder a, ul.dropdown-menu li.Bladder a { color:  #cc6600; }
+li.SCI a, ul.dropdown-menu li.SCI a { color:  #999999; }
+li.Diet a, ul.dropdown-menu li.Diet a{ color: #99aa88; }
+li.Pain a, ul.dropdown-menu li.Pain a { color: #669999; }
+li.Caring a, ul.dropdown-menu li.Caring a { color: #aa8844; }
+li.Sexuality a, ul.dropdown-menu li.Sexuality a { color:  #115577; }
+li.Health a, ul.dropdown-menu li.Health a { color:  #999999; }
+
+.Bowel .department-title, .col-xs-3.col-md-2.Bowel { background-color: #669966; }
+.Skin .department-title, .col-xs-3.col-md-2.Skin { background-color: #6699FF; }
+.Exercise .department-title, .col-xs-3.col-md-2.Exercise { background-color: #CC6666; }
+.Bladder .department-title, .col-xs-3.col-md-2.Bladder{ background-color: #cc6600; }
+.SCI .department-title, .col-xs-3.col-md-2.SCI{ background-color: #999999; }
+.Caring .department-title, .col-xs-3.col-md-2.Caring { background-color: #aa8844; }
+.Pain .department-title, .col-xs-3.col-md-2.Pain { background-color: #669999; }
+.Sexuality .department-title, .col-xs-3.col-md-2.Sexuality { background-color: #115577; }
+.Diet .department-title, .col-xs-3.col-md-2.Diet { background-color: #99aa88; }
+.Health .department-title, .col-xs-3.col-md-2.Health { background-color: #999999; }
+
+.Bowel .tab-content { border-top: 10px solid #669966; }
+.Bowel .department-tabs ul.nav.nav-tabs li.active, .Bowel .department-tabs ul.nav.nav-tabs li.active a{ background-color: #669966; }
+.Skin .tab-content { border-top: 10px solid #6699FF; }
+.Skin .department-tabs ul.nav.nav-tabs li.active, .Skin .department-tabs ul.nav.nav-tabs li.active a{ background-color: #6699FF; }
+.Exercise .tab-content { border-top: 10px solid #CC6666; }
+.Exercise .department-tabs ul.nav.nav-tabs li.active, .Exercise .department-tabs ul.nav.nav-tabs li.active a{ background-color: #CC6666; }
+.Bladder .tab-content { border-top: 10px solid #cc6600; }
+.Bladder .department-tabs ul.nav.nav-tabs li.active, .Bladder .department-tabs ul.nav.nav-tabs li.active a{ background-color: #cc6600; }
+.SCI .tab-content { border-top: 10px solid #999999; }
+.SCI .department-tabs ul.nav.nav-tabs li.active, .SCI .department-tabs ul.nav.nav-tabs li.active a{ background-color: #999999; }
+.Caring .tab-content { border-top: 10px solid #aa8844; }
+.Caring .department-tabs ul.nav.nav-tabs li.active, .Caring .department-tabs ul.nav.nav-tabs li.active a{ background-color: #aa8844; }
+.Pain .tab-content { border-top: 10px solid #669999; }
+.Pain .department-tabs ul.nav.nav-tabs li.active, .Pain .department-tabs ul.nav.nav-tabs li.active a{ background-color: #669999; }
+.Sexuality .tab-content { border-top: 10px solid #115577; }
+.Sexuality .department-tabs ul.nav.nav-tabs li.active, .Sexuality .department-tabs ul.nav.nav-tabs li.active a{ background-color: #115577; }
+.Diet .tab-content { border-top: 10px solid #99aa88; }
+.Diet .department-tabs ul.nav.nav-tabs li.active, .Diet .department-tabs ul.nav.nav-tabs li.active a{ background-color: #99aa88; }
+.Health .tab-content { border-top: 10px solid #999999; }
+.Health .department-tabs ul.nav.nav-tabs li.active, .Health .department-tabs ul.nav.nav-tabs li.active a{ background-color: #999999; }
+.Health.container, .Diet.container, .Sexuality.container, .Pain.container, .Caring.container, .SCI.container, .Exercise.container, .Skin.container, .Bowel.container, .Bladder.container  { padding: 0px; margin: 0px; width: 100%; }
+
+//MEDIA QUERIES
+@media (max-width:1200px) {
+    .navbar.right, .navbar img.smalldisplay { display: none; }
+    .portal-icon.search form input { width: 300px; }
+    .col-lg-6 { border-right: none; }
+}
+
+@media (max-width:992px) {
+    .navbar img.smalldisplay, li.small, .navbar.left, .navbar.right, .navbar .portal-icon.off, .btn-group.hidden-xs.hidden-sm  { display: none; }
+    .col-lg-6  { border-right: none; border-left: none; }
+    .navbar .login a { float: right; }
+
+    .navbar .logout a, .navbar .login a,  .navbar .logout button{
+        padding: none;
+        border: 1px solid #fff;
+        font-size: 100%;
+    }
+}
+
+@media (max-width:768px) {
+    .news-item.blog-shout .img_area .img_box {
+        width:100%;
+        height: 0;
+        padding-bottom: 33%;
+        overflow: hidden;
+        float: none;
+    }
+
+    .news-item.blog-shout .img_area .logo_area img {
+        width: 25%;
+        height: auto;
+    }
+
+    .news-item.blog-shout .img_area { width: 100%; float: none; }
+    .bloc p { font-size: 130%; }
+
+}
+
+@media screen and (max-width: 660px) {
+    .news-item.story .inner { padding-top:10px; }
+    .news-item.story button { font-size: 80%; }
+}
+
+@media screen and (max-width: 480px) {
+    .eventbox img.left, .eventbox input { width: 100%; }
+    .eventbox .right {clear: both; }
+    .news-item.story .inner { padding-top:5px; }
+}
+
+//navigation
+.navbar-portal .navbar-header { float: none; }
+.navbar-portal .navbar-toggle { display: block; }
+.navbar-portal .navbar-collapse.collapse { display: none!important; }
+.navbar-portal { border: 1px solid #fff; }
+.navbar-portal .navbar-nav {
+    float: none!important;
+    margin: 7.5px -15px;
+}
+.navbar-portal .navbar-nav>li {
+    float: none;
+}
+.navbar-portal .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.navbar-portal a:hover { text-transform: none; }
+
+.navbar-portal button.navbar-toggle {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+}
+
+.navbar-portal .logo-container {
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    float: left;
+}
+
+.portal-icons {
+    text-align: right;
+    width: 100%;
+    padding-top: 5px;
+}
+
+.portal-icon span { font-size: 100%;}
+.portal-icon .btn.btn-default.big { background: none; color: #fff; font-size: 200%; padding-top: 0px; border: 0px; margin: 0px; }
+.portal-icon .btn.btn-default.small { background: none; color: #fff; font-size: 150%; padding-top: 0px; border: 0px; margin: 0px; }
+.portal-icon { float: right; padding-right: 10px; padding-left: 10px; text-align: center; }
+.portal-icon.accessibility { padding-right: 25px; padding-left: 25px; border-left: 1px solid #fff; margin-left: 20px; }
+
+
+.navbar-portal .button {
+  color: white;
+  display: inline-block; /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
+  position: relative; /* All 'absolute'ly positioned elements are relative to this one */
+  padding: 2px 5px; /* Add some padding so it looks nice */
+}
+
+/* badge floats in the top right corner of the button */
+.navbar-portal .button__badge {
+  background-color: #fa3e3e;
+  border-radius: 50%;
+  color: white;
+  padding: 1px 3px;
+  font-size: 30%;
+  position: absolute; /* Position the badge within the relatively positioned button */
+  top: 0;
+  right: 0;
+}
+
+//landing pages
+.coachportal {clear: both; text-align: center; padding: 20px; }
+
+.coachportal .header { clear: both; }
+.coachportal .header .spacer { width: 10%; float: left; background: #eeeeee;}
+.coachportal .nav-pills.nav-horizontal { width: 100%; }
+.coachportal .nav-stacked { width: 10%; float: left; }
+
+.coachportal .portal-content .interior {background: #fff; text-align: center; width: 90%; min-height: 650px; height: 100%; float: left; padding: 20px; }
+.coachportal .portal-content .interior .title { font-size: 200%; color: #2288cc; padding: 20px; margin-bottom: 20px;}
+.coachportal .portal-content .interior .button { clear: both; padding-top: 40px; width: 100%; text-align: center; }
+.coachportal .portal-content .interior .button a { text-transform: uppercase; color: #fff; background: #2288cc; padding: 20px; height: 60px; width: 100px; }
+
+.coachportal .nav-pills li a { color: #fff; min-height: 60px; padding-top: 20px; border-top: 1px solid #2288cc; border-left: 1px solid #2288cc;}
+.coachportal .nav-pills.nav-horizontal li a { border-right: 1px solid #2288cc; }
+.coachportal .nav-pills.nav-stacked li a { border-bottom: 1px solid #2288cc; }
+.coachportal .nav-pills li { background: #2288cc; }
+
+.coachportal .nav-pills.nav-horizontal li {border-radius: 5px 5px 0px 0px; }
+.coachportal .nav-pills.nav-stacked li {border-radius: 5px 0px 0px 5px; text-align: left; }
+.coachportal .nav-pills.nav-horizontal li a { border-radius: 5px 5px 0px 0px; }
+.coachportal .nav-pills.nav-stacked li a { border-radius: 5px 0px 0px 5px;}
+
+.coachportal li.active a, .coachportal li.active, .coachportal .nav-tabs li.active { color: #2288cc; background: #fff; border-left: 1px solid #ccc; border-top: 1px solid #ccc; }
+.coachportal .nav-horizontal li.active a, .coachportal .nav-horizontal li.active, .coachportal .nav-horizontal.nav-tabs li.active { border-right: 1px solid #ccc; }
+.coachportal .nav-stacked li.active a, .coachportal .nav-stacked li.active {border-bottom: 1px solid #ccc; }
+.coachportal li a:hover { color: #2288cc; background: #fff; border-left: 1px solid #ccc; border-top: 1px solid #ccc; }
+.coachportal .nav-stacked li a:hover { border-bottom: 1px solid #ccc; }
+.coachportal .nav-horizontal li a:hover { border-right: 1px solid #ccc; }
+
+.coachportal .alert { height: 60px; margin-bottom: 20px; background: none; padding: 0px; color: #333; }
+.coachportal .alert .alert-icon { display: inline; background: #669966; padding: 20px; width: 60px; }
+.coachportal .alert .alert-content { display: inline; background: #fff; padding: 20px; text-align: center; }
+.coachportal .alert .alert-close { display: inline; background: #669966; padding: 20px; width: 60px; }
+.coachportal .alert .alert-close a { color: #fff; }
+
+.breaker {clear: both; width: 100%; height: 60px;}
+
+.coachportal .content-section { width: 70%; float: left; border-right: 3px solid; padding: 20px; margin-right: 20px; }
+.coachportal .tips-section { padding: 20px;  text-align: left; }
+.coachportal .current-goal-title { font-weight: bold; color: #333; font-size: 100%; }
+.coachportal .current-goal-text {margin-bottom: 10px; }
+.coachportal .getready { clear: both; background: #ffee99; padding: 10px; text-align: center; }
+.coachportal .getready a { color: #333; }
+
+.coachportal .portal-content .interior .circle-button { clear: both; width: 100%; text-align: center; }
+.coachportal .portal-content .interior .circle-button .container { text-transform: uppercase; padding-top: 25px;  width:120px; height: 120px; background: #669966; border-radius: 50%;}
+.coachportal .portal-content .interior .circle-button .container a { text-transform: uppercase; color: #fff; }
+.coachportal .intro-top {width: 100%; text-align: center; }
+.coachportal .intro-top .middle { margin-left: 20%; margin-right: 20%; width: 60%; }
+.coachportal .user-circle { width: 80px; height: 80px; background: #ccc; border-radius: 50%; padding: 5px; border: 2px solid #2288cc; float: left; margin-right: 20px;}
+.coachportal .details { text-align: left;  padding: 10px; }
+.coachportal span.number { font-size: 200%; color: #2288cc;  font-weight: bold; }
+.coachportal .time-block { float: left; padding: 10px; margin-left: 20px; }
+.coachportal .count-down { margin-top: 20px; }
+.coachportal .count-down-middle.container { width: 375px; }
+
+.coachportal .current-goal-title.big  { font-weight: bold; font-size: 130%; margin-bottom: 20px; }
+
+.basic_page .title_area { text-align: center; }
+
+

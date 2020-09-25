@@ -1,0 +1,15 @@
+%h1 Create a Blog Post
+= form_for(@blog_post) do |f|
+  = hidden_field_tag :user_id, current_user.id
+  = f.label :title
+  = f.text_field :title, class: 'form-control'
+  = f.label :image_url, "Blog Photo"
+  = f.file_field :image_url, class: "form-control"
+  = f.label :content
+  = f.text_area :content
+  = f.label :department_id
+  = f.text_field :department_id, class: 'form-control'
+  = f.label :sponsor_id
+  = f.text_field :sponsor_id, class: 'form-control'
+  %p
+  = f.submit "Submit Post", class: "btn btn-primary"

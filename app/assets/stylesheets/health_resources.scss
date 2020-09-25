@@ -1,0 +1,250 @@
+// Place all the styles related to the HealthResources controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// this is styling for resource pages
+.container.resource {width: 100%;}
+.resource-title-row, .resource-button-row, .resource-add-row, .resource-add-row-grey, .resource-add-row-red {
+    color: #ffffff;    
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 12px;
+    padding-bottom: 12px;    
+    margin: 0px;
+}
+
+.resource-button-row, .resource-add-row, .resource-add-row-grey, .resource-add-row-red {
+    height: 50px;
+}
+
+.resource-row-grey {
+    background-color: #999;
+    color: #fff;
+    width:100%;
+    padding:20px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.resource-none-row {
+    width: 100%;
+    color: #ffffff;    
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+    margin: 0px;    
+}
+
+.resource-title-row.footer {
+    margin-top: 20px;
+}
+
+
+.resource-title-row a {
+    color: #ffffff;    
+}
+
+.resource-add-row{
+  background-color: #666666;  
+}
+
+.resource-add-row-red {
+  background-color: #CC6666;  
+}
+
+.resource-button-row a, .resource-none-row a,  .resource-add-row a, .resource-add-row-grey a {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.resource-title-row .title {
+    overflow: hidden;
+    font-size: 120%;
+    text-transform: uppercase;
+}
+
+.resource.teaser {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.resource.teaser .img_area {
+    width: 15%;
+    height: 0;    
+    padding-bottom: 15%;
+    overflow: hidden;
+    float: left;
+    border: 1px solid;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.resource.teaser .body {
+    min-height: 40px;
+}
+
+.resource.not-teaser .image_area .container {
+    width: 100%;
+    max-height: 350px;
+    overflow: hidden;
+}
+
+.resource.not-teaser .image_area .container img {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;    
+}
+
+.resource, .resource .body_area .main, .resource .body_area.main {
+    clear: both;
+}
+
+.review .resource.teaser .stars { display: none; }
+.resource.teaser .name_area a { color: #333; }
+
+.resource .stars {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.resource .footer_area {
+    width: 100%;
+    text-align: center;
+    padding-top:10px;
+    font-style: italic;
+}
+
+.resource .footer_icon {
+    width: 45px;
+    height: 45px;
+    background-color: #666666;
+    color: #ffffff;
+    float: left;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-left: 5px;
+    position:relative;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+.resource {
+    padding: 10px;
+}
+
+.row.sponsor {
+    width: 100%;
+    text-align: center;
+}
+
+.row.sponsor img {
+    width: 50%;
+    height: auto;
+}
+
+.Bowel .resource-button-col { background-color: #669966; }
+.Skin .resource-button-col { background-color: #6699FF; }
+.Exercise .resource-button-col { background-color: #CC6666; }
+.Bladder .resource-button-col { background-color: #cc6600; }
+.SCI .resource-button-col { background-color: #999999; }
+.Caregivers .resource-button-col { background-color: #aa8844; }
+.Pain .resource-button-col { background-color: #669999; }
+.Sexuality .resource-button-col{ background-color: #115577; }
+.Diet .resource-button-col{ background-color: #99aa88; }
+.Health .resource-button-col { background-color: #999999; }
+
+.link_area.red {background: #999; padding: 10px; margin-bottom: 10px;}
+
+.click {
+  font-size: 33px;
+  color: rgba(0,0,0,.5);
+  width: 38px;
+  height: 38px;
+  margin: 0 auto;
+  position: relative;
+  left: -20px;
+  cursor: pointer;
+  border: none !important;
+  outline: none !important;  
+}
+
+
+.click span {
+  z-index: 999;
+  position: absolute;
+  border: none !important;
+  outline: none !important;  
+}
+
+span:hover {
+  opacity: 0.8;
+  border: none !important;
+  outline: none !important;  
+}
+
+span:active {
+  transform: scale(0.93,0.93) translateY(2px);
+  border: none !important;
+  outline: none !important;  
+}
+
+span:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+button:active {
+  border: none !important;
+  outline: none !important;
+}
+
+button:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+.ring, .ring2 {
+  border: none !important;
+  outline: none !important;
+}
+
+.active span, .active-2 span {
+  color: #cc0000 !important;
+}
+
+.active-2 .ring {
+  background: #cc0000 !important;
+}
+
+.info {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: relative;
+  top: 25px;
+  left: -35px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.info-tog {
+  color: #cc0000;
+  position: relative;
+  top: 35px;
+  opacity: 1;
+}
+
+* {
+  transition: all .32s ease;
+}
+
+button.no-bg {
+  background-color: none;
+  background: none;
+  border: none;
+}
+

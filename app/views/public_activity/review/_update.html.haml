@@ -1,0 +1,27 @@
+-if activity.owner
+  .row
+    .col-xs-12
+      .news-item.resource.review{class: activity.trackable.health_resource.department.name}
+        .img_area       
+          -if activity.trackable.health_resource.attachment.thumb.url
+            =link_to image_tag(activity.trackable.health_resource.attachment.thumb.url), health_resource_path(activity.trackable.health_resource_id) 
+          -else
+            %img{:src => "http://styleguide.europeana.eu/images/fpo_square.png"} 
+
+        .review-title
+          = link_to "#{activity.owner.first_name}", "/users/#{activity.owner.id}"
+          reviewed a 
+          .span
+            #{activity.trackable.health_resource.department.name} Department 
+          resource
+          %p
+        .title= link_to activity.trackable.health_resource.title, health_resource_path(activity.trackable.health_resource_id)
+        %p
+        .main= activity.trackable.health_resource.description.truncate(150).html_safe
+        -if activity.trackable.comment.length > 0
+          %p
+          .review-comment= "#{activity.owner.first_name} says: '" + truncate(activity.trackable.comment, length: 100) + "'"
+        -else
+          %p
+          .review-comment-blank
+       

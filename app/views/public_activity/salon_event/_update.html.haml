@@ -1,0 +1,37 @@
+-if activity.trackable.present?
+  .eventbox.event
+    .container
+      .title{:class=>"#{Department.find(activity.trackable.department_id).name}"}
+        -if activity.trackable.event_date > Time.now
+          Upcoming #{Department.find(activity.trackable.department_id).name} Section Event
+        -else
+          #{Department.find(activity.trackable.department_id).name} Section Event Archive    
+      .textarea
+        - if activity.trackable.attachment.thumb.length == 0
+          %img{:src => "http://www.realtoolreviews.com/wp-content/plugins/ilen-video-locker/assets/ilenframework/assets/images/default.png", :class => "left"}      
+        - else
+          %img{:src => "#{activity.trackable.attachment.thumb}", :class => "left"}        
+        .right
+          .content_name
+            = link_to activity.trackable.title, salon_event_path(activity.trackable) 
+          .uppercase
+            -if activity.trackable.event_date > Time.now
+              Chat with us online: 
+              %p
+              #{activity.trackable.event_date.strftime("%B")} 
+              #{activity.trackable.event_date.strftime("%d")} at 
+              #{activity.trackable.event_date.strftime("%l:%M %p")} 
+          %p
+          .details
+            = activity.trackable.description.truncate(200).html_safe
+          %p            
+          BROUGHT TO YOU BY &nbsp;
+          - if activity.trackable.sponsor 
+            =link_to image_tag("#{activity.trackable.sponsor.logo}", :class => "small"), "/sponsors/#{activity.trackable.sponsor.id}"  
+          - else
+            %img{:src => "/logo-dark.png", :class => "small"}          
+      .footer
+        -if activity.trackable.event_date > Time.now
+          =link_to "View Event / Register >", "/salon_events/#{activity.trackable.id}" 
+        -else
+          =link_to "View Event Archive >", "/salon_events/#{activity.trackable.id}"   

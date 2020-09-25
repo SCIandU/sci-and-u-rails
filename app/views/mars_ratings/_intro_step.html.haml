@@ -1,0 +1,84 @@
+.row
+  .col-sm-12
+    = f.hidden_field :device, value: request.user_agent
+    .alert
+      = f.check_box(:consent_form, class: "top")
+      I have read
+      %button{:type=>"button", :class=>"btn btn-info btn-lg", "data-toggle"=>"modal", "data-target"=>"#Consent"}the consent form
+      and agree to participate in the SCI & U survey.
+    // .field
+    //   = f.label :technical_help, "Take me to the survey.", :value => "false"
+    //   = f.radio_button :technical_help, false, :checked => true
+    // .field
+    //   = f.label :technical_help, "I require accommodations to fill out the survey.", :value => "true"
+    //   = f.radio_button :technical_help, true
+
+%div{:id => "Consent", :class=>"modal fade", :tabindex=>"-1", :role=>"dialog"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}x
+        %h4 Consent To Participate In A Research Study
+      .modal-body
+        %b
+          Study Title:
+        Considerations for Self-Management Support to Reduce Secondary Complications for Individuals with Traumatic Spinal Cord Injury
+        %p
+        %b
+        Investigators:
+        Susan Jaglal, PhD, Department of Physical Therapy; 500 University Avenue, Toronto, Ontario, Canada M5G 1V7; 416-978-0315; susan.jaglal@utoronto.ca
+        %p
+        Sarah Munce, MSc, PhD, Institute of Health Policy, Management & Evaluation; 500 University Avenue Rm. 851, Toronto, Ontario, Canada M5G 1V7; 416-946-7902; sarah.munce@utoronto.ca
+        %p
+        %b
+        Study Contact:
+        Sonya Allin, MSc, PhD, Department of Physical Therapy; 500 University Avenue Rm. 851, Toronto, Ontario, Canada M5G 1V7; 416-978-4099; sciandustudy@utoronto.ca
+        %p
+        %b
+          Introduction:
+        You are being asked to take part in a research study. Please read this explanation about the study and its risks and benefits before you decide if you would like to take part. You should take as much time as you need to make your decision. You should ask the study contacts listed above to explain anything that you do not understand and make sure that all of your questions have been answered before you agree to participate. Before you make your decision, feel free to talk about this study with anyone you wish including your friends, family, and family doctor. Participation in this study is voluntary.
+        %p
+        %b
+          Background and Purpose of Research:
+        You have been asked to participate in an evaluation that is designed to understand the capacity for an online prototype (called SCI & U) to encourage or improve self-care behaviour after spinal cord injury (SCI). SCI & U is actively being designed and built in order to provide information and resources to support self-management for Canadians living with SCI.
+        %p
+        %b
+          Eligibility:
+        To participate in this study you must have a spinal cord injury, be greater than 18 years of age, and English-speaking.  You must also have logged into the SCI & U online prototype at least 5 times, have customized your profile and have contributed content in the form or a resource review or blog comment.
+        %p
+        %b
+          Procedures:
+        You will be asked to evaluate your experience of SCI & U. More specifically, you will be asked to fill out a survey (either online or by Skupe or phone, whichever is more convenient for you) that asks several questions about your experience of SCI & U. Completing this survey will take about 30 minutes of your time. At the close of this survey we will additionally ask if you will be willing to participate in a follow-up phone or Skype interview.  If you participate in a follow up interview, we may ask you to clarify your survey responses and to discuss ideas for future extensions of SCI & U. Follow up interviews will last approximately 45 minutes.
+        %p
+        All information obtained during the study will be held in strict confidence and will be stored securely. Your full name or any identifying information will never be used in any publication or presentations.
+        %p
+        %b
+          Voluntary Participation:
+        You can choose not to participate or you may withdraw at any time without risk of penalty.
+        %p
+        %b
+          Risks:
+        There are no known risks associated with participation in the survey.
+        %p
+        %b
+          Benefits:
+        For completing an online survey, you will receive a $5 gift certificate to Starbucks.  If you are asked to participate in a follow up interview by phone or Skype, you will receive an additional $25 gift certificate to either Starbucks, Tim Horton's or Amazon.ca (according to your preference).
+        %p
+        Information gathered from surveys and interviews will provide a better understanding of the potential for SCI & U to support effective self-management and how it may be improved to better meet the needs of the SCI community.
+        %p
+        %b
+          Privacy & Confidentiality:
+        All information obtained during the study will be held in strict confidence and stored securely. No names or identifying information will be used in any publication or presentations. All data collected as a part of this research will be permanently deleted five years after the study is completed.
+        %p
+        %b
+          Rights of Participants:
+        By agreeing to the information presented here you do not give up any of your legal rights against the investigators, sponsor or involved institutions for compensation, nor does this form relieve the investigators, sponsor or involved institutions of their legal and professional responsibilities.
+        %p
+        %b
+          Questions:
+        If you have any future questions about the study, please contact Sonya Allin in the Department of Physical Therapy at the University of Toronto at 416-978-4099 or by email: sciandustudy@utoronto.ca.
+        %p
+        If you have any questions about your rights as a research participant, please contact Jill Parsons, Health Sciences Ethics Review Officer, Ethics Review Office, University of Toronto at telephone 416-946-5806 or by email: jc.parsons@utoronto.ca.
+
+      .modal-footer
+        %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}Close

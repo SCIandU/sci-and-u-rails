@@ -1,0 +1,24 @@
+- @upcoming_events.each do |salon_event|   
+  - if salon_event.event_date >= Time.now
+    .eventbox.event
+      .container
+        .title{class: Department.find(salon_event.department_id).name}  
+          =link_to salon_event.title, salon_event_path(salon_event)
+        .imagearea
+          =link_to image_tag(salon_event.attachment.large.url), salon_event_path(salon_event)
+        .date
+          Live Online! #{salon_event.event_date.strftime("%b")} #{salon_event.event_date.strftime("%d")} at 
+          #{salon_event.event_date.strftime("%l")} #{salon_event.event_date.strftime("%M")} #{salon_event.event_date.strftime("%P")} 
+        .footer
+          =link_to "Learn More / Sign Up >", "/salon_events/#{salon_event.id}"
+
+- if @upcoming_events.count == 0 
+  - @podcasts.each do |salon_event|   
+    .eventbox.event
+      .container
+        .title{class: Department.find(salon_event.department_id).name}  
+          =link_to salon_event.title, salon_event_path(salon_event)
+        .imagearea
+          =link_to image_tag(salon_event.attachment.large.url), salon_event_path(salon_event) 
+        .footer
+          =link_to "Listen to the Podcast >", "/salon_events/#{salon_event.id}"

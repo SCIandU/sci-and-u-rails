@@ -1,0 +1,47 @@
+%div{:id => "Top"}	
+.big-grey-row
+	%span.inline.big TEST YOUR KNOWLEDGE
+.stories-nav
+	.container
+		.button.Bladder
+			= link_to "Bladder", "/surveys?department_id=4&page=1"  
+		.button.Bowel
+			= link_to "Bowel", "/surveys?department_id=1&page=1"
+		.button.Exercise
+			= link_to "Exercise", "/surveys?department_id=3&page=1" 
+		.button.Skin
+			= link_to "Skin", "/surveys?department_id=2&page=1" 
+		.button.Sexuality
+			= link_to "Sex", "/surveys?department_id=7&page=1"  
+		.button.Pain
+			= link_to "Pain", "/surveys?department_id=10&page=1" 
+		.button.Diet
+			= link_to "Diet", "/surveys?department_id=9&page=1"   
+		.button.Family
+			= link_to "Caring", "/surveys?department_id=8&page=1" 
+		.button.Health
+			= link_to "Basics", "/surveys?department_id=6&page=1" 
+
+- if @surveys.count == 0
+	.row  
+		.col-sm-12.center
+			%center
+				%h4 
+					There are no quizzes in this department. Please check back later!
+
+- else
+	- @surveys.in_groups_of(3) do |subset|	
+		.row 							
+			- subset.each do |survey|
+				-if survey
+					.col-sm-4.story-col.eventbox 
+						.container 
+							.title{class: Department.find(survey.department_id).name}  
+								#{Department.find(survey.department_id).name} Quiz
+							.imagearea       
+								/ %input{:type => "image", :src => "#{survey.attachment.thumb.url}", "data-toggle"=>"modal", "data-target"=>"#Box#{survey.id}"}
+								/ %br
+								%a.button{:href => "/surveys/#{survey.id}"}#{survey.name}
+						
+=will_paginate @surveys
+

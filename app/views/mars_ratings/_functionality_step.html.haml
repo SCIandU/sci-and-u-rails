@@ -1,0 +1,82 @@
+.big-grey-row.top
+  .col-xs-12
+    %span.inline.big SCI & U's FUNCTIONALITY
+
+.row.title
+  .col-sm-12    
+    How accurately/fast do the features (functions) and components (buttons/menus) of SCI and U work for you?
+.row
+  .col-sm-12   
+    = f.radio_button(:functionality1, 1)
+    = f.label(:functionality1, "1: The site is broken; no/insufficient/inaccurate response (e.g. crashes/bugs/broken features etc.")
+    %br
+    = f.radio_button(:functionality1, 2)
+    = f.label(:functionality1, "2: Some functions work, but it lags or contains major technical problems")
+    %br
+    = f.radio_button(:functionality1, 3)
+    = f.label(:functionality1, "3: The site works overall. Some technical problems need fixing/is slow at times")
+    %br
+    = f.radio_button(:functionality1, 4)
+    = f.label(:functionality1, "4: Mostly functional with minor/negligible problems")
+    %br
+    = f.radio_button(:functionality1, 5)     
+    = f.label(:functionality1, "5: Perfect/timely response; no technical bugs found")
+.row.title
+  .col-sm-12    
+    How easy is it to learn how to use SCI & U?  Is it clear where to find help and instructions?
+.row
+  .col-sm-12   
+    = f.radio_button(:functionality2, 1)
+    = f.label(:functionality2, "1: No/limited instructions; menu labels/icons are confusing; complicated")
+    %br
+    = f.radio_button(:functionality2, 2)
+    = f.label(:functionality2, "2: Useable after a lot of time/effort")
+    %br
+    = f.radio_button(:functionality2, 3)
+    = f.label(:functionality2, "3: Useable after some time/effort")
+    %br
+    = f.radio_button(:functionality2, 4)
+    = f.label(:functionality2, "4: Easy to learn how to use the app (or has clear instructions)")
+    %br
+    = f.radio_button(:functionality2, 5)     
+    = f.label(:functionality2, "5: Able to use app immediately; intuitive; simple")
+
+.row.title
+  .col-sm-12    
+    Is moving between sections of SCI & U logical/accurate/appropriate?  Are all the necessary screen links present?
+.row
+  .col-sm-12   
+    = f.radio_button(:functionality3, 1)
+    = f.label(:functionality3, "1: Different sections seem logically disconnected and random/confusing/navigation is difficult")
+    %br
+    = f.radio_button(:functionality3, 2)
+    = f.label(:functionality3, "2: Usable after a lot of time/effort")
+    %br
+    = f.radio_button(:functionality3, 3)
+    = f.label(:functionality3, "3: Usable after some time/effort")
+    %br
+    = f.radio_button(:functionality3, 4)
+    = f.label(:functionality3, "4: Easy to use or missing a negligible link")
+    %br
+    = f.radio_button(:functionality3, 5)     
+    = f.label(:functionality3, "5: Perfectly logical, easy, clear and intuitive screen flow throughout or offers shortcuts")
+
+.row.title
+  .col-sm-12    
+    Are the interactions required by SCI & U (taps/swipes/scrolls) consistent and intuitive across all screens?
+.row
+  .col-sm-12   
+    = f.radio_button(:functionality4, 1)
+    = f.label(:functionality4, "1: Completely inconsistent/confusing")
+    %br
+    = f.radio_button(:functionality4, 2)
+    = f.label(:functionality4, "2: Often inconsistent/confusing")
+    %br
+    = f.radio_button(:functionality4, 3)
+    = f.label(:functionality4, "3: OK with some inconsistencies/confusing elements")
+    %br
+    = f.radio_button(:functionality4, 4)
+    = f.label(:functionality4, "4: Mostly consistent/intuitive with negligible problems")
+    %br
+    = f.radio_button(:functionality4, 5)     
+    = f.label(:functionality4, "5: Perfectly consistent and intuitive")

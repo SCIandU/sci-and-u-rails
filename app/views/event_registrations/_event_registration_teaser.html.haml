@@ -1,0 +1,8 @@
+.registration-author
+	.row
+		.col-xs-12
+			- if event_registration.user.profile_image.thumb.url
+				%img{:src => "#{event_registration.user.profile_image.thumb.url}", :class=>"author grey", :height=>"75",:width=>"75", }   
+			- else
+				%img{:src => "/img/user-image.png", :class=>"author grey"}        
+			%br= link_to "#{event_registration.user.first_name} #{event_registration.user.last_name}", "/users/#{event_registration.user.id}" 

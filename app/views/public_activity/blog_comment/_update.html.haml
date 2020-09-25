@@ -1,0 +1,22 @@
+-if activity.owner
+  .row
+    .col-xs-12
+      .news-item.resource{class: activity.trackable.blog_post.department.name}
+        .img_area   
+          - if activity.trackable.blog_post.attachment.thumb.length == 0
+            %img{:src => "http://styleguide.europeana.eu/images/fpo_square.png"}
+          - else
+            %img{:src => "#{activity.trackable.blog_post.attachment.thumb}", :class => "teaser"}
+        .review-title
+          = link_to "#{activity.owner.first_name} #{activity.owner.last_name}", "/users/#{activity.owner.id}"
+          commented on a 
+          .span
+            #{activity.trackable.blog_post.department.name} Department 
+          blog post
+          %p
+        .title= link_to activity.trackable.blog_post.title, blog_post_path(activity.trackable.blog_post_id)
+        %p
+        .main= activity.trackable.blog_post.content.truncate(300).html_safe
+        %p
+        .review-comment= "#{activity.owner.first_name} says: '" + activity.trackable.comment.truncate(100).html_safe + "'"
+     

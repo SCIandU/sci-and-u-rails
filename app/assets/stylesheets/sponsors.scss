@@ -1,0 +1,26 @@
+// Place all the styles related to the sponsors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//sponsors page
+.container.sponsors { width: 100%; }
+
+.sponsors .row {
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+.sponsors .row.title {
+    margin-bottom: 20px;
+}
+
+.sponsors .row.logo img {
+    width: 50%;
+    height: auto;
+    padding: 20px;
+}
+
+@media (max-width:768px) {
+    .sponsors .row.logo img { width: 100%; }
+}

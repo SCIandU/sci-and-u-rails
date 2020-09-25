@@ -1,0 +1,29 @@
+- if @featured_stories
+  - @featured_stories.each do |story|   
+    .eventbox.story
+      .container
+        .title{class: Department.find(story.department_id).name} 
+          #{Department.find(story.department_id).name} Story
+        .subtitle 
+          =story.title      
+        .imagearea          
+          %input{:type => "image", :src => "#{story.attachment.large.url}", "data-toggle"=>"modal", "data-target"=>"#featuredStoryModal"}
+        .footer
+          =link_to "All Stories >", "/stories"
+
+    %div{:id => "featuredStoryModal", :class=>"modal fade", :tabindex=>"-1", :role=>"dialog"}
+      .modal-dialog
+        .modal-content
+          .modal-header
+            %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}x
+            .title= "#{story.title}" 
+          .modal-body
+            .embed-responsive.embed-responsive-16by9
+              %iframe.embed-responsive-item.async-iframe{:allowfullscreen => "", :frameborder => "0", :src => "#{story.youtube_link.gsub(/watch\?v=/, "embed/")}?autoplay=0"}
+          .modal-footer
+            %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}Close    
+
+  
+
+ 
+

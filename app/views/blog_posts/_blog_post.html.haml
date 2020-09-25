@@ -1,0 +1,6 @@
+.blog
+  %h2= link_to blog.title, blog_post_path(blog)
+  -#%h4 #{blog.user.first_name} #{blog.user.last_name}
+  %p= truncate(blog.content, :length => 140)
+  %br
+  %br

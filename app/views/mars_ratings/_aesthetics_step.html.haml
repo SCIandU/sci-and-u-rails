@@ -1,0 +1,61 @@
+.big-grey-row.top
+  .col-xs-12
+    %span.inline.big SCI & U'S AESTHETICS 
+.row.title
+  .col-sm-12    
+    Is the arrangement and size of buttons/icons/menus/content on SCI & U appropriate or zoomable when needed?
+.row
+  .col-sm-12     
+    = f.radio_button(:aesthetics1, 1)
+    = f.label(:aesthetics1, "1: Very bad design, clutered, some options impossible to select/locate/see/read device display not optimised")
+    %br
+    = f.radio_button(:aesthetics1, 2)
+    = f.label(:aesthetics1, "2: Bad design, random, unclear, some options difficult to select/locate/see/read")
+    %br
+    = f.radio_button(:aesthetics1, 3)
+    = f.label(:aesthetics1, "3: Satisfactory, few problems with selecting/locating/seeing/reading items or with minor screensize problems")
+    %br
+    = f.radio_button(:aesthetics1, 4)
+    = f.label(:aesthetics1, "4: Mostly clear, able to select/locate/see/read items")
+    %br
+    = f.radio_button(:aesthetics1, 3)
+    = f.label(:aesthetics1, "5: Professional, simple, clear, orderly, logically organized, device display optimized. Every design component has a purpose")
+.row.title
+  .col-sm-12  
+    How would you rate the quality of graphics used for buttons/icons/menus/content?
+.row
+  .col-sm-12  
+    = f.radio_button(:aesthetics2, 1)
+    = f.label(:aesthetics2, "1: Graphics appear amateur, very poor visual design – disproportionate, completely stylistically inconsistent")
+    %br
+    = f.radio_button(:aesthetics2, 2)
+    = f.label(:aesthetics2, "2: Low quality/low resolution graphics; low quality visual design – disproportionate, stylistically inconsistent")
+    %br
+    = f.radio_button(:aesthetics2, 3)
+    = f.label(:aesthetics2, "3: Moderate quality graphics and visual design (generally consistent in style)")
+    %br
+    = f.radio_button(:aesthetics2, 4)
+    = f.label(:aesthetics2, "4: High quality/resolution graphics and visual deisgn – mostly proportionate, stylistically consistent")
+    %br
+    = f.radio_button(:aesthetics2, 3)
+    = f.label(:aesthetics2, "5: Very high quality/resolution graphics and visual design – proportionate, stylistically consistent throughout")
+.row.title
+  .col-sm-12    
+    How good does SCI and U look to you, overall?
+.row
+  .col-sm-12  
+    = f.radio_button(:aesthetics3, 1)
+    = f.label(:aesthetics3, "1: No visual appeal, unpleasant to look at, poorly designed, clashing/mismatched colours")
+    %br
+    = f.radio_button(:aesthetics3, 2)
+    = f.label(:aesthetics3, "2: Little visual appeal – poorly designed, bad use of colour, visually boring")
+    %br
+    = f.radio_button(:aesthetics3, 3)
+    = f.label(:aesthetics3, "3: Some visual appeal – average, neither pleasant, nor unpleasant")
+    %br
+    = f.radio_button(:aesthetics3, 4)
+    = f.label(:aesthetics3, "4: High level of visual appeal – seamless graphics – consistent and professionally designed")
+    %br
+    = f.radio_button(:aesthetics3, 3)
+    = f.label(:aesthetics3, "5: As above + very attractive, memorable, stands out; use of colour enhances app features/menus")
+

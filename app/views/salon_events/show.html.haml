@@ -1,0 +1,90 @@
+%div{:class=>"#{Department.find(@salon_event.department_id).name}"}
+  .big-grey-row
+    %span.inline.big= @salon_event.title
+    -if @salon_event.event_date > Time.now
+      %br
+      %span.inline.small           
+        #{@salon_event.event_date.strftime("%b")} 
+        #{@salon_event.event_date.strftime("%d")} 
+        #{@salon_event.event_date.strftime("%l:%M %p")}    
+
+  -if @salon_event.event_date > Time.now
+    .row.question-panel
+      .col-xs-12
+        %button{:type=>"button", :class=>"btn btn-info btn-lg", "data-toggle"=>"modal", "data-target"=>"#MyQuestion"}Ask A Question of Panelists
+        %p
+        %button{:type=>"button", :class=>"btn btn-info btn-lg", "data-toggle"=>"modal", "data-target"=>"#Questions"}See What Others Are Asking
+
+  .row.image
+    .col-xs-12        
+      =link_to image_tag(@salon_event.attachment.thumb.url), salon_event_path(@salon_event)     
+      = @salon_event.description.html_safe 
+
+  -if @salon_event.event_date > Time.now
+
+    .row.question-panel
+      .col-xs-12
+        Join Us Online On #{@salon_event.event_date.strftime("%b")} #{@salon_event.event_date.strftime("%d")} 
+        =link_to "By Clicking Here", "#{@salon_event.url}", target: "blank" 
+
+  -else 
+    .row.question-panel
+      .col-xs-12  
+        LISTEN TO THE PODCAST
+        %p                
+        %audio{ :controls => 'controls' }
+          %source{ :src => "#{@salon_event.podcast}" }      
+
+  -if @sponsor
+    .row.sponsors
+      .col-xs-12
+        BROUGHT TO YOU BY 
+        %br
+        = link_to image_tag(@sponsor.logo), sponsor_path(@sponsor) 
+
+  -if @salon_event.event_date > Time.now && @salon_event.event_registrations.count > 0
+    .row.question-panel
+      .col-xs-12   
+        =  link_to "SIGN UP FOR THIS EVENT", "/salon_events/#{@salon_event.id}/event_registrations/new"  
+  -elsif @salon_event.event_date > Time.now && @salon_event.event_registrations.count == 0
+    .row.question-panel
+      .col-xs-12   
+        =  link_to "BE THE FIRST TO SIGN UP", "/salon_events/#{@salon_event.id}/event_registrations/new"    
+
+  -if @salon_event.event_date > Time.now && @salon_event.event_registrations.count > 0
+    .row.question-panel
+      .col-xs-12  
+        Others who are Registered 
+        %br     
+        - @salon_event.event_registrations.each do |event_registration|
+          = render "event_registrations/event_registration_teaser", event_registration: event_registration
+
+  .row.sponsors
+    .col-xs-12
+      =link_to "Back to #{Department.find(@salon_event.department_id).name} Department", "/departments/#{@salon_event.department_id}"
+
+-if @salon_event.event_date > Time.now
+  %div{:id => "Questions", :class=>"modal fade", :tabindex=>"-1", :role=>"dialog"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}x
+          %h4 Questions Others Have Asked
+        .modal-body
+          .comments   
+            - @salon_event.questions.each do |question|
+              = render "questions/question", question: question 
+        .modal-footer
+          %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}Close   
+
+  %div{:id => "MyQuestion", :class=>"modal fade", :tabindex=>"-1", :role=>"dialog"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}x
+          %h4 Ask Your Question for #{@salon_event.title}
+        .modal-body
+          = render "questions/form", salon_event: @salon_event 
+        .modal-footer
+          %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}Close             
+      

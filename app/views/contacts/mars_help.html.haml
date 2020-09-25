@@ -1,0 +1,46 @@
+.coaching.container
+  .big-grey-row
+    %span.inline.big THANK YOU!
+    
+  .row
+    .col-xs-12
+      %p      
+      Thank you for your willingness to help us to evaluate SCI & U.  Your input is valuable to us.
+      %p
+      If you require help, we'll reach out to you.  Complete the information below to request an SCI & U administrator's support.
+      %p
+      %center
+        = simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| 
+          .title 
+            My Name:
+            = f.input :name, :required => true, :input_html => {:value => "#{current_user.first_name} #{current_user.last_name}"} 
+          .title 
+            My Email:          
+            = f.input :email, :required => true, :input_html => {:value => current_user.email}
+          %p
+          Please reach out to me by:
+          = f.select(:type) do   
+            = options_for_select([["Email", "Email"], ["Phone", "Phone"]], ["Email", "Email"])        
+          %p     
+          If by phone, the best number to reach me at is:
+          = f.input :phone         
+          %p  
+          The best time of day to reach me is:
+          = f.select(:time) do   
+            = options_for_select([["AM", "AM"], ["PM", "PM"]], ["AM", "AM"])
+          %p
+          I prefer to be contacted on a
+          = f.select(:day) do   
+            = options_for_select([["Weekend", "Weekend"], ["Weekday", "Weekday"]], ["Weekend", "Weekend"])          
+
+          .div{:class=> "hidden"}
+            = f.input :form_type, :input_html => {:value => "NeedHelp"}
+            = f.input :type, :input_html => {:value => "NA"}    
+            = f.input :time, :input_html => {:value => "NA"}    
+            = f.input :day, :input_html => {:value => "NA"}                
+            = f.input :nickname, :hint => 'Leave this field blank!'
+          .div
+            %br
+            = f.button :submit, 'Contact Me', :class=> "btn btn-primary" 
+
+

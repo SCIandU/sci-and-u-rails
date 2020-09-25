@@ -1,0 +1,17 @@
+-if @page.id == 29 or @page.id == 33
+	.bloc.sectiona
+		.row
+			.col-sm-12.intro
+				%h2.text-center= @page.name 
+				%p.text-center= @page.body.html_safe
+
+-else	
+	.basic_page
+		.big-grey-row
+			%span.inline.big= @page.name
+		.title_area
+			-if @page.image_url != ""
+				%img{:src => @page.image_url, :class => "resource_image"}
+		.row.body_area.main
+			= @page.body.html_safe
+	  

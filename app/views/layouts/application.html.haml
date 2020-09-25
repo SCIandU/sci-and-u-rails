@@ -1,0 +1,106 @@
+%html
+  %head
+    %meta{ content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title SCI & U: An Online Self-Management Portal for SCI
+    / meta
+    %meta{charset: "utf-8"}/
+    %meta{content: "IE=edge", "http-equi": "X-UA-Compatible"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "keywords"}/
+    %meta{content: "SCI & U Design Team", name: "author"}/
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+
+    / favicon
+    = favicon_link_tag 'favicon.ico', rel: 'shortcut icon', type: 'image/x-icon'
+    = favicon_link_tag 'favicon.ico', rel: 'icon', type: 'image/x-icon'
+
+    /= stylesheet_link_tag 'http://fontsmage/x-icon'
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => false
+    / Modernizr to provide HTML5 support for IE.
+    = javascript_include_tag 'modernizr.custom.js'
+
+    / star rating
+    = javascript_include_tag 'jquery.raty.js', 'data-turbolinks-track' => false
+    = csrf_meta_tags    
+  %body#home5
+  -if @portalflag
+    = render "layouts/navbar"
+    %p &nbsp;
+    %br &nbsp;      
+    .container-fluid
+      .row-fluid    
+        = yield
+  -else
+    = render "layouts/navbar"
+    %p &nbsp;
+    %br &nbsp;    
+    .container-fluid
+      .row-fluid
+        -if user_signed_in?  
+          .col-lg-3.col-md-4
+            = render "layouts/navbarleft"
+          .col-lg-6.col-xs-12.col-md-8.middle-col
+            .container.activities
+              = render 'layouts/messages'
+              -if @first_time
+                .welcome
+                  Welcome to SCI & U!
+                  %br 
+                  To get better acquainted with the site and services, please refer to the
+                  %br
+                  %button{:type=>"button", :class=>"btn btn-info btn-lg", "data-toggle"=>"modal", "data-target"=>"#myModal"}the SCI & U tutorial.
+              = yield    
+          .col-lg-3
+            = render "layouts/navbarright"  
+        -else
+          .col-xs-12
+            = render 'layouts/messages'    
+            = yield       
+             
+    / = render "layouts/navbarbot"
+
+    %div{:id => "myModal", :class=>"modal fade", :tabindex=>"-1", :role=>"dialog"}
+      .modal-dialog
+        .modal-content
+          .modal-header
+            %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}x
+            %h4 How To Use SCI & U
+          .modal-body
+            .embed-responsive.embed-responsive-16by9
+              %iframe.embed-responsive-item.async-iframe{:allowfullscreen => "", :frameborder => "0", :src => "https://www.youtube.com/embed/l9KRDn9nwAA?ecver=1"}
+            %p            
+            %h4 Welcome to SCI and U
+            %p    
+            SCI and U is an initiative funded by the Rick Hansen Institute to digitally provide the very best in self-management resources to Canadians with Spinal Cord Injuries.
+            %p
+            Managing the effects of a Spinal Cord Injury is a life long process requiring knowledge, skill, motivation and perseverance. Yet we know management at home can often be challenging, particularly when you're not close to people with knowledge or experience of SCI.
+            %p
+            At SCI and U we are dedicated to enabling better self-management of SCI at home.  We do this by using the internet to bring information and people together.
+            %p
+            Here you will find:
+            %p
+            Basic information on the management of topics like bowel and bladder health in the form of short videos from trusted sources like SCI-U …
+            %p
+            … as well as from the latest guidelines for the best in SCI care.
+            %p
+            You will also find countless personal stories of management challenges and successes from other Canadians with SCI, organized by topics like exercise management or sexuality.
+            %p
+            More importantly, however, you will find opportunities to interact with members of the Canadian SCI Community who share your management interests and concerns.
+            %p
+            These members include our managing editors and contributors, who are made up of people with SCI as well as research experts from all over Canada.
+            %p
+            You can interact with SCI & U members during online events (or group chats) on topics like Skin Management, Exercise or the Design of Online Health Coaching; these take place every other week. Check our calendar events to find the event that most interests you, and take a peek at our archives to see video of past events. To participate an event yourself, all you need is an internet connection and a browser. We’ll help you to take care of the rest.
+            %p
+            You can also read what members are saying on the SCI + U blog, which is updated every other day with stories about life with an SCI that come from all over Canada.
+            %p
+            If you are motivated, you can contribute your own story as well, so we can make it available to others who can learn from it.
+            %p
+            And in the Winter of 2017, SCI+U will proudly begin offering an online health coaching service that can partner you with a trained peer for 1-on-1 health management counselling and support. Our trained peers are experts in helping people to shape their health management goals and to take steps toward making their goals a reality. Designs for this service are ongoing and opportunities to get involved in will be provided throughout the spring and early summer of 2017.
+            %p
+            In the meantime, we hope you find SCI&U engaging, entertaining, educational and empowering. We hope it brings you closer to people and information that you trust, and that can ease the burden of the challenges you face with self-management at home. And we hope you will become a member of our community, and to work with us to continue to build and improve SCI & U over time.
+            %p
+            On behalf of all of us at the SCI & U team, welcome; we are delighted to have you in our community.
+          .modal-footer
+            %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}Close    

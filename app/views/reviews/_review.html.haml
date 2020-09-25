@@ -1,0 +1,10 @@
+.rating-author
+    .row
+        .col-xs-12
+            - if review.user.profile_image.thumb.url
+                %img{:src => "#{review.user.profile_image.thumb.url}", :height => 80, :width => 80, :class=>"author grey"}
+            - else
+                %img{:src => "/img/user-image.png", :height => 80, :width => 80, :class=>"author"}
+            %br= link_to "#{review.user.first_name} #{review.user.last_name}", "/users/#{review.user.id}"
+            .review-rating{"data-score" => review.rating}
+            %br  #{review.comment}

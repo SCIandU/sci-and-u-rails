@@ -1,0 +1,30 @@
+
+#rating-form
+  = form_for @review do |f|
+    = f.hidden_field :user_id, value: current_user.id
+    = f.hidden_field :health_resource_id, value: @health_resource.id
+    .big-grey-row
+      %span.inline.big How many stars?
+    .row.question-panel.white
+      .col-sm-12.form-area
+        %div{:id => "star-rating"}
+    .row.question-panel.white
+      .col-sm-12.form-area
+      = hidden_field_tag :user_id, current_user.id
+      = hidden_field_tag :health_resource_id,  @health_resource.id
+      = render "health_resources/health_resource_teaser", resource: @health_resource
+
+    / Text input
+    .row.question-panel.white
+      .col-sm-12.resource-title-row
+        .title Write Your Review
+
+    .row.question-panel.white
+      .col-sm-12.form-area
+        %center
+          = f.text_area :comment, rows: 10, class: "form-control"
+    .row.question-panel.white
+      .actions
+        .col-sm-offset-2.col-sm-10
+          .pull-right
+            = f.submit "Submit", class: "btn btn-primary"

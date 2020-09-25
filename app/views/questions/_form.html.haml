@@ -1,0 +1,6 @@
+= form_for @question, :html => {:method => :post} do |f|
+  = f.hidden_field :user_id, value: current_user.id
+  = f.hidden_field :salon_event_id, value: salon_event.id
+  = f.text_area :userquestion, cols: 50, rows: 4, required: true
+  %p
+  = f.submit "Ask", class: "btn btn-primary"

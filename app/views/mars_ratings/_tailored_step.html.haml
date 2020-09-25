@@ -1,0 +1,129 @@
+.big-grey-row.top
+  .col-xs-12
+    %span.inline.big SCI & U'S IMPACT
+.row.title  
+  .col-sm-12  
+    Awareness: SCI&U is likely to increase awareness of the importance of addressing SCI self-management in the community.
+.row
+  .col-sm-12  
+    = f.radio_button(:appspecific1, 1)
+    = f.label(:appspecific1, "1: Strongly disagree")
+    %br
+    = f.radio_button(:appspecific1, 2)
+    = f.label(:appspecific1, "2: Disagree")
+    %br
+    = f.radio_button(:appspecific1, 3)
+    = f.label(:appspecific1, "3: Neither agree nor disagree")
+    %br
+    = f.radio_button(:appspecific1, 4)
+    = f.label(:appspecific1, "4: Agree")
+    %br
+    = f.radio_button(:appspecific1, 5)     
+    = f.label(:appspecific1, "5: Strongly agree")
+.row.title  
+  .col-sm-12    
+    Knowledge: SCI&U is likely to increase knowledge/understanding of SCI self-management in the community.
+.row
+  .col-sm-12   
+    = f.radio_button(:appspecific2, 1)
+    = f.label(:appspecific2, "1: Strongly disagree")
+    %br
+    = f.radio_button(:appspecific2, 2)
+    = f.label(:appspecific2, "2: Disagree")
+    %br
+    = f.radio_button(:appspecific2, 3)
+    = f.label(:appspecific2, "3: Neither agree nor disagree")
+    %br
+    = f.radio_button(:appspecific2, 4)
+    = f.label(:appspecific2, "4: Agree")
+    %br
+    = f.radio_button(:appspecific2, 5)     
+    = f.label(:appspecific2, "5: Strongly agree")
+.row.title  
+  .col-sm-12     
+    Attitudes: SCI&U is likely to change attitudes toward improving self-management of an SCI in the community.
+.row
+  .col-sm-12   
+    = f.radio_button(:appspecific3, 1)
+    = f.label(:appspecific3, "1: Strongly disagree")
+    %br
+    = f.radio_button(:appspecific3, 2)
+    = f.label(:appspecific3, "2: Disagree")
+    %br
+    = f.radio_button(:appspecific3, 3)
+    = f.label(:appspecific3, "3: Neither agree nor disagree")
+    %br
+    = f.radio_button(:appspecific3, 4)
+    = f.label(:appspecific3, "4: Agree")
+    %br
+    = f.radio_button(:appspecific3, 5)     
+    = f.label(:appspecific3, "5: Strongly agree")
+.row.title  
+  .col-sm-12  
+    Intention to change: SCI&U is likely to increase intentions/motivation to address self-management of an SCI in the community.
+.row
+  .col-sm-12    
+    = f.radio_button(:appspecific4, 1)
+    = f.label(:appspecific4, "1: Strongly disagree")
+    %br
+    = f.radio_button(:appspecific4, 2)
+    = f.label(:appspecific4, "2: Disagree")
+    %br
+    = f.radio_button(:appspecific4, 3)
+    = f.label(:appspecific4, "3: Neither agree nor disagree")
+    %br
+    = f.radio_button(:appspecific4, 4)
+    = f.label(:appspecific4, "4: Agree")
+    %br
+    = f.radio_button(:appspecific4, 5)     
+    = f.label(:appspecific4, "5: Strongly agree")
+.row.title  
+  .col-sm-12    
+    Help seeking: Use of SCI&U is likely to encourage users to seek further help in managing an SCI in the community.
+.row
+  .col-sm-12   
+    = f.radio_button(:appspecific5, 1)
+    = f.label(:appspecific5, "1: Strongly disagree")
+    %br
+    = f.radio_button(:appspecific5, 2)
+    = f.label(:appspecific5, "2: Disagree")
+    %br
+    = f.radio_button(:appspecific5, 3)
+    = f.label(:appspecific5, "3: Neither agree nor disagree")
+    %br
+    = f.radio_button(:appspecific5, 4)
+    = f.label(:appspecific5, "4: Agree")
+    %br
+    = f.radio_button(:appspecific5, 5)     
+    = f.label(:appspecific5, "5: Strongly agree")
+.row.title  
+  .col-sm-12     
+    Behaviour change: Use of SCI&U is likely promote better self-management of an SCI while at home.
+.row
+  .col-sm-12   
+    = f.radio_button(:appspecific6, 1)
+    = f.label(:appspecific6, "1: Strongly disagree")
+    %br
+    = f.radio_button(:appspecific6, 2)
+    = f.label(:appspecific6, "2: Disagree")
+    %br
+    = f.radio_button(:appspecific6, 3)
+    = f.label(:appspecific6, "3: Neither agree nor disagree")
+    %br
+    = f.radio_button(:appspecific6, 4)
+    = f.label(:appspecific6, "4: Agree")
+    %br
+    = f.radio_button(:appspecific6, 5)     
+    = f.label(:appspecific6, "5: Strongly agree")
+.row.title  
+  .col-sm-12 
+    .title Additional Comments to Share about SCI & U?  What would you like to see more of?  What would you like to see less of?
+.row    
+  .col-sm-12.control-.form-area
+    = f.text_area :feedback, rows: 10, class: "form-control"
+/
+/    .actions
+/.col-sm-offset-2.col-sm-10
+/  .pull-right
+/    = f.submit "Submit this Evaluation of SCI + U", class: "btn btn-primary"
+

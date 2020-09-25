@@ -1,0 +1,24 @@
+-if activity.trackable.present?
+  .eventbox
+    .container
+      -if activity.trackable.department          
+        .title{:class=>"#{activity.trackable.department.name}"}
+          = link_to "New in the #{activity.trackable.department.name} Department", "/departments/#{activity.trackable.department.id} "   
+      .textarea
+        -if activity.trackable.attachment.thumb.url
+          =link_to image_tag(activity.trackable.attachment.thumb.url, :class=>"left"), health_resource_path(activity.trackable) 
+        -else
+          %img{:src => "http://styleguide.europeana.eu/images/fpo_square.png", :class=>"left"}    
+        .right
+          -if activity.trackable.title                  
+            .content_name
+              = link_to activity.trackable.title, health_resource_path(activity.trackable)        
+          .details
+            = activity.trackable.description.truncate(200).html_safe
+          - if activity.trackable.sponsor 
+            BROUGHT TO YOU BY &nbsp;
+            =link_to image_tag("#{activity.trackable.sponsor.logo}", :class => "small"), "/sponsors/#{activity.trackable.sponsor.id}"  
+          - else
+            VETTED BY &nbsp;
+            %img{:src => "/logo-dark.png", :class => "small"}          
+                        

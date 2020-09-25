@@ -1,0 +1,78 @@
+.big-grey-row
+  %span.inline.big Edit Your SCI & U Profile
+
+.row.question-panel.white
+  .col-xs-12   
+    = form_for @user, :html => {:multipart => true} do |f|
+
+      //= f.hidden_field :crop_x
+      //= f.hidden_field :crop_y
+      //= f.hidden_field :crop_w
+      //= f.hidden_field :crop_h
+
+      = f.label :first_name, "First Name"
+      = f.text_field :first_name, class: 'form-control'
+      = f.label :last_name, "Last Name"
+      = f.text_field :last_name, class: 'form-control'
+      = f.label :email, "My Email"
+      = f.email_field :email, class: 'form-control'
+
+      = f.label :profile_image, "My Photo"
+      = f.file_field :profile_image, class: "form-control", value: current_user.profile_image 
+      .form_box
+        %input.form-control.uneditable-input.input-large{"id" => "file-display", "type" =>"text"}
+        %a{:id => "upload-btn", :class => "btn"}
+          %i.icon-upload-alt
+          Browse
+      %p                
+      = f.label :gender, "Gender"
+      = f.select(:gender, options_for_select(User::GENDER, current_user.gender), {}, class: "form-control", required: true )      
+      %p
+      = f.label :age, "Age"
+      = f.text_field :age, class: 'form-control', required: true
+      //%p
+      //= current_user.dob
+      //= f.label :dob, "Date of Birth"
+      //= f.text_field :dob, class: 'control', required: true
+      %p
+      = f.label :location, "My Location"
+      = f.select(:location, options_for_select(User::PROVINCE, current_user.location), {}, class: "form-control", required: true )   
+
+      = f.label :with_sci, "I'm a Person With An SCI"
+
+      -if current_user.with_sci
+        = f.check_box(:with_sci, checked: true)
+      -else
+        = f.check_box(:with_sci, checked: false)
+      %p
+      #reveal
+        = f.label :injury_level, "My Injury Level"
+        = f.select(:injury_level, options_for_select(User::INJURY_LEVEL, current_user.injury_level), {}, class: "form-control")      
+        %p
+        = f.label :injury_date, "Date of Injury (Approximate)"
+        = f.text_field :injury_date, class: 'datepicker'    
+      %p
+      = f.label :how, "How I heard about SCI & U"
+      = f.select(:how, options_for_select(User::HOW, current_user.how), {}, class: "form-control" )        
+      = f.label :job_title, "My Position or Title"
+      = f.text_field :job_title, class: "form-control"         
+      = f.label :blurb, "A Bit About Me"
+      = f.text_area :blurb, class: "form-control", :rows => 10
+      = f.label :whyhere, "What Brought Me to SCI & U"
+      = f.text_area :whyhere, class: "form-control", :rows => 10      
+      %p
+      = f.submit "Click to Save changes", class: "btn"
+
+  / Modal
+  #modal.modal.fade{"aria-labelledby" => "modalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} ×
+          %h4#modalLabel.modal-title Crop the image
+        .modal-body
+          %div
+            = image_tag "", alt: "Picture", id: "image"
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close

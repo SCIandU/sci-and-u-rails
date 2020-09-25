@@ -1,0 +1,74 @@
+.big-grey-row
+  %span.inline.big THANK YOU!
+    
+.row
+  .col-xs-12
+    %p      
+    Thank you for helping us to evaluate SCI & U.  Your input is very valuable to us and will help us to improve the website.
+    %p
+    As a token of our appreciation, we'll send you a
+    = link_to "$5 Starbucks eGift.", "https://www.starbucks.ca/shop/card/egift", :target => "new"
+    If you would like us to send your card to an email other than the one you registered with or by mail, indicate below.
+    %p      
+    %center
+      = simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| 
+        .title 
+          My Name:
+          = f.text_field :name, class: 'form-control', required: true, :value => "#{current_user.first_name} #{current_user.last_name}"  
+        .title 
+          Send My Card to the Follwing Email:          
+          = f.text_field :email, class: 'form-control', required: true, :value => current_user.email 
+        %p
+        If you would prefer that we send your gift to you by mail, please indicate the address where we should mail it to you.
+        %p
+        .title 
+          Street Address:
+          = f.text_field :street1, class: 'form-control'  
+          = f.text_field :street2, class: 'form-control' 
+        .title      
+          City:
+          = f.text_field :city, class: 'form-control' 
+        .title      
+          Province:
+          = f.select(:province, options_for_select(User::PROVINCE, current_user.location), {}, class: "form-control", required: true )   
+            
+        .title     
+          Postal Code:
+          = f.text_field :postalcode, class: 'form-control' 
+
+        %p 
+        //I would like to participate in an additional one-on-one interview for $25:
+        //= f.select(:department, options_for_select(User::YES), {}, class: "form-control", required: true )  
+        I would be open to having a member of the research team contact me to arrange a one-on-one interview, in order to clarify some of my responses:
+        = f.select(:time) do   
+          = options_for_select([["YES","YES"], ["NO", "NO"]])
+        / %p
+        / If yes, please contact me for an interview by:
+        / = f.select(:type) do   
+        /   = options_for_select([["Email", "Email"], ["Phone", "Phone"]])        
+        / %p     
+        / If by phone, the best number to reach me at is
+        / = f.text_field :phone, class: 'form-control'     
+        / %p  
+        / The best time of day to reach me is the
+        / = f.select(:time) do   
+        /   = options_for_select([["AM", "AM"], ["PM", "PM"]])
+        / %p
+        / I prefer to be contacted on a
+        / = f.select(:day) do   
+        /   = options_for_select([["Weekend", "Weekend"], ["Weekday", "Weekday"]])
+
+        .div{:class=> "hidden"}
+          = f.input :form_type, :input_html => {:value => "MARSThanks"}
+          = f.input :nickname, :hint => 'Leave this field blank!'
+          = f.input :phone, :input_html => {:value => "NA"}
+          = f.input :time, :input_html => {:value => "NA"}
+          = f.input :day, :input_html => {:value => "NA"}
+          = f.input :type, :input_html => {:value => "NA"}          
+            
+        .div
+          %br
+          = f.button :submit, 'Send Me My Starbucks Card!', :class=> "btn btn-primary" 
+
+
+

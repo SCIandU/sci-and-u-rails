@@ -1,0 +1,61 @@
+%div{:class=>"#{@survey.department.name}"}
+  .big-grey-row
+    %span.inline.big= @survey.department.name + " Quiz"
+  .row.question-panel.white
+    .col-xs-12
+      - counter = 0
+      = form_for @survey, :url => mark_survey_url, method: :get, remote: true  do |f| 
+        - @survey_questions.each do |question|          
+          //= question.survey_correct           
+          - if question.survey_type == "Choose_one"
+            - type = "radio"
+            - value = "question#{counter}"
+          - elsif question.survey_type == "Choose_all"         
+            - type = "checkbox" 
+            - value = "question#{counter}[]"   
+          - else         
+            - type = "hidden" 
+            - value = "question#{counter}[]"     
+          - if not type == "hidden"     
+            = question.survey_question
+            %p
+            %p
+              <i>
+              = question.instructions
+              </i>
+            %p 
+            %p           
+            - (1..question.survey_numoptions).each do |i|            
+              .row.question-panel.grey
+                %input{name: "#{value}", type: "#{type}", value: "#{i}"}  
+                - if i == 1 
+                  = question.survey_q1  
+                - elsif i == 2
+                  = question.survey_q2
+                - elsif i == 3
+                  = question.survey_q3     
+                - elsif i == 4
+                  = question.survey_q4    
+                - elsif i == 5
+                  = question.survey_q5  
+                - elsif i == 6
+                  = question.survey_q6
+                - elsif i == 7
+                  = question.survey_q7     
+                - elsif i == 8
+                  = question.survey_q8  
+                - elsif i == 9
+                  = question.survey_q9 
+                - elsif i == 10
+                  = question.survey_q10
+                - elsif i == 11
+                  = question.survey_q11    
+                - elsif i == 12
+                  = question.survey_q12                  
+                %br
+          - counter = counter + 1              
+        = f.submit "Check your answers", class: "btn btn-primary" 
+
+  .row.question-panel.white
+    .col-xs-12 
+      %a.btn{:href=>"/departments/#{@survey.department.id}"} Back to #{@survey.department.name} Department

@@ -1,0 +1,32 @@
+%div{:class=>"#{@health_resource.department.name}"}
+  .big-grey-row
+    %span.inline.big= @health_resource.department.name + " Department Resource"
+  .row.question-panel.white
+    .col-xs-12
+      = render "health_resource", resource: @health_resource
+  - if @sponsor
+    .row.question-panel.white
+      .col-xs-12
+        This Resource Was Contributed By
+    .row.question-panel.white
+      .col-xs-12  
+        = link_to image_tag(@sponsor.logo), sponsor_path(@sponsor)    
+
+  .row.question-panel
+    .col-xs-12
+      -if @health_resource.reviews.length == 0  
+        =link_to "Click to Be the First to Review!", new_health_resource_review_path(@health_resource) 
+      -else    
+        =link_to "Click Here to Add a Review", new_health_resource_review_path(@health_resource)    
+  
+  -if @health_resource.reviews.length > 0  
+    .row.question-panel
+      .col-xs-12  
+        - @health_resource.reviews.each do |review|
+          = render "reviews/review", review: review
+      -if @health_resource.user_id == current_user.id
+        = link_to "Edit This Resource", edit_health_resource_path(@health_resource)       
+
+  .row.question-panel.white
+    .col-xs-12 
+      %a.btn{:href=>"/departments/#{@health_resource.department.id}"} Back to #{@health_resource.department.name} Department

@@ -1,0 +1,26 @@
+
+= form_for @mars_rating do |f|
+  - if @mars_rating.errors.any?
+    .alert
+      = "#{pluralize(@mars_rating.errors.count, "error")} prohibited this form from being saved:"
+      - @mars_rating.errors.full_messages.each do |msg|
+        %br
+        = msg
+        = @mars_rating.consent
+
+  .panel-body
+    = f.hidden_field :user_id, value: current_user.id  
+    = render "#{@mars_rating.current_step}_step", f: f 
+
+    .actions
+      .col-sm-offset-2.col-sm-10
+        .pull-right
+          = f.submit "Back", class: "btn btn-primary", :name => "back_button" unless @mars_rating.first_step?  
+          -if @mars_rating.last_step?  
+            = f.submit "Submit Your Evaluation", class: "btn btn-primary"
+          -else   
+            = f.submit "Continue", class: "btn btn-primary"              
+
+
+
+

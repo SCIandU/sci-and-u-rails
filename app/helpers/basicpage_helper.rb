@@ -1,0 +1,2 @@
+module BasicpageHelper
+end

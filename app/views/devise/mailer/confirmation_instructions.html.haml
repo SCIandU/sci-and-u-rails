@@ -1,0 +1,4 @@
+.container.devise
+  %h2 Welcome to SCI & U, #{@email}!
+  %p You can confirm your account email by clicking on the link below:
+  %p= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)

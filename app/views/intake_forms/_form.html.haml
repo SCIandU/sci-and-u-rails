@@ -1,0 +1,168 @@
+= form_for @intake_form do |f|
+  - if @intake_form.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@mars_rating.errors.count, "error")} prohibited this intake_form from being saved:"
+      %ul
+        - @intake_form.errors.full_messages.each do |msg|
+          %li= msg
+  - else
+    .panel-body   
+          
+      .row
+        .col-sm-12   
+          ABOUT ME
+      .row
+        .col-sm-12             
+          .title Address
+        .col-sm-12.control-.form-area
+          = f.text_area :address1, rows: 1, class: "form-control"  
+          = f.text_area :address2, rows: 1, class: "form-control"  
+        .col-sm-12             
+          .title City
+        .col-sm-12.control-.form-area          
+          = f.text_area :city, rows: 1, class: "form-control"  
+        .col-sm-12             
+          .title Province
+        .col-sm-12.control-.form-area                    
+          = f.select(:province, IntakeForm::PROVINCE, {}, class: "form-control" )  
+        .col-sm-12             
+          .title Postal Code
+        .col-sm-12.control-.form-area              
+          = f.text_area :postal_code, rows: 1, class: "form-control"         
+      .row
+        .col-sm-12             
+          .title Phone Number
+        .col-sm-12.control-.form-area
+          = f.text_area :home_phone, rows: 1, class: "form-control"  
+      .row
+        .col-sm-12             
+          .title Age
+        .col-sm-12.control-.form-area    
+          = f.text_area :age, rows: 1, class: "form-control", value: current_user.age 
+      .row
+        .col-sm-12             
+          .title My sex is ...
+        .col-sm-12.control-.form-area    
+          = f.select(:sex, IntakeForm::SEX, {}, class: "form-control" )              
+
+      .row
+        .col-sm-12             
+          .title My ethnicity is ...
+        .col-sm-12.control-.form-area    
+          = f.select(:ethnicity, IntakeForm::ETHNICITY, {}, class: "form-control" )    
+      .row
+        .col-sm-12             
+          .title My highest level of education  ...
+        .col-sm-12.control-.form-area    
+          = f.select(:education, IntakeForm::EDUCATION, {}, class: "form-control" )    
+      .row
+        .col-sm-12             
+          .title My Marital Status is ...
+        .col-sm-12.control-.form-area    
+          = f.select(:marital_status, IntakeForm::MARITAL_STATUS, {}, class: "form-control" )    
+      .row
+        .col-sm-12             
+          .title My primary mode of mobility ...
+        .col-sm-12.control-.form-area    
+          = f.select(:mobility_method, IntakeForm::MOBILITY_METHOD, {}, class: "form-control" )   
+      .row
+        .col-sm-12             
+          .title Date of my SCI
+        .col-sm-12.control-.form-area    
+          = f.text_area :date_of_sci, rows: 1, class: "form-control"  
+
+      .row
+        .col-sm-12             
+          .title Level of my SCI
+        .col-sm-12.control-.form-area  
+          = f.select(:level_of_sci, options_for_select(IntakeForm::INJURY_LEVEL, current_user.injury_level), {}, class: "form-control" )  
+      .row
+        .col-sm-12             
+          .title Cause of my SCI
+        .col-sm-12.control-.form-area    
+          = f.text_area :cause_of_sci, rows: 1, class: "form-control"            
+
+      .row
+        .col-sm-12             
+          .title My ASIA level (if known):
+        .col-sm-12.control-.form-area
+          = f.text_area :asia_class, rows: 1, class: "form-control"  
+      .row
+        .col-sm-12             
+          .title If ASIA level is unknown, my injury description:
+        .col-sm-12.control-.form-area    
+          = f.select(:injury_description, IntakeForm::INJURY_DESCRIPTION, {}, class: "form-control" )   
+      .row
+        .col-sm-12   
+          COACHING PREFERENCES          
+              
+      .row
+        .col-sm-12             
+          .title I would like to have a coach help me to better manage my ....
+        .col-sm-12.control-.form-area    
+          = f.label(:bowel, "Bowel")
+          = f.check_box :bowel, {}, false, false
+          = f.label(:bladder, "Bladder")
+          = f.check_box :bladder, {}, false, false
+          = f.label(:skin, "Skin")
+          = f.check_box :skin, {}, false, false
+          = f.label(:exercise, "Exercise")
+          = f.check_box :exercise, {}, false, false     
+
+      .row
+        .col-sm-12             
+          .title Do you have specific goals you would like to acheive? What would you like to work on with your coach?
+        .col-sm-12.control-.form-area
+          = f.text_area :what, rows: 10, class: "form-control"  
+
+      .row
+        .col-sm-12   
+          ME + MY INTERNET    
+      .row
+        .col-sm-12             
+          .title I can access the internet
+        .col-sm-12.control-.form-area    
+          = f.radio_button(:internet_connection, true, checked: false, value: false)
+
+      .row
+        .col-sm-12             
+          .title I regularly use a ....
+        .col-sm-12.control-.form-area    
+          = f.label(:tablet, "Tablet Device (e.g. iPad)")
+          = f.check_box :tablet, {}, false, false
+          = f.label(:smartphone, "Smart Phone (e.g. iPhone or Android Phone)")
+          = f.check_box :smartphone, {}, false, false
+          = f.label(:desktop_mac, "Desktop (Mac)")
+          = f.check_box :desktop_mac, {}, false, false
+          = f.label(:desktop_pc, "Desktop (PC)")
+          = f.check_box :desktop_pc, {}, false, false
+
+      .row
+        .col-sm-12             
+          .title I am comfortable with ....
+        .col-sm-12.control-.form-area    
+          = f.label(:skype, "Skype")
+          = f.check_box :skype, {}, false, false
+          = f.label(:hangouts, "Google Hangouts")
+          = f.check_box :hangouts, {}, false, false
+          = f.label(:chat, "Online Chat Rooms")
+          = f.check_box :chat, {}, false, false
+          = f.label(:email, "Email Messaging")
+          = f.check_box :email, {}, false, false
+          = f.label(:telephone, "Telephone")
+          = f.check_box :telephone, {}, false, false          
+
+      .row
+        .col-sm-12   
+          WRAPPING UP ...
+      .row
+        .col-sm-12             
+          .title How did you find out about SCI + U?
+        .col-sm-12.control-.form-area
+          = f.text_area :how, rows: 10, class: "form-control"            
+
+          .actions
+            .col-sm-offset-2.col-sm-10
+              .pull-right
+                = f.submit "Submit", class: "btn btn-primary"
+

@@ -1,0 +1,12 @@
+.big-grey-row
+  %span.inline.big 
+    SCI & U Partners   
+
+- @sponsors.each do |sponsor|
+  .row.question-panel.red
+    .col-xs-12
+      %h4= link_to sponsor.name, sponsor_path(sponsor)
+  .row.logo.question-panel.white            
+    .col-xs-12
+      = link_to image_tag(sponsor.logo), sponsor_path(sponsor)
+                  

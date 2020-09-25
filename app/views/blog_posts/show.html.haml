@@ -1,0 +1,58 @@
+%div{:class=> @blog_post.department.name}
+  .big-grey-row
+    %span.inline.big #{@blog_post.title}
+    %br
+    %span.inline.small 
+      %i Posted to the #{@blog_post.department.name} department
+
+  .row
+    .col-xs-12{:style => "font-size: 1em;"}
+      %p
+      %p
+      - if @blog_post.attachment.large.url 
+        =image_tag @blog_post.attachment.large.url 
+      -else 
+        %img{:src => "/img/default.png"} /img/user-image.png
+      %p
+      %p.content-to-resize 
+        %b
+          by 
+          = link_to full_name_helper, @user
+      %p
+      - content_helper.each do |paragraph|
+        %p.content-to-resize= paragraph.html_safe
+
+  - if @sponsor
+    .row.resource-title-row
+      .col-xs-12
+        This Blog Post Was Contributed By
+    .row.sponsors
+      .col-xs-12.sponsors
+        = link_to image_tag(@sponsor.logo), sponsor_path(@sponsor)
+
+  .blog-author
+    .row
+      .col-xs-12
+        - if @user.profile_image.url(:thumb)
+          = image_tag @user.profile_image.url(:thumb), :class => "author"   
+        - else
+          = image_tag "/img/user-image.png", :class => "author" 
+        .div=link_to full_name_helper, @blog_post.user
+        .div= "#{@blog_post.user.job_title}"
+        .div= "#{@blog_post.user.location}"
+        %p= "#{@blog_post.user.blurb}"
+
+  .row
+    .col-xs-12      
+      .comments   
+        - @blog_comments.each do |blog_comment|
+          = render "blog_comments/blog_comment", comment: blog_comment 
+      .form       
+        %p
+        = render "blog_comments/form", blog_post: @blog_post
+
+
+  
+
+ 
+

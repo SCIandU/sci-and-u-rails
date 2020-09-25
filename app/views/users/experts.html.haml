@@ -1,0 +1,153 @@
+.experts
+
+	%div{:id => "Top"}	
+
+	.big-grey-row
+		%span.inline.big The SCI & U Team
+
+	.row.spacer
+	.row.jump-nav.top
+		.container
+			.col-xs-3
+				= link_to "Experts", "#Experts"   
+			.col-xs-3
+				= link_to "Administrators", "#Admins" 
+			.col-xs-3
+				= link_to "Advisors", "#CAG"   
+			.col-xs-3
+				= link_to "Coaches", "#Coaches"     				
+
+	.row.spacer
+	%div{:id => "Experts"}	
+
+	%div{:class=> "Bladder"}
+		.big-grey-row
+			%span.inline.big Core Advisors
+
+		- @experts.each do |user|
+			.row.question-panel.white
+				.col-xs-12
+					.img_area.user
+						- if user.profile_image.thumb.url
+							%img{:src => "#{user.profile_image.thumb.url}", :class=>"left small"}
+						- else
+							%img{:src => "https://image.freepik.com/free-icon/male-user-shadow_318-34042.jpg", :class=>"left small"}                 
+					.body_area
+						.main 
+							= link_to full_name_helper(user), user
+							%p
+							= user.blurb.truncate(600).html_safe
+						%p	
+					- if user.sponsors.count > 0
+						.button_area
+							My Affiliations			
+						.affiliations
+							- user.sponsors.each do |sponsor| 
+								%img{:src => "#{sponsor.logo}", :width => 250, :class=>"padded"}					
+					.button_area
+						= link_to "View My Profile", user 
+
+	.row.question-panel
+		.col-xs-12
+			=link_to "Back to Top","#Top"
+
+	%div{:id => "CAG"}	
+
+	%div{:class=> "Skin"}
+		.big-grey-row
+			%span.inline.big Community Advisors
+
+		- @advisors.each do |user|
+			.row.question-panel.white
+				.col-xs-12
+					.img_area.user
+						- if user.profile_image.thumb.url
+							%img{:src => "#{user.profile_image.thumb.url}", :class=>"left small"}
+						- else
+							%img{:src => "https://image.freepik.com/free-icon/male-user-shadow_318-34042.jpg", :class=>"left small"}                 
+					.body_area
+						.main 
+							= link_to full_name_helper(user), user
+							%p
+							= user.blurb.truncate(600).html_safe
+						%p	
+					- if user.sponsors.count > 0
+						.button_area
+							My Affiliations			
+						.affiliations
+							- user.sponsors.each do |sponsor| 
+								%img{:src => "#{sponsor.logo}", :width => 250, :class=>"padded"}					
+					.button_area
+						= link_to "View My Profile", user 
+
+	.row.question-panel
+		.col-xs-12
+			=link_to "Back to Top","#Top"
+
+
+	%div{:id => "Coaches"}	
+			
+	%div{:class=> "Bowel"}
+		.big-grey-row
+			%span.inline.big Coaches
+
+		- @coaches.each do |user|
+			.row.question-panel.white
+				.col-xs-12
+					.img_area.user
+						- if user.profile_image.thumb.url
+							%img{:src => "#{user.profile_image.thumb.url}", :class=>"left small"}
+						- else
+							%img{:src => "https://image.freepik.com/free-icon/male-user-shadow_318-34042.jpg", :class=>"left small"}                 
+					.body_area
+						.main 
+							= link_to full_name_helper(user), user
+							%p
+							= user.blurb.truncate(600).html_safe
+						%p	
+					- if user.sponsors.count > 0
+						.button_area
+							My Affiliations			
+						.affiliations
+							- user.sponsors.each do |sponsor| 
+								%img{:src => "#{sponsor.logo}", :width => 250, :class=>"padded"}					
+					.button_area
+						= link_to "View My Profile", user 						
+
+	.row.question-panel
+		.col-xs-12
+			=link_to "Back to Top","#Top"
+
+
+	%div{:id => "Admins"}	
+
+	%div{:class=> "Exercise"}
+		.big-grey-row
+			%span.inline.big Administrators
+
+		- @admins.each do |user|
+			.row.question-panel.white
+				.col-xs-12
+					.img_area.user
+						- if user.profile_image.thumb.url
+							%img{:src => "#{user.profile_image.thumb.url}", :class=>"left small"}
+						- else
+							%img{:src => "https://image.freepik.com/free-icon/male-user-shadow_318-34042.jpg", :class=>"left small"}                 
+					.body_area
+						.main 
+							= link_to full_name_helper(user), user
+							%p
+							= user.blurb.truncate(600).html_safe
+						%p	
+					- if user.sponsors.count > 0
+						.button_area
+							My Affiliations			
+						.affiliations
+							- user.sponsors.each do |sponsor| 
+								%img{:src => "#{sponsor.logo}", :width => 250, :class=>"padded"}					
+					.button_area
+						= link_to "View My Profile", user 
+
+	.row.question-panel
+		.col-xs-12
+			=link_to "Back to Top","#Top"

@@ -1,0 +1,140 @@
+.big-grey-row.top
+  .col-xs-12
+    %span.inline.big SCI & U'S INFORMATION
+.row
+  .col-sm-12  
+    This section asks you to evaluate the quality of information (e.g. text, feedback, measures, references) on SCI&U. 
+.row.title    
+  .col-sm-12  
+    Does SCI & U contain the information that was described to you, is it what you expected?   
+.row
+  .col-sm-12   
+    = f.radio_button(:information1, 1)
+    = f.label(:information1, "1: Misleading. SCI&U does not contain the described components/functions. Or has no description")
+    %br
+    = f.radio_button(:information1, 2)
+    = f.label(:information1, "2: Inaccurate. SCI&U  contains very few of the described components/functions")
+    %br
+    = f.radio_button(:information1, 3)
+    = f.label(:information1, "3: OK. SCI&U  contains some of the described components/functions")
+    %br
+    = f.radio_button(:information1, 4)
+    = f.label(:information1, "4: Accurate. SCI&U  contains most of the described components/functions")
+    %br
+    = f.radio_button(:information1, 5)
+    = f.label(:information1, "5: Highly accurate description of the SCI&U components/functions")
+.row.title  
+  .col-sm-12  
+    Does SCI & U have an obvious, specific, measurable and achievable purpose?
+.row
+  .col-sm-12   
+    = f.radio_button(:information2, 1)
+    = f.label(:information2, "1: SCI&U has no chance of achieving its goals")
+    %br
+    = f.radio_button(:information2, 2)
+    = f.label(:information2, "2: SCI&U has some goals, but has very little chance of achieving them")
+    %br
+    = f.radio_button(:information2, 3)
+    = f.label(:information2, "3: OK. SCI&U has clear goals, which may be achievable.")
+    %br
+    = f.radio_button(:information2, 4)
+    = f.label(:information2, "4: SCI&U has clearly specified goals which are measurable and achievable.")
+    %br
+    = f.radio_button(:information2, 5)
+    = f.label(:information2, "5: SCI&U has specific and measurable goals, which are highly likely to be achieved.")
+.row.title  
+  .col-sm-12  
+    Is SCI&U's content correct, well written, and relevant to the purpose of SCI & U?
+.row
+  .col-sm-12   
+    = f.radio_button(:information3, 1)
+    = f.label(:information3, "1: Irrelevant/Inappropriate/Incoherent/Incorect")
+    %br
+    = f.radio_button(:information3, 2)
+    = f.label(:information3, "2: Poor. Barely relevan/appropriate/coherent/may be incorrect")
+    %br
+    = f.radio_button(:information3, 3)
+    = f.label(:information3, "3: Moderately relevant/appropriate/coherent/and appears correct")
+    %br
+    = f.radio_button(:information3, 4)
+    = f.label(:information3, "4: Relevant/appropriate/coherent/correct")
+    %br
+    = f.radio_button(:information3, 5)
+    = f.label(:information3, "5: Highly relevant, appropriate, coherent, and corect")
+.row.title  
+  .col-sm-12  
+    Is the information comprehensive but concise?
+.row
+  .col-sm-12   
+    = f.radio_button(:information4, 1)
+    = f.label(:information4, "1: Minimal or overwhelming")
+    %br
+    = f.radio_button(:information4, 2)
+    = f.label(:information4, "2: Insufficinet or possibly overhwelming")
+    %br
+    = f.radio_button(:information4, 3)
+    = f.label(:information4, "3: OK but not comprehensive or concise")
+    %br
+    = f.radio_button(:information4, 4)
+    = f.label(:information4, "4: Offers a broad range of information, has some gaps or unnecessary detail; or has no links to more information and resources")
+    %br
+    = f.radio_button(:information4, 5)
+    = f.label(:information4, "5: Comprehensive and concise; contains links to more information and resources")
+.row.title  
+  .col-sm-12  
+    Are there visual explanations of concepts – through charts/graphs/images/videos, etc. – and are they clear, logical, correct?     
+.row
+  .col-sm-12   
+    = f.radio_button(:information5, 1)
+    = f.label(:information5, "1: Completely unclear/confusing/wrong or necessary but missing")
+    %br
+    = f.radio_button(:information5, 2)
+    = f.label(:information5, "2: Mostly unclear/confusing/wrong")
+    %br
+    = f.radio_button(:information5, 3)
+    = f.label(:information5, "3: OK but often unclear/confusing/wrong")
+    %br
+    = f.radio_button(:information5, 4)
+    = f.label(:information5, "4: Mostly clear/logical/correct with negligible issues")
+    %br
+    = f.radio_button(:information5, 5)
+    = f.label(:information5, "5: Perfectly clear/logical correct")
+.row.title  
+  .col-sm-12  
+    Do you feel SCI&U comes from a legitimate source?
+.row
+  .col-sm-12   
+    = f.radio_button(:information6, 1)
+    = f.label(:information6, "1:Source identified but legitimacy/trustworthiness of source is questionable (e.g. commercial business with vested interest)")
+    %br
+    = f.radio_button(:information6, 2)
+    = f.label(:information6, "2: Appears to come from a legitimate source, but it cannot be verified (e.g. has no webpage)")
+    %br
+    = f.radio_button(:information6, 3)
+    = f.label(:information6, "3: Developed by small NGO/institution (hospital/centre, etc.)/specialized commercial business, funding body")
+    %br
+    = f.radio_button(:information6, 4)
+    = f.label(:information6, "4: Developed by government, university or as above but larger in scale")
+    %br
+    = f.radio_button(:information6, 5)
+    = f.label(:information6, "5: Developed using nationally competitive government or research funding (e.g. Australian Research Council, NHMRC)")
+.row.title  
+  .col-sm-12  
+    Do you feel SCI & U has been sufficiently trialled/tested? Is it sufficiently trustable, based on evidence?  
+.row
+  .col-sm-12   
+    = f.radio_button(:information7, 1)
+    = f.label(:information7, "1: SCI & U has yet to be tested")
+    %br
+    = f.radio_button(:information7, 2)
+    = f.label(:information7, "2: SCI & U has been trialled (e.g. acceptability, usability, satisfaction ratings) and has partially positive outcomes in studies that are not randomized controlled trials (RCTs)")
+    %br
+    = f.radio_button(:information7, 3)
+    = f.label(:information7, "3: SCI & U has been trialled (e.g., acceptability, usability, satisfaction ratings) and has positive outcomes in studies that are not RCTs")
+    %br
+    = f.radio_button(:information7, 4)
+    = f.label(:information7, "4: SCI & U has been trialled and outcome tested in 1-2: RCTs indicating positive results")
+    %br
+    = f.radio_button(:information7, 5)
+    = f.label(:information7, "5: SCI & U has been trialled and outcome tested in > 3: high quality RCTs indicating positive results")
+

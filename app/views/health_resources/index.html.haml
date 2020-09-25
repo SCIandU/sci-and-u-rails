@@ -1,0 +1,19 @@
+%h1 Listing health_resources
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @health_resources.each do |health_resource|
+      %tr
+        %td= link_to 'Show', health_resource
+        %td= link_to 'Edit', edit_health_resource_path(health_resource)
+        %td= link_to 'Destroy', health_resource, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Health resource', new_health_resource_path

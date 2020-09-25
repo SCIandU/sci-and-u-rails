@@ -1,0 +1,103 @@
+.row.title.top
+  .col-sm-12  
+    Thank you!  The survey below contains five sections and should take you about 30 minutes to complete. 
+
+.big-grey-row
+  .col-xs-12
+    %span.inline.big IS SCI & U ENGAGING?
+
+.row.title
+  .col-sm-12  
+    Do you find the current version of SCI & U to be fun or entertaining to use?  
+.row
+  .col-sm-12    
+    = f.radio_button(:engagement1, 1)
+    = f.label(:engagement1, "1: SCI&U is dull, not fun or entertaining at all")
+    %br
+    = f.radio_button(:engagement1, 2)
+    = f.label(:engagement1, "2: It's mostly boring")
+    %br
+    = f.radio_button(:engagement1,  3)
+    = f.label(:engagement1, "3: OK, fun enough to entertain for a brief time (< 5: minutes)")
+    %br
+    = f.radio_button(:engagement1, 4)
+    = f.label(:engagement1, "4: Moderately fun and entertaining, entertains for some time (5-10 minutes total)")
+    %br
+    = f.radio_button(:engagement1, 5)     
+    = f.label(:engagement1, "5: Highly entertaining and fun, visitors will come back again and again.")
+.row.title
+  .col-sm-12    
+    Do you find SCI & U interesting to use? Does it present its content in an interesting way?
+.row
+  .col-sm-12   
+    = f.radio_button(:engagement2, 1)
+    = f.label(:engagement2, "1:Not interesting at all")
+    %br
+    = f.radio_button(:engagement2, 2)
+    = f.label(:engagement2, "2: Mostly uninteresting")
+    %br
+    = f.radio_button(:engagement2, 3)
+    = f.label(:engagement2, "3: OK, neither interesting nor uninteresting; engages for a brief time (< 5: minutes)")
+    %br
+    = f.radio_button(:engagement2, 4)
+    = f.label(:engagement2, "4: Moderately interesting; would engage user for some time (5-10 minutes total)")
+    %br
+    = f.radio_button(:engagement2, 5)     
+    = f.label(:engagement2, "5: Very interesting, would engage user in repeat use")
+.row.title
+  .col-sm-12     
+    Does SCI & U allow you to customize your experience suffiently (e.g. to customize the content you see)?
+.row
+  .col-sm-12   
+    = f.radio_button(:engagement3, 1)
+    = f.label(:engagement3, "1: Does not allow any customisation or requires setting to be input every time")
+    %br
+    = f.radio_button(:engagement3, 2)
+    = f.label(:engagement3, "2: Allows insufficient customisation and has limiting functions")
+    %br
+    = f.radio_button(:engagement3, 3)
+    = f.label(:engagement3, "3: Allows basic customisation to function adequately")
+    %br
+    = f.radio_button(:engagement3, 4)
+    = f.label(:engagement3, "4: Allows numerous options for customisation")
+    %br
+    = f.radio_button(:engagement3, 5)     
+    = f.label(:engagement3, "5: Allows complete tailoring to my characteristics and preferences, retains all my settings")
+.row.title
+  .col-sm-12   
+    Does SCI & U allow you the right amount of input?  Does it give you the right amount of interactive feedback?
+.row
+  .col-sm-12   
+    = f.radio_button(:engagement4, 1)
+    = f.label(:engagement4, "1: No interactive features and/or no response to my interaction")
+    %br
+    = f.radio_button(:engagement4, 2)
+    = f.label(:engagement4, "2: Insufficient interactivity, or feedback, or input options, limiting functions")
+    %br
+    = f.radio_button(:engagement4, 3)
+    = f.label(:engagement4, "3: Basic interactive features to function adequately")
+    %br
+    = f.radio_button(:engagement4, 4)
+    = f.label(:engagement4, "4: Offers a variety of interactive features/feedback/user input options")
+    %br
+    = f.radio_button(:engagement4, 5)     
+    = f.label(:engagement4, "5: Very high level of responsiveness through interactive features/feedback/user input options")
+.row.title
+  .col-sm-12   
+    Do you feel the content of SCI & U (i.e. the visual information, language, and design) is appropriate for the SCI community?
+.row
+  .col-sm-12   
+    = f.radio_button(:engagement5, 1)
+    = f.label(:engagement5, "1: Completely inappropriate/unclear/confusing")
+    %br
+    = f.radio_button(:engagement5, 2)
+    = f.label(:engagement5, "2: Mostly inappropriate/unclear/confusing")
+    %br
+    = f.radio_button(:engagement5, 3)
+    = f.label(:engagement5, "3: Acceptable but not targeted. May be inappropriate/unclear/confusing")
+    %br
+    = f.radio_button(:engagement5, 4)
+    = f.label(:engagement5, "4: Well-targeted, with negligible issues")
+    %br
+    = f.radio_button(:engagement5, 5)     
+    = f.label(:engagement5, "5: Perfectly targeted, no issues found") 

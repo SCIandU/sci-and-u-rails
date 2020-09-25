@@ -1,0 +1,88 @@
+// Place all the styles related to the BlogPost controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container.blog-post { width: 100%; }
+
+#blog .row {
+    margin-top: 10px;
+}
+
+//blog posts
+.blog-post img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.blog-post .resource-add-row-grey.master {
+    margin-bottom: 10px;
+}
+
+.blog-post p, .blog-post br, .blog-post, .title, .author {
+   font-family: 'delicious-roman';
+   font-size: 100%;
+}
+
+.blog-post {
+    padding-bottom: 20px;
+}
+
+.blog-post .title{
+    //font-size: 14pt;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.comments {
+    clear: both;    
+    width: 100%;
+    text-align: left;
+    padding-top: 20px; 
+}
+
+.comments img {
+    width: 15%;
+    border-radius: 50%;
+    border: 2px solid #666666;
+    float: left;
+    margin-right: 20px;
+
+}
+
+.comments .comment {
+    clear: both;
+    padding: 20px;
+}
+
+.form { 
+    clear: both;
+}
+
+.form textarea {
+    width: 75%;
+}
+
+//author info on blog posts
+.blog-author img{
+    width: 25%;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+}
+
+.blog-author p{
+    //font-family: 'delicious-smallcaps';
+    clear: both;
+    padding-top:10px;
+}
+
+.blog-author {
+    border-bottom: 5px solid #999999;
+    font-size: 100%;
+    font-style: italic;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}    
+
+.blog-author a, .blog-author a:visited { color: #333; }

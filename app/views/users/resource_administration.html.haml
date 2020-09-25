@@ -1,0 +1,103 @@
+.experts
+
+	%div{:id => "Top"}	
+
+	.big-grey-row
+		%span.inline.big Resource Administration
+
+	- if @user_admin == false
+		.row.spacer
+		.row.jump-nav.top
+			.container
+				.col-xs-6
+					= link_to "Clients", "#Coachees"   
+				.col-xs-6
+					= link_to "Coaches", "#Coaches"     				
+
+		.row.spacer
+		%div{:id => "Coachees"}	
+
+		%div{:class=> "Bladder"}
+			.big-grey-row
+				%span.inline.big Coaching Clients
+
+			.row.question-panel.white
+				.col-xs-2.main  Client 
+				.col-xs-2.main  Coach 
+				.col-xs-4.main Resource
+				.col-xs-2.main Session
+				.col-xs-1.main 
+				.col-xs-1.main 			
+		
+			- @coachees.each do |user|
+				= form_for user, url: {action: "add_resources"}, method: :POST, remote: true do |f| 
+					= hidden_field_tag(:user_id,value = user.id)
+					.row.question-panel.white
+						.col-xs-2.main              
+							= link_to user.first_name, "/users/resource_administration?user_id=#{user.id}"
+						.col-xs-2.main               
+							= link_to User.find(user.coach_id).first_name, User.find(user.coach_id) 
+						.col-xs-4.main 
+							%select{ :name => "resource_id" }
+								- @resources.each do |resource|	
+									%option{:value => "#{resource.id}"}= "#{resource.id}: #{resource.title.truncate(10)}"
+						.col-xs-2.main 
+							%select{ :name => "session_id" }
+								%option{:value => "1"}= "1"
+								%option{:value => "2"}= "2"
+								%option{:value => "3"}= "3"
+								%option{:value => "4"}= "4"
+								%option{:value => "5"}= "5"
+								%option{:value => "6"}= "6"
+								%option{:value => "7"}= "7"
+								%option{:value => "8"}= "8"
+								%option{:value => "9"}= "9"
+								%option{:value => "10"}= "10"
+								%option{:value => "11"}= "11"
+								%option{:value => "12"}= "12"	
+								%option{:value => "13"}= "13"
+								%option{:value => "14"}= "14"										
+						.col-xs-1.main 
+							= f.submit "ADD", class: "btn btn-primary"   
+						.col-xs-1.main 
+							= f.submit "X", class: "btn btn-primary"   					
+
+		.row.spacer
+		%div{:id => "Coaches"}	
+
+		%div{:class=> "Bowel"}
+			.big-grey-row
+				%span.inline.big Coaches
+
+			- @coaches.each do |user|
+				.row.question-panel.white
+					.col-xs-12                
+						.body_area
+							.main 
+								= link_to full_name_helper(user), user
+
+	- else
+		%div{:class=> "Bladder"}
+			.big-grey-row
+				%span.inline.big Client: #{@coachees.first_name}
+
+			- if @resources 
+				.row.question-panel.white
+					.col-xs-6.main Resource
+					.col-xs-2.main Session
+					.col-xs-4.main 	
+				- @resources.each do |favorite|
+					= form_for @coachees, url: {action: "add_resources"}, method: :POST, remote: true do |f| 
+						= hidden_field_tag(:user_id,value = @coachees.id)
+						= hidden_field_tag(:resource_id,value = favorite.health_resource_id)
+						.row.question-panel.white
+							.col-xs-6.main 
+								= link_to HealthResource.find(favorite.health_resource_id).title, health_resource_path(HealthResource.find(favorite.health_resource_id)) 	
+							.col-xs-2.main 
+								= favorite.session   
+							.col-xs-4.main 
+								= f.submit "Remove", class: "btn btn-primary"   
+
+			.big-grey-row
+				%span.inline.big 
+					= link_to "Add Client Resources", "/users/resource_administration"

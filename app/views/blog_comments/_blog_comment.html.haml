@@ -1,0 +1,7 @@
+.comment
+  - if comment.user.profile_image.url(:thumb)
+    = image_tag comment.user.profile_image.url(:thumb), :class => "author"
+  - else
+    = image_tag "/img/user-image.png", :class => "author"
+  .comment-text=link_to "#{comment.user.first_name} #{comment.user.last_name}", "/users/#{comment.user.id}"
+  %p #{comment.comment}

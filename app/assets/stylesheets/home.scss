@@ -1,0 +1,239 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//news feed styling
+.container.activities { width: 100%; }
+
+.news-item { margin-bottom: 20px; padding: 20px; text-align: left; color: #fff; }
+.news-item a, .post-wrap .author_name a, .news-item .date { text-transform: uppercase; color: #fff; }
+.news-item .title, .news-item .review-title { text-align: left; margin-bottom: 10px; }
+.news-item .review-title a { color: #fff }
+.news-item .title a { font-size: 120%; }
+.news-item .title a { color: #333; }
+
+.news-item .buttonarea {width: 100%;  margin-top: 10px; }
+.news-item.story .buttonarea a { color: #fff; }
+
+.news-item.story input {
+    width:100%;
+    height: auto;
+}
+
+.news-item.story { padding: 20px; }
+.news-item.story .inner { background: #fff; color: #333; padding: 10px; text-align: center; }
+.news-item.story .title {
+    width: 100%;  
+    text-align: center;
+}
+
+.news-item.story button {
+    background: none;
+    border: none;
+    color: #333;
+    padding: none;
+    white-space: normal; 
+    text-align: center;
+    border: 1px solid #c00;
+    margin: 10px 0px 10px 0px;
+}
+
+.news-item.story input {
+    width: 50%;
+    height: auto;
+}
+
+.news-item.story img.big { width: 25%; }
+
+.news-item.story .new {
+    clear: both;
+    background: #fff;  
+    height: 0;
+    padding-bottom: 33%;
+    width: 66%;
+    overflow: hidden; 
+    color: #333;  
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.news-item.story .new a { color: #333; }
+
+.news-item .review-title .span { text-transform: uppercase; display: inline; }
+.news-item.resource .img_area img { width: 100%; padding: 0px; }
+.news-item.resource .logo_area img { float: none; }
+
+.news-item.resource.review {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+//resources
+.news-item.resource .img_area {
+    width: 25%;    
+    float: left;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 25%;
+    margin-right: 10px;
+    margin-bottom: 10px;    
+}
+
+.news-item.resource .logo_area {
+    clear: both;
+    text-transform: uppercase;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    padding: 5px;
+    margin-top: 10px;
+} 
+
+.news-item.resource .logo_area img, .col-xs-12 .sponsors img{
+    width: 50%;
+    height: auto;
+    padding: 20px;
+}
+
+
+.news-item.resource .review-comment {
+    clear: both;
+    margin-top: 10px;
+    padding: 10px;
+    background: #fff;
+    color: #333;
+    font-style: italic;
+    text-align: right;
+}
+
+.news-item.resource .review-comment-blank {
+    clear: both;   
+}
+
+//story
+.news-item.story-shout .img_area {
+    clear: both;
+    width: 100%;    
+    float: left;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.news-item.story-shout .img_area .img_box {
+    width:60%;
+    height: 0;
+    padding-bottom: 35%;
+    overflow: hidden;
+    float: left;
+}
+
+.news-item.story-shout .logo_area {
+    width:40%;
+    background: #fff;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0px;
+    height: 0px;
+    padding-bottom: 35%;
+    overflow: hidden;    
+}
+
+.news-item.story-shout .logo_area img {
+    margin: 0px;
+    padding-left: 30px;
+    padding-right: 30px;    
+    width: 100%;
+    height: auto;
+}
+
+
+//blog
+.news-item.blog-shout .author { clear: both; }
+
+.news-item.blog-shout .img_area {
+    clear: both;
+    width: 100%;    
+    float: left;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.news-item.blog-shout .img_area .img_box img {
+    width: 100%;
+    height: auto;
+}
+
+.news-item.blog-shout .img_area .img_box {
+    width:75%;
+    height: 0;
+    padding-bottom: 23%;
+    overflow: hidden;
+    float: left;
+}
+
+.news-item.blog-shout .logo_area {
+    float: right;
+    width:23%;
+    background: #fff;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0px;
+    height: 0px;
+    padding-bottom: 23%;
+    overflow: hidden;    
+}
+
+.news-item.blog-shout .logo_area img {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 480px) {
+    .news-item .logo_area.container img { width: 75%; height: auto; }
+
+}
+
+.news-item.story.Bladder .title a { color: #cc6600; }
+.news-item.story.Bowel .title a { color: #669966; }
+.news-item.story.Skin .title a { color: #6699FF; }
+.news-item.story.Exercise .title a { color: #CC6666; }
+.news-item.story.SCI .title a { color: #999999; }
+.news-item.story.Introduction .title a { color: #999999; }
+.news-item.story.Sexuality .title a { color: #999900; }
+.news-item.story.Family .title a { color: #9999cc; }
+.news-item.story.Caregivers .title a  { background-color: #aa8844; }
+.news-item.story.Pain .title a { background-color: #669999; }
+.news-item.story.Diet .title a  {background-color: #99aa88; }
+.news-item.story.Health .title a { background-color: #999999; }
+
+.news-item.Bladder, .coach.Bladder { background-color: #cc6600; }
+.news-item.Bowel, .coach.Bowel { background-color: #669966; }
+.news-item.Exercise, .coach.Exercise { background-color: #CC6666; }
+.news-item.Skin, .coach.Skin { background-color: #6699FF;  }
+.news-item.SCI, .coach.SCI { background-color: #999999;  }
+.news-item.Introduction, .coach.Introduction { background-color: #999999;  }
+.news-item.Sexuality, .coach.Sexuality{ background-color: #999900; }
+.news-item.Family, .coach.Family { background-color: #0099cc; }
+.news-item.Caregivers, .coach.Caregivers  { background-color: #aa8844; }
+.news-item.Pain, .coach.Pain { background-color: #669999; }
+.news-item.Diet, .coach.Diet {background-color: #99aa88; }
+.news-item.Health, .coach.Health  { background-color: #999999; }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+.resource.not-teaser
+ .image_area
+  .container
+   - if resource.attachment.large.url
+    =image_tag resource.attachment.large.url
+   -else
+    %img{:src => "http://www.cse.iitd.ernet.in/projects/data/default.png"}
+ .body_area.main
+  .name_area
+   %h4= resource.title
+  .link_area.red
+   .stars
+    - if resource.reviews.average(:rating)
+     .review-rating{"data-score" => resource.reviews.count == 0 ? 0 : resource.reviews.average(:rating).round(2)}
+    - else
+     .review-rating{"data-score" => 0}    
+   %h4= link_to "Visit this Resource Online", resource.url, target: "_blank", class: "red", style: "font-color: red"
+   - if current_user  
+    %h4 Click to add to favourites   
+    = form_for @health_resource, url: {action: "favorite", params: {type: "favorite"}}, method: :POST, remote: true do |f| 
+     = button_tag type: 'submit', class: 'no-bg' do
+      - if @is_favorite 
+       .click.active.active-2.active-3
+        %span.fa.fa-heart
+        %p.info Added to favourites
+      -else 
+       .click
+        %span.fa.fa-heart-o
+        %p.info Added to favourites         
+  = resource.description.html_safe

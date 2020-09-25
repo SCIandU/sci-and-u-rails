@@ -1,0 +1,62 @@
+%div{:id => "Top"}	
+.big-grey-row
+	%span.inline.big YOUR STORIES 
+	%span.inline.small Story To Share? 
+	%span.inline.small= link_to "Click Here", "/contacts/new" 
+.stories-nav
+	.container
+		.button.Bladder
+			= link_to "Bladder", "/stories?department_id=4&page=1"  
+		.button.Bowel
+			= link_to "Bowel", "/stories?department_id=1&page=1"      
+		.button.Exercise
+			= link_to "Exercise", "/stories?department_id=3&page=1" 
+		.button.Skin
+			= link_to "Skin", "/stories?department_id=2&page=1" 
+		.button.Sexuality
+			= link_to "Sex", "/stories?department_id=7&page=1"  
+		.button.Pain
+			= link_to "Pain", "/stories?department_id=10&page=1" 
+		.button.Diet
+			= link_to "Diet", "/stories?department_id=9&page=1"   
+		.button.Family
+			= link_to "Caring", "/stories?department_id=8&page=1" 
+		.button.Health
+			= link_to "Basics", "/stories?department_id=6&page=1" 
+
+- if @stories.count == 0
+	.row  
+		.col-sm-12.center
+			%center
+				%h4 
+					There are no stories in this department. Please check back later or
+					%p
+					%a{:href=>"http://localhost:3000/contacts/new"} Click to Share Your Story With Us!
+
+- else
+	- @stories.in_groups_of(3) do |subset|	
+		.row 							
+			- subset.each do |story|
+				-if story
+					.col-sm-4.story-col.eventbox 
+						.container 
+							.title{class: Department.find(story.department_id).name}  
+								#{Department.find(story.department_id).name} Story
+							.imagearea       
+								%input{:type => "image", :src => "#{story.attachment.thumb.url}", "data-toggle"=>"modal", "data-target"=>"#Box#{story.id}"}
+								%br
+								%button{:type=>"button", :class=>"btn btn-info btn-lg", "data-toggle"=>"modal", "data-target"=>"#Box#{story.id}"}#{story.title}
+
+					%div{:id => "Box#{story.id}", :class=>"modal fade", :tabindex=>"-1", :role=>"dialog"}
+						.modal-dialog
+							.modal-content
+								.modal-header
+									%button{:type => "button", :class =>"close", "data-dismiss" => "modal"}x
+									.title= "#{story.title}" 
+								.modal-body
+									.embed-responsive.embed-responsive-16by9									
+										%iframe.embed-responsive-item.async-iframe{:allowfullscreen => "", :frameborder => "0", :src => "#{story.youtube_link.gsub(/watch\?v=/, "embed/")}?autoplay=0"}
+								.modal-footer
+									%button{:type => "button", :class =>"close", "data-dismiss" => "modal"}Close 							
+=will_paginate @stories
+

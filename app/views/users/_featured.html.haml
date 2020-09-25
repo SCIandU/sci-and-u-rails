@@ -1,0 +1,19 @@
+- @featured_users.each do |featured|  
+  .eventbox.user 
+    .container
+      .title.Health
+        Our Experts
+      .imagearea
+        - if featured.profile_image.thumb.url 
+          =link_to image_tag("#{featured.profile_image.thumb.url}"), featured 
+        - else
+          %img{:src => "/img/user-image.png", :height => 250, :width => 250}         
+      .description
+        .name
+          = link_to "#{featured.first_name} #{featured.last_name}", featured 
+        .role  
+          SCI & U #{featured.role}
+        .details
+          = truncate(featured.blurb, :length => 100)
+      .footer
+        =link_to "Read More >", featured

@@ -1,0 +1,87 @@
+%div.mars
+ .big-grey-row
+  .col-xs-12
+   %span.inline.big Give Us Feedback on SCI & U!
+ .row  
+  .col-xs-12
+   %p
+   - if @mars_rating.current_step == "intro"
+    .alert
+     -if current_user.first_name
+      Hello #{current_user.first_name}!
+     -else
+      Hello!
+     %p
+     %p     
+     -if current_user.age && (current_user.total_time_online > 15)
+      You've visited us a few times and customized your profile.  Because you're now somewhat familiar with our site, we really want to hear from you!  We'll provide you with a $5 as a
+      = link_to "Starbucks eGift", "https://www.starbucks.ca/shop/card/egift", :target => "new"
+      if you complete a short online survey about our website.
+      /, and an additional $25 as an 
+      /= link_to "Amazon eGift,", "https://www.amazon.com/Amazon-Amazon-com-eGift-Cards/dp/BT00DC6QU4", :target => "new"
+      /= link_to "Starbucks eGift,", "https://www.starbucks.ca/shop/card/egift", :target => "new"
+      /or
+      /= link_to "Tim Horton's eGift", "http://www.timhortons.com/ca/en/timcard/egift-tim-card.php", :target => "new"
+      /if you participate in an interview with a member of our research team thereafter.
+     -else
+      We're asking users who have spent a little time with us to complete an online survey.  Once you have
+      %a{:href=>"/users/#{current_user.id}/edit"} customized your profile
+      and visited at few more pages of the site, you can complete this survey too.
+      %p
+      %p
+      Those who complete a survey receive a
+      = link_to "$5 Starbucks eGift.", "https://www.starbucks.ca/shop/card/egift", :target => "new"
+      %p
+      %p
+      /In addition, some will be contacted to participate in follow-up interviews for $25 more.
+    %p  
+    %i   
+     / %p
+     / To complete the survey you first need to:
+     / .row
+     /  .col-xs-4 
+     /  .col-xs-4    
+     /  .col-xs-2
+     /  .col-xs-2 Satisfied? 
+
+     / .row
+     /  .col-xs-4 Visit >15 core pages
+     /  .col-xs-4 Current Total    
+     /  - if current_user.total_time_online 
+     /   .col-xs-2= current_user.total_time_online
+     /  -else 
+     /   .col-xs-2 0
+     /  .col-xs-2 
+     /   - if current_user.total_time_online
+     /    - if current_user.total_time_online > 15
+     /     %font{:color => "#c00"} YES
+     /   -else
+     /    %font{:color => "#c00"} NO
+
+     / .row
+     /  .col-xs-4 
+     /   %a{:href=>"/users/#{current_user.id}/edit"} Customize Profile
+     /  .col-xs-4     
+     /  .col-xs-2
+     /  .col-xs-2 
+     /   - if current_user.age
+     /    %font{:color => "#c00"} YES
+     /   -else
+     /    %font{:color => "#c00"} NO   
+     / %p
+     / %p  
+     -if !current_user.age || !(current_user.total_time_online > 15)
+      %b
+       YOU ARE NOT YET READY TO COMPLETE THE SURVEY! Once you've complete your profile and visit a few pages, you'll be able to proceed.
+     .row
+      .col-xs-4
+      .col-xs-4 
+       -if !current_user.age 
+        %center
+         %a.btn{:href=>"/users/#{current_user.id}/edit"} Customize Your Profile Here
+      .col-xs-4         
+
+-if current_user.age && (current_user.total_time_online > 15)
+ = render 'form'
+
+  

@@ -1,0 +1,9 @@
+// Place all the styles related to the Departments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.container.departments { width: 100%;}
+
+.container.departments a {color: #333;}
+.container.departments a:visited {color: #333;}
+
+.container.departments #resources.tab-pane.fade.in.active .resource-button-row a {color: #fff;}

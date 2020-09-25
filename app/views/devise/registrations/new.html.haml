@@ -1,0 +1,44 @@
+.container.devise
+  %h2 Sign me up for the SCI & U information website!
+
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :first_name, autofocus: true
+      %br/
+      = f.text_field :first_name
+    .field
+      = f.label :last_name, autofocus: true
+      %br/
+      = f.text_field :last_name
+    .field
+      = f.label "Username (or Login)", autofocus: true
+      %br/
+      = f.text_field :login      
+    .field
+      = f.label :email, autofocus: true
+      %br/
+      = f.email_field :email
+    .field
+      = f.label :password
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} characters minimum)
+      %br/
+      = f.password_field :password, autocomplete: "off"
+    .field
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "off"
+
+    //.field
+    //  How I Heard About SCI & U
+    //  = f.select(:how, options_for_select(User::HOW), {}, class: "form-control")
+
+    //.field.checkbox
+    //  = f.check_box(:with_sci)
+    //  I am a Canadian with an SCI
+
+    .actions
+      = f.submit "SIGN ME UP!"
+

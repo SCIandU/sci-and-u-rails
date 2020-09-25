@@ -1,0 +1,10 @@
+.basic_page
+ .title_area
+  -if @basic_page
+   -if @basic_page.image_url != ""
+    %img{:src => @basic_page.image_url, :class => "resource_image"}
+   .row.resource-title-row
+    = @basic_page.name
+   .row.body_area.main
+    = @basic_page.body.html_safe
+  

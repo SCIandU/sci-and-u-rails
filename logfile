@@ -1,0 +1,480 @@
+2018-10-29 10:18:33.314 EDT [3616] LOG:  listening on IPv6 address "::1", port 5432
+2018-10-29 10:18:33.314 EDT [3616] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-10-29 10:18:33.315 EDT [3616] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-10-29 10:18:33.336 EDT [3617] LOG:  database system was shut down at 2018-10-25 19:22:11 EDT
+2018-10-29 10:18:33.344 EDT [3616] LOG:  database system is ready to accept connections
+2018-10-30 18:20:46.159 EDT [3616] LOG:  received smart shutdown request
+2018-10-30 18:20:46.160 EDT [3616] LOG:  worker process: logical replication launcher (PID 3623) exited with exit code 1
+2018-10-30 18:20:46.161 EDT [3618] LOG:  shutting down
+2018-10-30 18:20:46.171 EDT [3616] LOG:  database system is shut down
+2018-11-02 09:40:33.801 EDT [875] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-02 09:40:33.801 EDT [875] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-02 09:40:33.801 EDT [875] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-02 09:40:33.826 EDT [876] LOG:  database system was shut down at 2018-10-30 18:20:46 EDT
+2018-11-02 09:40:33.833 EDT [875] LOG:  database system is ready to accept connections
+2018-11-04 16:37:25.213 EST [875] LOG:  received smart shutdown request
+2018-11-04 16:37:25.215 EST [875] LOG:  worker process: logical replication launcher (PID 882) exited with exit code 1
+2018-11-04 16:37:25.215 EST [877] LOG:  shutting down
+2018-11-04 16:37:25.223 EST [875] LOG:  database system is shut down
+2018-11-05 10:03:48.451 EST [640] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-05 10:03:48.452 EST [640] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-05 10:03:48.452 EST [640] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-05 10:03:48.471 EST [641] LOG:  database system was shut down at 2018-11-04 16:37:25 EST
+2018-11-05 10:03:48.479 EST [640] LOG:  database system is ready to accept connections
+2018-11-05 14:42:32.138 EST [15756] ERROR:  column users.badge_id does not exist at character 37
+2018-11-05 14:42:32.138 EST [15756] STATEMENT:  SELECT "users".* FROM "users" WHERE "users"."badge_id" IN (4, 3, 2, 1)
+2018-11-06 08:15:28.628 EST [640] LOG:  received smart shutdown request
+2018-11-06 08:15:28.630 EST [640] LOG:  worker process: logical replication launcher (PID 647) exited with exit code 1
+2018-11-06 08:15:28.630 EST [642] LOG:  shutting down
+2018-11-06 08:15:28.644 EST [640] LOG:  database system is shut down
+2018-11-06 10:04:23.652 EST [713] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-06 10:04:23.652 EST [713] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-06 10:04:23.653 EST [713] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-06 10:04:23.674 EST [714] LOG:  database system was shut down at 2018-11-06 08:15:28 EST
+2018-11-06 10:04:23.685 EST [713] LOG:  database system is ready to accept connections
+2018-11-06 12:34:02.653 EST [1408] ERROR:  column "current" does not exist at character 53
+2018-11-06 12:34:02.653 EST [1408] STATEMENT:  SELECT "users".* FROM "users" WHERE (coach_status = current)
+2018-11-06 12:34:50.772 EST [1408] ERROR:  column "current" does not exist at character 53
+2018-11-06 12:34:50.772 EST [1408] STATEMENT:  SELECT "users".* FROM "users" WHERE (coach_status = "current")
+2018-11-06 13:03:35.486 EST [2063] ERROR:  operator does not exist: character varying = integer at character 51
+2018-11-06 13:03:35.486 EST [2063] HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+2018-11-06 13:03:35.486 EST [2063] STATEMENT:  SELECT "users".* FROM "users" WHERE (coach_status = 0)
+2018-11-07 08:17:32.866 EST [713] LOG:  received smart shutdown request
+2018-11-07 08:17:32.868 EST [713] LOG:  worker process: logical replication launcher (PID 720) exited with exit code 1
+2018-11-07 08:17:32.868 EST [715] LOG:  shutting down
+2018-11-07 08:17:32.878 EST [713] LOG:  database system is shut down
+2018-11-07 11:09:00.056 EST [727] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-07 11:09:00.056 EST [727] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-07 11:09:00.057 EST [727] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-07 11:09:00.079 EST [728] LOG:  database system was shut down at 2018-11-07 08:17:32 EST
+2018-11-07 11:09:00.085 EST [727] LOG:  database system is ready to accept connections
+2018-11-07 14:45:16.346 EST [727] LOG:  received smart shutdown request
+2018-11-07 14:45:16.347 EST [727] LOG:  worker process: logical replication launcher (PID 734) exited with exit code 1
+2018-11-07 14:45:16.347 EST [729] LOG:  shutting down
+2018-11-07 14:45:16.354 EST [727] LOG:  database system is shut down
+2018-11-07 17:42:29.569 EST [550] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-07 17:42:29.569 EST [550] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-07 17:42:29.570 EST [550] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-07 17:42:29.590 EST [551] LOG:  database system was shut down at 2018-11-07 14:45:16 EST
+2018-11-07 17:42:29.597 EST [550] LOG:  database system is ready to accept connections
+2018-11-12 12:28:21.538 EST [8655] ERROR:  column "nil" does not exist at character 85
+2018-11-12 12:28:21.538 EST [8655] STATEMENT:  SELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND (session=nil)
+2018-11-14 14:21:12.596 EST [15964] FATAL:  database "living-well-with-sci_test" does not exist
+2018-11-14 17:36:48.644 EST [550] LOG:  received smart shutdown request
+2018-11-14 17:36:48.645 EST [550] LOG:  worker process: logical replication launcher (PID 557) exited with exit code 1
+2018-11-14 17:36:48.645 EST [552] LOG:  shutting down
+2018-11-14 17:36:48.651 EST [550] LOG:  database system is shut down
+2018-11-21 09:01:06.693 EST [709] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-21 09:01:06.693 EST [709] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-21 09:01:06.694 EST [709] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-21 09:01:06.721 EST [710] LOG:  database system was shut down at 2018-11-19 13:33:08 EST
+2018-11-21 09:01:06.728 EST [709] LOG:  database system is ready to accept connections
+2018-11-22 20:33:27.296 EST [709] LOG:  received smart shutdown request
+2018-11-22 20:33:27.299 EST [709] LOG:  worker process: logical replication launcher (PID 716) exited with exit code 1
+2018-11-22 20:33:27.299 EST [711] LOG:  shutting down
+2018-11-22 20:33:27.311 EST [709] LOG:  database system is shut down
+2018-11-27 14:29:45.929 EST [1786] LOG:  listening on IPv6 address "::1", port 5432
+2018-11-27 14:29:45.929 EST [1786] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-11-27 14:29:45.930 EST [1786] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-11-27 14:29:45.958 EST [1787] LOG:  database system was shut down at 2018-11-22 20:33:27 EST
+2018-11-27 14:29:45.967 EST [1786] LOG:  database system is ready to accept connections
+2018-12-02 14:02:14.142 EST [1786] LOG:  received smart shutdown request
+2018-12-02 14:02:14.147 EST [1786] LOG:  worker process: logical replication launcher (PID 1793) exited with exit code 1
+2018-12-02 14:02:14.147 EST [1788] LOG:  shutting down
+2018-12-02 14:02:14.166 EST [1786] LOG:  database system is shut down
+2018-12-03 13:43:41.421 EST [1233] LOG:  listening on IPv6 address "::1", port 5432
+2018-12-03 13:43:41.421 EST [1233] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-12-03 13:43:41.422 EST [1233] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-12-03 13:43:41.446 EST [1234] LOG:  database system was shut down at 2018-12-02 14:02:14 EST
+2018-12-03 13:43:41.454 EST [1233] LOG:  database system is ready to accept connections
+2018-12-06 17:51:13.900 EST [1233] LOG:  received smart shutdown request
+2018-12-06 17:51:13.907 EST [1233] LOG:  worker process: logical replication launcher (PID 1240) exited with exit code 1
+2018-12-06 17:51:13.907 EST [1235] LOG:  shutting down
+2018-12-06 17:51:13.922 EST [1233] LOG:  database system is shut down
+2018-12-10 11:54:25.755 EST [3032] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-12-10 11:54:25.755 EST [3032] LOG:  listening on IPv6 address "::1", port 5432
+2018-12-10 11:54:25.756 EST [3032] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-12-10 11:54:25.781 EST [3033] LOG:  database system was shut down at 2018-12-06 17:51:13 EST
+2018-12-10 11:54:25.789 EST [3032] LOG:  database system is ready to accept connections
+2018-12-12 18:28:49.471 EST [3032] LOG:  received smart shutdown request
+2018-12-12 18:28:49.473 EST [3032] LOG:  worker process: logical replication launcher (PID 3039) exited with exit code 1
+2018-12-12 18:28:49.474 EST [3034] LOG:  shutting down
+2018-12-12 18:28:49.500 EST [3032] LOG:  database system is shut down
+2018-12-18 17:13:59.845 EST [1297] LOG:  listening on IPv6 address "::1", port 5432
+2018-12-18 17:13:59.845 EST [1297] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-12-18 17:13:59.846 EST [1297] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-12-18 17:13:59.866 EST [1298] LOG:  database system was shut down at 2018-12-12 18:28:49 EST
+2018-12-18 17:13:59.873 EST [1297] LOG:  database system is ready to accept connections
+2018-12-22 15:48:29.920 EST [1297] LOG:  received smart shutdown request
+2018-12-22 15:48:29.923 EST [1297] LOG:  worker process: logical replication launcher (PID 1304) exited with exit code 1
+2018-12-22 15:48:29.923 EST [1299] LOG:  shutting down
+2018-12-22 15:48:29.937 EST [1297] LOG:  database system is shut down
+2019-03-07 14:41:29.860 EST [1045] LOG:  listening on IPv6 address "::1", port 5432
+2019-03-07 14:41:29.860 EST [1045] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-07 14:41:29.861 EST [1045] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-07 14:41:29.885 EST [1046] LOG:  database system was shut down at 2018-12-22 15:48:29 EST
+2019-03-07 14:41:29.891 EST [1045] LOG:  database system is ready to accept connections
+2019-04-03 08:26:01.895 EDT [6974] LOG:  listening on IPv6 address "::1", port 5432
+2019-04-03 08:26:01.896 EDT [6974] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-04-03 08:26:01.896 EDT [6974] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-04-03 08:26:01.924 EDT [6975] LOG:  database system was shut down at 2019-03-23 19:06:53 EDT
+2019-04-03 08:26:01.932 EDT [6974] LOG:  database system is ready to accept connections
+2019-04-03 08:31:36.543 EDT [7076] ERROR:  relation "survey_questions" already exists
+2019-04-03 08:31:36.543 EDT [7076] STATEMENT:  CREATE TABLE "survey_questions" ("id" serial primary key, "department_id" integer, "text" character varying, "survey_type" character varying, "survey_numoptions" integer, "survey_image" character varying, "survey_q1" character varying, "survey_q2" character varying, "survey_q3" character varying, "survey_q4" character varying, "survey_q5" character varying, "survey_q6" character varying, "survey_q7" character varying, "survey_q8" character varying, "survey_q9" character varying, "survey_q10" character varying, "survey_q11" character varying, "survey_q12" character varying, "survey_correct" character varying, "published" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)
+2019-04-03 08:40:47.604 EDT [7213] ERROR:  relation "surveys" does not exist at character 563
+2019-04-03 08:40:47.604 EDT [7213] STATEMENT:                SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+	                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+	             (SELECT c.collname FROM pg_collation c, pg_type t
+	               WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation),
+	                     col_description(a.attrelid, a.attnum) AS comment
+	                FROM pg_attribute a LEFT JOIN pg_attrdef d
+	                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+	               WHERE a.attrelid = '"surveys"'::regclass
+	                 AND a.attnum > 0 AND NOT a.attisdropped
+	               ORDER BY a.attnum
+	
+2019-04-03 08:44:10.090 EDT [7270] ERROR:  table "survey_answers" does not exist
+2019-04-03 08:44:10.090 EDT [7270] STATEMENT:  DROP TABLE "survey_answers"
+2019-04-03 08:44:10.091 EDT [7270] ERROR:  table "survey_answers" does not exist
+2019-04-03 08:44:10.091 EDT [7270] STATEMENT:  DROP TABLE "survey_answers"
+2019-04-03 08:44:36.494 EDT [7284] ERROR:  relation "surveys" does not exist at character 563
+2019-04-03 08:44:36.494 EDT [7284] STATEMENT:                SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+	                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+	             (SELECT c.collname FROM pg_collation c, pg_type t
+	               WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation),
+	                     col_description(a.attrelid, a.attnum) AS comment
+	                FROM pg_attribute a LEFT JOIN pg_attrdef d
+	                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+	               WHERE a.attrelid = '"surveys"'::regclass
+	                 AND a.attnum > 0 AND NOT a.attisdropped
+	               ORDER BY a.attnum
+	
+2019-04-03 08:44:40.554 EDT [7284] ERROR:  relation "surveys" does not exist at character 563
+2019-04-03 08:44:40.554 EDT [7284] STATEMENT:                SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+	                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+	             (SELECT c.collname FROM pg_collation c, pg_type t
+	               WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation),
+	                     col_description(a.attrelid, a.attnum) AS comment
+	                FROM pg_attribute a LEFT JOIN pg_attrdef d
+	                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+	               WHERE a.attrelid = '"surveys"'::regclass
+	                 AND a.attnum > 0 AND NOT a.attisdropped
+	               ORDER BY a.attnum
+	
+2019-04-03 08:46:58.990 EDT [7328] ERROR:  relation "survey_scores" does not exist at character 563
+2019-04-03 08:46:58.990 EDT [7328] STATEMENT:                SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+	                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+	             (SELECT c.collname FROM pg_collation c, pg_type t
+	               WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation),
+	                     col_description(a.attrelid, a.attnum) AS comment
+	                FROM pg_attribute a LEFT JOIN pg_attrdef d
+	                  ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+	               WHERE a.attrelid = '"survey_scores"'::regclass
+	                 AND a.attnum > 0 AND NOT a.attisdropped
+	               ORDER BY a.attnum
+	
+2019-04-03 10:12:57.775 EDT [8236] ERROR:  column survey_questions.survey_id does not exist at character 59
+2019-04-03 10:12:57.775 EDT [8236] STATEMENT:  SELECT "survey_questions".* FROM "survey_questions" WHERE "survey_questions"."survey_id" = $1
+2019-04-03 10:12:58.285 EDT [8238] ERROR:  column survey_questions.survey_id does not exist at character 59
+2019-04-03 10:12:58.285 EDT [8238] STATEMENT:  SELECT "survey_questions".* FROM "survey_questions" WHERE "survey_questions"."survey_id" = $1
+2019-04-08 09:14:00.427 EDT [6974] LOG:  received smart shutdown request
+2019-04-08 09:14:00.432 EDT [6974] LOG:  worker process: logical replication launcher (PID 6981) exited with exit code 1
+2019-04-08 09:14:00.433 EDT [6976] LOG:  shutting down
+2019-04-08 09:14:00.451 EDT [6974] LOG:  database system is shut down
+2019-04-08 14:16:05.572 EDT [2152] LOG:  listening on IPv6 address "::1", port 5432
+2019-04-08 14:16:05.573 EDT [2152] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-04-08 14:16:05.574 EDT [2152] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-04-08 14:16:05.599 EDT [2153] LOG:  database system was shut down at 2019-04-08 09:14:00 EDT
+2019-04-08 14:16:05.609 EDT [2152] LOG:  database system is ready to accept connections
+2019-04-08 23:21:25.735 EDT [7359] ERROR:  column "survey_id" of relation "survey_questions" already exists
+2019-04-08 23:21:25.735 EDT [7359] STATEMENT:  ALTER TABLE "survey_questions" ADD "survey_id" integer
+2019-04-08 23:21:44.273 EDT [7365] ERROR:  column "survey_id" of relation "survey_questions" already exists
+2019-04-08 23:21:44.273 EDT [7365] STATEMENT:  ALTER TABLE "survey_questions" ADD "survey_id" integer
+2019-04-09 21:03:14.666 EDT [2152] LOG:  received smart shutdown request
+2019-04-09 21:03:14.671 EDT [2152] LOG:  worker process: logical replication launcher (PID 2159) exited with exit code 1
+2019-04-09 21:03:14.671 EDT [2154] LOG:  shutting down
+2019-04-09 21:03:14.691 EDT [2152] LOG:  database system is shut down
+2019-04-18 08:13:19.238 EDT [8853] LOG:  listening on IPv6 address "::1", port 5432
+2019-04-18 08:13:19.238 EDT [8853] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-04-18 08:13:19.239 EDT [8853] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-04-18 08:13:19.269 EDT [8854] LOG:  database system was shut down at 2019-04-09 21:03:14 EDT
+2019-04-18 08:13:19.278 EDT [8853] LOG:  database system is ready to accept connections
+2019-04-23 07:46:45.907 EDT [8853] LOG:  received smart shutdown request
+2019-04-23 07:46:45.912 EDT [8853] LOG:  worker process: logical replication launcher (PID 8860) exited with exit code 1
+2019-04-23 07:46:45.912 EDT [8855] LOG:  shutting down
+2019-04-23 07:46:45.930 EDT [8853] LOG:  database system is shut down
+2019-04-23 21:19:34.092 EDT [3771] FATAL:  database files are incompatible with server
+2019-04-23 21:19:34.092 EDT [3771] DETAIL:  The data directory was initialized by PostgreSQL version 10, which is not compatible with this version 11.2.
+2019-04-23 21:20:07.511 EDT [3781] FATAL:  database files are incompatible with server
+2019-04-23 21:20:07.511 EDT [3781] DETAIL:  The data directory was initialized by PostgreSQL version 10, which is not compatible with this version 11.2.
+2019-05-01 15:52:18.951 EDT [7360] FATAL:  database files are incompatible with server
+2019-05-01 15:52:18.951 EDT [7360] DETAIL:  The data directory was initialized by PostgreSQL version 10, which is not compatible with this version 11.2.
+2019-05-01 15:52:22.085 EDT [7363] FATAL:  database files are incompatible with server
+2019-05-01 15:52:22.085 EDT [7363] DETAIL:  The data directory was initialized by PostgreSQL version 10, which is not compatible with this version 11.2.
+2019-05-01 16:14:10.389 EDT [7632] FATAL:  database files are incompatible with server
+2019-05-01 16:14:10.389 EDT [7632] DETAIL:  The data directory was initialized by PostgreSQL version 10, which is not compatible with this version 11.2.
+2019-05-23 13:12:06.215 EDT [38529] FATAL:  database files are incompatible with server
+2019-05-23 13:12:06.215 EDT [38529] DETAIL:  The data directory was initialized by PostgreSQL version 10, which is not compatible with this version 11.2.
+2019-05-23 13:20:09.277 EDT [38728] FATAL:  database files are incompatible with server
+2019-05-23 13:20:09.277 EDT [38728] DETAIL:  The data directory was initialized by PostgreSQL version 10, which is not compatible with this version 11.2.
+FATAL:  "/usr/local/var/postgres" is not a valid data directory
+DETAIL:  File "/usr/local/var/postgres/PG_VERSION" does not contain valid data.
+HINT:  You might need to initdb.
+FATAL:  "/usr/local/var/postgres" is not a valid data directory
+DETAIL:  File "/usr/local/var/postgres/PG_VERSION" does not contain valid data.
+HINT:  You might need to initdb.
+2019-05-27 17:34:53.577 EDT [1580] LOG:  listening on IPv6 address "::1", port 5432
+2019-05-27 17:34:53.578 EDT [1580] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-05-27 17:34:53.579 EDT [1580] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-05-27 17:34:53.589 EDT [1581] LOG:  database system was shut down at 2019-05-27 17:24:44 EDT
+2019-05-27 17:34:53.592 EDT [1580] LOG:  database system is ready to accept connections
+2019-05-27 17:35:10.319 EDT [1590] FATAL:  role "postgres" does not exist
+2019-05-27 17:36:12.183 EDT [1596] FATAL:  database "du" does not exist
+2019-05-27 17:36:17.622 EDT [1598] FATAL:  database "JaglalLab" does not exist
+2019-05-27 17:37:03.306 EDT [1600] ERROR:  role "JaglalLab" already exists
+2019-05-27 17:37:03.306 EDT [1600] STATEMENT:  CREATE ROLE "JaglalLab" NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT LOGIN;
+2019-05-27 17:37:24.444 EDT [1605] FATAL:  database "living-well-with-sci_development" does not exist
+2019-05-27 17:39:12.781 EDT [1617] FATAL:  lock file "postmaster.pid" already exists
+2019-05-27 17:39:12.781 EDT [1617] HINT:  Is another postmaster (PID 1580) running in data directory "/usr/local/var/postgres"?
+2019-05-27 17:43:07.748 EDT [2576] ERROR:  table "survey_score" does not exist
+2019-05-27 17:43:07.748 EDT [2576] STATEMENT:  DROP TABLE "survey_score"
+2019-05-27 21:52:28.726 EDT [1580] LOG:  received fast shutdown request
+2019-05-27 21:52:28.728 EDT [1580] LOG:  aborting any active transactions
+2019-05-27 21:52:28.729 EDT [1580] LOG:  background worker "logical replication launcher" (PID 1587) exited with exit code 1
+2019-05-27 21:52:28.729 EDT [1582] LOG:  shutting down
+2019-05-27 21:52:28.738 EDT [1580] LOG:  database system is shut down
+2019-05-27 22:08:04.588 EDT [3027] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-05-27 22:08:04.588 EDT [3027] LOG:  listening on IPv6 address "::1", port 5432
+2019-05-27 22:08:04.589 EDT [3027] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-05-27 22:08:04.602 EDT [3028] LOG:  database system was shut down at 2019-05-27 21:52:28 EDT
+2019-05-27 22:08:04.608 EDT [3027] LOG:  database system is ready to accept connections
+2019-05-27 22:10:51.987 EDT [3168] FATAL:  database "JaglalLab" does not exist
+2019-05-27 22:11:43.600 EDT [3175] ERROR:  syntax error at or near "/" at character 1
+2019-05-27 22:11:43.600 EDT [3175] STATEMENT:  /l
+	;
+2019-05-27 22:12:37.475 EDT [3184] FATAL:  database "living-well-with-sci_developmen" does not exist
+2019-05-27 22:29:12.929 EDT [3185] ERROR:  column "coach_status" of relation "users" does not exist
+2019-05-27 22:29:12.929 EDT [3185] STATEMENT:  COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, first_name, last_name, job_title, blurb, location, role, age, injury_level, organizational_affiliations, sponsor_id, coach_id, coach_status, skypehandle, confirmation_token, confirmed_at, confirmation_sent_at, unconfirmed_email, attachment, approved, profile_image, is_research_participant, how, read_form, orientation, with_sci, total_time_online, dob, whyhere, injury_date, gender) FROM stdin;
+2019-05-27 22:31:08.644 EDT [3185] ERROR:  syntax error at or near "16" at character 1
+2019-05-27 22:31:08.644 EDT [3185] STATEMENT:  16pjoshi@rickhanseninstitute.org$2a$10$WzdIB.VbwpD3YUxm9SgKfeZZ558OIjHETzrobmyg7AZ4C0NDMSO8W
+	10susan.jaglal@utoronto.ca$2a$10$NWQqAV.OtB7POHvK.e.D0u604kyGMszsmlcO8gcRla7j1wFsa/dj2
+	11dwolfe@uwo.ca$2a$10$D7SBl6pBv6FVenqCIPEFWufYW3rKiiZv9m0X61GOsdEPZ8H4LRgh6
+	13tomasone@queensu.ca$2a$10$q2pUjTnbv/m999fHlupZ4u5cC7IsfMy3qVgjxBIEZXmj/rMBjHe.i
+	12lindsay.sleeth@sjhc.london.on.ca$2a$10$yO2OpygTbj06Le0ilaRbAuyDywNKSyF1PM56aw5b/4HLLll9m086e
+	14spero.ginis@gmail.com$2a$10$4FHq6xMt.h3GAJrJV6vJB.Qbmqox48n8.ZJYAnF2CBJuZQWHBQeaW
+	21cathy.craven@uhn.ca$2a$10$ggPYQ4DrwipMp5WDeg4zy.8JnXFWNY667/qW2FrgDPoKcL6Ao3dSG
+	31adrienne@sci-and-u.ca$2a$10$Skfrq4X4yDY36FhhGaVz2eCDgXP6hbB1aJmLz048..uWFsWPphIL2
+	59gcbarnes@sympatico.ca$2a$10$Xj40w9/R0I0haSwA.NoWrOYiJoZYPYeO9G0.mGPZtLISfcLQAoQK6
+	64tahera_hossain@yahoo.com$2a$10$1f.ajnLNvbwhfuWtxmUvd.u8MMPoP2RP4SGKJHIZejRqFj9c8h046
+	63khossain17@hotmail.com$2a$10$LZ4DxF3mh.UJziX43lL8nulwo6/QO.ml6QOD2vDeAuqD97i2KvYce
+	65moonistariq@live.com$2a$10$DABSW43dOjbw8tKo4ogApOmRM0ucQX3PzA8tTzxyYZ8Xhr4cwQuOG
+	69spero.ginis@ubc.ca
+	7saima@sci-and-u.ca$2a$10$XgVJNnQ6Sf0R1zwEQaO/XeOIhguF8zG7utzq45LBuEFPSwZDFxRAG
+	15jchernesky@rickhanseninstitute.org$2a$10$VRb0htziBOQwHDqedw5hSOdAmF5YLpdLxmQc.nWvcQXHMfXQ48Bhafef5ae106198cf41b5a7afd105d942009a529d5aefa6666888d37338d7dd8ab72017-03-08 17:06:21.6904642017-03-01 20:10:35.46908652017-08-22 18:35:50.9376232017-07-07 21:51:48.838963206.12.12.60206.12.12.602016-10-31 18:57:31.2738862017-08-22 18:36:15.465139JohnCherneskyConsumer Engagement LeadJohn Chernesky joins us as RHI's Consumer Engagement Lead having spent the last five years working in radio and television in Vancouver. He has been paralyzed since the age of 16 following a car accident in 1993. John is very active in SCI research, having participated in many studies and recently co-authored a study alongside researchers at ICORD. He is also very involved in the local SCI community and enjoys wheelchair rugby, tennis, downhill skiing and para-rowing. Prior to his in-house role at RHI, John was a member of RHI's Consumer Advisory Committee, which helps shape the consumer engagement strategy.British Columbia140C7
+	39sara.ahmed@mcgill.ca$2a$10$SfKt5fZaLUd3fvFJ8W.S/O2mFLjtYx2OEVwBY1x0.vESaGofvYQCO
+	5eric@sci-and-u.ca$2a$10$e2duW.NNxkZ2OYR7XsMnm.fueXmLUy0noveQ8TDcWPXvA4dJ9W0Zi
+	1john@sci-and-u.ca$2a$10$S3qag1g6plccXOOXuGUJlel3HvsH.udlR8/4NBGkoD9EB1jj26U4G
+	60sarah.munce@mail.utoronto.ca$2a$10$6wJhnhqpXghc4R5ud.bpIe3CkJhMIVHqGQ7KQWNg4qdSzm/NL5JF2
+	42george@sci-and-u.ca$2a$10$2yROEtulf6q.4Udk6CQRNOG.2pGjbOgEJyWmxEqOfzWgaTYtjtqmm
+	41jordan.dsouza@qochealth.com$2a$10$WtFGCZYLQNdr4MMui7uo5Oy9thuTF8dpSn3wphgG8VXGexHSAIim6
+	34springcreek@xplornet.com$2a$10$fnTtM93LutuFs0Rks/1r2.EjW7i4M238OhQRlwEwGfTYrjzqDcV/y
+	44melissad@ajhs.ca$2a$10$SKleTtFE60YRJxnpgEwPou/Ho26u1rfRArdgN9fA4RCQHpy6OFlo2
+	8shawn@sci-and-u.ca$2a$10$sX60wQMzvwBX6eluNd1LneorL0Dsv3DkZbb/13I590JTA8tuZq3tu
+	18sonya@sci-and-u.ca$2a$10$fkrzxvyyIIuoN1AXgawKBeBSypMkOrfz9OVnP17mz4MSQaL0U7rY.
+	68v.nacuta@ieee.org$2a$10$HF8WIOiy3KWhtBJzGozJ6eA/oAgUk8HXDASU6JzLS8Gg6A8m6QW6O
+	48john.shepherd@mail.utoronto.ca$2a$10$8xCDfmome1SpyvazO39r/enX.NtUt0.8hQCGagLXqc96LyHVDsAyi
+	54salvashamsi@gmail.com$2a$10$VYFFgmVuJDeOAESo31IBQ.rOcGTbvnjvbPMlsQ7MUUFR23E5OEdsC
+	52waneric78@gmail.com$2a$10$1GvbHDzzChIVG4qDRLqW7.hEp4GIGAcc6ucsUep7H6LP0hJBNdoWW
+	50h.saima7@gmail.com$2a$10$Ih9qzLiEQd4bAR.tXojvEefV6mpPnTL9Gq1JK4fHdv71sbVSgA0EG
+	66gfw73@hotmail.com$2a$10$uNi5R8pVftvsPy8vzO4ZuOv6e0tFIHAn/qMwxJ8MEpI.2i1sroeN6
+	58nishak4686@gmail.com$2a$10$crfPFLskOia/0IpCt.0E8eauEO8FU4I00CQg3.w./ObO0DGvMBOl6
+	62tabdulwahab@hotmail.com$2a$10$QEccn3Dda3n1zltuNkG/Je7N80.CBRrgzjeW3lmZcF3UYgRWvx6mO
+	56cindee.nguyen@hotmail.com$2a$10$pSQvNEvoCFFwz/MGilwh5ejz8g9OED56sALKOKwlLwKahbq7mRlui
+	67jennyclement@rogers.com$2a$10$tebp1cQYuEwU8zhGQDtcPOBa.I1cpqLmjZtFcz3RATgiXkxW.YqaG
+	53shehzaad.hossain@gmail.com$2a$10$BvgUi4QEScfzpEnmg9lS7eNBI7gKKpL73aytlys3BOzyuTh.lexRu
+	49shanthonys@hotmail.com$2a$10$SjkLaiVEtBaMrsLrF0Mj4OqwUwWh6wSCiySR/6svk45k4LPE9Xcku
+	57alina.khan@ryerson.ca$2a$10$34.NQcZVJwvPZZ3vAo7G3OwQyBLdGkvM60aSZEp5NBZ/WhpyM.L9G
+	COPY users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, first_name, last_name, job_title, blurb, location, role, age, injury_level, organizational_affiliations, sponsor_id, coach_id, coach_status, confirmation_token, confirmed_at, confirmation_sent_at, unconfirmed_email, attachment, approved, profile_image, how, with_sci, total_time_online, dob, whyhere, injury_date, gender) FROM stdin;
+2019-05-27 22:37:20.387 EDT [3185] ERROR:  INSERT has more target columns than expressions at character 282
+2019-05-27 22:37:20.387 EDT [3185] STATEMENT:  INSERT INTO users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, first_name, last_name, job_title, blurb, location, role)
+	VALUES ('18', 'sonya@sci-and-u.ca', '$2a$10$fkrzxvyyIIuoN1AXgawKBeBSypMkOrfz9OVnP17mz4MSQaL0U7rY.', '\N', '\N', '\N', '171', '2017-09-05 14:19:06.311542','2017-09-04 22:42:05.870733','75.98.195.58','149.248.176.114','2017-01-04 17:35:30.816873','2017-09-05 14:19:06.314431','Sonya','Allin','','Ontario','0');
+2019-05-27 22:37:51.876 EDT [3185] ERROR:  INSERT has more target columns than expressions at character 282
+2019-05-27 22:37:51.876 EDT [3185] STATEMENT:  INSERT INTO users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, first_name, last_name, job_title, blurb, location, role) VALUES ('18', 'sonya@sci-and-u.ca', '$2a$10$fkrzxvyyIIuoN1AXgawKBeBSypMkOrfz9OVnP17mz4MSQaL0U7rY.', '\N', '\N', '\N', '171', '2017-09-05 14:19:06.311542','2017-09-04 22:42:05.870733','75.98.195.58','149.248.176.114','2017-01-04 17:35:30.816873','2017-09-05 14:19:06.314431','Sonya','Allin','','Ontario','0');
+2019-05-27 22:39:10.015 EDT [3185] ERROR:  invalid input syntax for type timestamp: "\N" at character 383
+2019-05-27 22:39:10.015 EDT [3185] STATEMENT:  INSERT INTO users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, first_name, last_name, blurb, location, role) VALUES ('18', 'sonya@sci-and-u.ca', '$2a$10$fkrzxvyyIIuoN1AXgawKBeBSypMkOrfz9OVnP17mz4MSQaL0U7rY.', '\N', '\N', '\N', '171', '2017-09-05 14:19:06.311542','2017-09-04 22:42:05.870733','75.98.195.58','149.248.176.114','2017-01-04 17:35:30.816873','2017-09-05 14:19:06.314431','Sonya','Allin','','Ontario','0');
+2019-05-27 22:39:35.139 EDT [3185] ERROR:  invalid input syntax for type timestamp: "" at character 381
+2019-05-27 22:39:35.139 EDT [3185] STATEMENT:  INSERT INTO users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, first_name, last_name, blurb, location, role) VALUES ('18', 'sonya@sci-and-u.ca', '$2a$10$fkrzxvyyIIuoN1AXgawKBeBSypMkOrfz9OVnP17mz4MSQaL0U7rY.', '', '', '', '171', '2017-09-05 14:19:06.311542','2017-09-04 22:42:05.870733','75.98.195.58','149.248.176.114','2017-01-04 17:35:30.816873','2017-09-05 14:19:06.314431','Sonya','Allin','','Ontario','0');
+2019-05-27 22:41:35.323 EDT [3185] ERROR:  syntax error at or near "quit" at character 1
+2019-05-27 22:41:35.323 EDT [3185] STATEMENT:  quit()
+	;
+2019-05-27 22:41:38.587 EDT [3185] ERROR:  syntax error at or near "qui" at character 1
+2019-05-27 22:41:38.587 EDT [3185] STATEMENT:  qui;
+2019-05-27 22:43:48.023 EDT [3405] ERROR:  syntax error at or near "WHERE" at character 72
+2019-05-27 22:43:48.023 EDT [3405] STATEMENT:  INSERT INTO users (confirmed_at) VALUES ('2017-09-05 14:19:06.311542') WHERE (id=18);
+2019-05-27 22:47:35.588 EDT [3447] ERROR:  syntax error at or near "'confirmed_at'" at character 18
+2019-05-27 22:47:35.588 EDT [3447] STATEMENT:  UPDATE users SET 'confirmed_at' = '2017-09-05 14:19:06.311542' where 'id' = '18';
+2019-05-27 23:07:25.729 EDT [3753] ERROR:  syntax error at or near "living" at character 1
+2019-05-27 23:07:25.729 EDT [3753] STATEMENT:  living-well-with-sci_development
+	select * from health_resourcese
+	;
+2019-05-27 23:20:07.342 EDT [3461] ERROR:  column scripts_and_tips.user_id does not exist at character 59
+2019-05-27 23:20:07.342 EDT [3461] STATEMENT:  SELECT "scripts_and_tips".* FROM "scripts_and_tips" WHERE "scripts_and_tips"."user_id" = $1
+2019-05-27 23:41:14.821 EDT [4215] ERROR:  syntax error at or near "living" at character 7
+2019-05-27 23:41:14.821 EDT [4215] STATEMENT:  drop  living-well-with-sci_development;
+2019-05-27 23:41:39.174 EDT [4215] ERROR:  syntax error at or near "living" at character 6
+2019-05-27 23:41:39.174 EDT [4215] STATEMENT:  drop living-well-with-sci_development
+	drop living-well-with-sci_development;
+2019-05-27 23:42:18.821 EDT [4215] ERROR:  syntax error at or near "-" at character 21
+2019-05-27 23:42:18.821 EDT [4215] STATEMENT:  drop database living-well-with-sci_development;
+2019-05-27 23:42:29.083 EDT [4215] ERROR:  syntax error at or near "'living-well-with-sci_development'" at character 15
+2019-05-27 23:42:29.083 EDT [4215] STATEMENT:  drop database 'living-well-with-sci_development';
+2019-05-27 23:42:40.075 EDT [4215] ERROR:  syntax error at or near "psql" at character 1
+2019-05-27 23:42:40.075 EDT [4215] STATEMENT:  psql
+	;
+2019-05-27 23:42:57.794 EDT [4215] ERROR:  syntax error at or near "BATABASE" at character 6
+2019-05-27 23:42:57.794 EDT [4215] STATEMENT:  DROP BATABASE living-well-with-sci_development;
+2019-05-27 23:43:06.269 EDT [4215] ERROR:  syntax error at or near "-" at character 21
+2019-05-27 23:43:06.269 EDT [4215] STATEMENT:  DROP DATABASE living-well-with-sci_development;
+2019-05-27 23:44:37.315 EDT [4215] ERROR:  syntax error at or near "q" at character 22
+2019-05-27 23:44:37.315 EDT [4215] STATEMENT:  DROP DATABASE living
+	q;
+2019-05-27 23:44:49.424 EDT [4268] ERROR:  syntax error at or near "-" at character 21
+2019-05-27 23:44:49.424 EDT [4268] STATEMENT:  DROP DATABASE living-well-with-sci_development;
+2019-05-27 23:45:30.505 EDT [4268] ERROR:  syntax error at or near "-" at character 23
+2019-05-27 23:45:30.505 EDT [4268] STATEMENT:  create database living-well-with-sci_development;
+2019-05-27 23:49:16.877 EDT [4385] FATAL:  database "living-well-with-sci_development" does not exist
+2019-05-27 23:49:44.636 EDT [4392] FATAL:  database "living-well-with-sci_development" does not exist
+2019-05-27 23:51:17.432 EDT [4417] ERROR:  invalid locale name: "en_US.utf8"
+2019-05-27 23:51:17.432 EDT [4417] STATEMENT:  CREATE DATABASE sci_and_u_db WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'en_US.utf8' LC_CTYPE = 'en_US.utf8';
+	
+	
+	
+2019-05-27 23:51:17.433 EDT [4417] ERROR:  database "sci_and_u_db" does not exist
+2019-05-27 23:51:17.433 EDT [4417] STATEMENT:  ALTER DATABASE sci_and_u_db OWNER TO postgres;
+	
+	
+2019-05-27 23:51:17.435 EDT [4418] FATAL:  database "sci_and_u_db" does not exist
+2019-05-27 23:52:45.041 EDT [4528] ERROR:  schema "public" already exists
+2019-05-27 23:52:45.041 EDT [4528] STATEMENT:  CREATE SCHEMA public;
+	
+	
+	
+2019-05-28 18:43:30.249 EDT [15644] ERROR:  column scripts_and_tips.for_coaching does not exist at character 103
+2019-05-28 18:43:30.249 EDT [15644] STATEMENT:  SELECT "scripts_and_tips".* FROM "scripts_and_tips" WHERE "scripts_and_tips"."department_id" = $1 AND "scripts_and_tips"."for_coaching" = $2
+2019-05-29 13:52:46.017 EDT [20880] ERROR:  column health_resources.health_resource_id does not exist at character 93
+2019-05-29 13:52:46.017 EDT [20880] STATEMENT:  SELECT id, department_id, title, description, url, attachment FROM "health_resources" WHERE "health_resources"."health_resource_id" = $1
+2019-06-10 17:52:38.749 EDT [3027] LOG:  received smart shutdown request
+2019-06-10 17:52:38.753 EDT [3027] LOG:  background worker "logical replication launcher" (PID 3034) exited with exit code 1
+2019-06-10 17:52:38.753 EDT [3029] LOG:  shutting down
+2019-06-10 17:52:38.763 EDT [3027] LOG:  database system is shut down
+FATAL:  "/usr/local/var/postgres.9.3.backup" is not a valid data directory
+DETAIL:  File "/usr/local/var/postgres.9.3.backup/PG_VERSION" does not contain valid data.
+HINT:  You might need to initdb.
+2019-07-03 11:58:46.298 EDT [12452] LOG:  listening on IPv6 address "::1", port 5432
+2019-07-03 11:58:46.298 EDT [12452] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-07-03 11:58:46.299 EDT [12452] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-07-03 11:58:46.327 EDT [12453] LOG:  database system was shut down at 2019-06-10 17:52:38 EDT
+2019-07-03 11:58:46.335 EDT [12452] LOG:  database system is ready to accept connections
+2019-07-10 12:36:59.256 EDT [44673] FATAL:  lock file "postmaster.pid" already exists
+2019-07-10 12:36:59.256 EDT [44673] HINT:  Is another postmaster (PID 12452) running in data directory "/usr/local/var/postgres"?
+2019-07-12 10:22:52.671 EDT [12452] LOG:  received smart shutdown request
+2019-07-12 10:22:52.673 EDT [12452] LOG:  background worker "logical replication launcher" (PID 12459) exited with exit code 1
+2019-07-12 10:22:52.674 EDT [12454] LOG:  shutting down
+2019-07-12 10:22:52.686 EDT [12452] LOG:  database system is shut down
+2019-07-30 17:30:10.612 EDT [9792] LOG:  listening on IPv6 address "::1", port 5432
+2019-07-30 17:30:10.612 EDT [9792] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-07-30 17:30:10.613 EDT [9792] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-07-30 17:30:10.638 EDT [9793] LOG:  database system was shut down at 2019-07-12 10:22:52 EDT
+2019-07-30 17:30:10.647 EDT [9792] LOG:  database system is ready to accept connections
+2019-08-02 13:00:25.073 EDT [9792] LOG:  received smart shutdown request
+2019-08-02 13:00:25.075 EDT [9792] LOG:  background worker "logical replication launcher" (PID 9799) exited with exit code 1
+2019-08-02 13:00:25.075 EDT [9794] LOG:  shutting down
+2019-08-02 13:00:25.084 EDT [9792] LOG:  database system is shut down
+2019-08-26 09:07:57.350 EDT [10809] LOG:  listening on IPv6 address "::1", port 5432
+2019-08-26 09:07:57.350 EDT [10809] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-08-26 09:07:57.351 EDT [10809] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-08-26 09:07:57.376 EDT [10810] LOG:  database system was shut down at 2019-08-02 13:00:25 EDT
+2019-08-26 09:07:57.381 EDT [10809] LOG:  database system is ready to accept connections
+2019-08-28 10:00:08.765 EDT [10809] LOG:  received smart shutdown request
+2019-08-28 10:00:08.767 EDT [10809] LOG:  background worker "logical replication launcher" (PID 10816) exited with exit code 1
+2019-08-28 10:00:08.767 EDT [10811] LOG:  shutting down
+2019-08-28 10:00:08.775 EDT [10809] LOG:  database system is shut down
+2019-10-08 14:06:35.958 EDT [4164] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-10-08 14:06:35.958 EDT [4164] LOG:  listening on IPv6 address "::1", port 5432
+2019-10-08 14:06:35.959 EDT [4164] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-10-08 14:06:35.984 EDT [4165] LOG:  database system was shut down at 2019-08-28 10:00:08 EDT
+2019-10-08 14:06:35.991 EDT [4164] LOG:  database system is ready to accept connections
+2019-10-08 19:05:54.073 EDT [4164] LOG:  received smart shutdown request
+2019-10-08 19:05:54.075 EDT [4164] LOG:  background worker "logical replication launcher" (PID 4171) exited with exit code 1
+2019-10-08 19:05:54.075 EDT [4166] LOG:  shutting down
+2019-10-08 19:05:54.081 EDT [4164] LOG:  database system is shut down
+2019-10-31 14:10:44.573 EDT [24460] LOG:  listening on IPv6 address "::1", port 5432
+2019-10-31 14:10:44.573 EDT [24460] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-10-31 14:10:44.574 EDT [24460] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-10-31 14:10:44.597 EDT [24461] LOG:  database system was shut down at 2019-10-08 19:05:54 EDT
+2019-10-31 14:10:44.605 EDT [24460] LOG:  database system is ready to accept connections
+2019-10-31 14:49:34.905 EDT [25285] FATAL:  lock file "postmaster.pid" already exists
+2019-10-31 14:49:34.905 EDT [25285] HINT:  Is another postmaster (PID 24460) running in data directory "/usr/local/var/postgres"?
+2019-11-01 09:04:28.480 EDT [24460] LOG:  received smart shutdown request
+2019-11-01 09:04:28.481 EDT [24460] LOG:  background worker "logical replication launcher" (PID 24467) exited with exit code 1
+2019-11-01 09:04:28.481 EDT [24462] LOG:  shutting down
+2019-11-01 09:04:28.488 EDT [24460] LOG:  database system is shut down
+2019-11-11 18:03:09.013 EST [7455] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-11-11 18:03:09.013 EST [7455] LOG:  listening on IPv6 address "::1", port 5432
+2019-11-11 18:03:09.014 EST [7455] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-11-11 18:03:09.044 EST [7456] LOG:  database system was shut down at 2019-11-01 09:04:28 EDT
+2019-11-11 18:03:09.050 EST [7455] LOG:  database system is ready to accept connections
+2019-11-13 08:44:58.524 EST [14053] FATAL:  lock file "postmaster.pid" already exists
+2019-11-13 08:44:58.524 EST [14053] HINT:  Is another postmaster (PID 7455) running in data directory "/usr/local/var/postgres"?
+2019-11-13 11:19:16.774 EST [7455] LOG:  received smart shutdown request
+2019-11-13 11:19:16.776 EST [7455] LOG:  background worker "logical replication launcher" (PID 7462) exited with exit code 1
+2019-11-13 11:19:16.776 EST [7457] LOG:  shutting down
+2019-11-13 11:19:16.784 EST [7455] LOG:  database system is shut down
+2020-04-19 02:36:32.875 EDT [3526] LOG:  listening on IPv6 address "::1", port 5432
+2020-04-19 02:36:32.875 EDT [3526] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-04-19 02:36:32.876 EDT [3526] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-04-19 02:36:32.901 EDT [3527] LOG:  database system was shut down at 2019-11-13 11:19:16 EST
+2020-04-19 02:36:32.908 EDT [3526] LOG:  database system is ready to accept connections
+2020-04-21 11:29:15.855 EDT [3526] LOG:  received smart shutdown request
+2020-04-21 11:29:15.860 EDT [3526] LOG:  background worker "logical replication launcher" (PID 3533) exited with exit code 1
+2020-04-21 11:29:15.860 EDT [3528] LOG:  shutting down
+2020-04-21 11:29:15.875 EDT [3526] LOG:  database system is shut down
+FATAL:  "/usr/local/var/postgres.9.3.backup" is not a valid data directory
+DETAIL:  File "/usr/local/var/postgres.9.3.backup/PG_VERSION" does not contain valid data.
+HINT:  You might need to initdb.
+2020-05-12 08:16:30.635 EDT [13781] LOG:  listening on IPv6 address "::1", port 5432
+2020-05-12 08:16:30.635 EDT [13781] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-05-12 08:16:30.636 EDT [13781] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-05-12 08:16:30.664 EDT [13782] LOG:  database system was shut down at 2020-04-21 11:29:15 EDT
+2020-05-12 08:16:30.672 EDT [13781] LOG:  database system is ready to accept connections
+2020-05-20 18:23:28.150 EDT [13781] LOG:  received smart shutdown request
+2020-05-20 18:23:28.155 EDT [13781] LOG:  background worker "logical replication launcher" (PID 13788) exited with exit code 1
+2020-05-20 18:23:28.155 EDT [13783] LOG:  shutting down
+2020-05-20 18:23:28.168 EDT [13781] LOG:  database system is shut down
+2020-06-16 18:47:51.495 EDT [6963] LOG:  listening on IPv6 address "::1", port 5432
+2020-06-16 18:47:51.496 EDT [6963] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-06-16 18:47:51.496 EDT [6963] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-06-16 18:47:51.519 EDT [6964] LOG:  database system was shut down at 2020-06-08 20:15:39 EDT
+2020-06-16 18:47:51.527 EDT [6963] LOG:  database system is ready to accept connections
+2020-06-19 17:23:37.761 EDT [6963] LOG:  received smart shutdown request
+2020-06-19 17:23:37.763 EDT [6963] LOG:  background worker "logical replication launcher" (PID 6970) exited with exit code 1
+2020-06-19 17:23:37.763 EDT [6965] LOG:  shutting down
+2020-06-19 17:23:37.770 EDT [6963] LOG:  database system is shut down
+2020-07-14 11:41:16.431 EDT [5341] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-07-14 11:41:16.432 EDT [5341] LOG:  listening on IPv6 address "::1", port 5432
+2020-07-14 11:41:16.432 EDT [5341] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-07-14 11:41:16.459 EDT [5342] LOG:  database system was shut down at 2020-06-19 17:23:37 EDT
+2020-07-14 11:41:16.467 EDT [5341] LOG:  database system is ready to accept connections
+2020-07-15 20:50:08.380 EDT [5341] LOG:  received smart shutdown request
+2020-07-15 20:50:08.382 EDT [5341] LOG:  background worker "logical replication launcher" (PID 5348) exited with exit code 1
+2020-07-15 20:50:08.382 EDT [5343] LOG:  shutting down
+2020-07-15 20:50:08.393 EDT [5341] LOG:  database system is shut down
+2020-08-12 17:26:59.182 EDT [12332] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-08-12 17:26:59.182 EDT [12332] LOG:  listening on IPv6 address "::1", port 5432
+2020-08-12 17:26:59.183 EDT [12332] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-08-12 17:26:59.208 EDT [12333] LOG:  database system was shut down at 2020-07-15 20:50:08 EDT
+2020-08-12 17:26:59.216 EDT [12332] LOG:  database system is ready to accept connections
+2020-08-16 16:29:48.071 EDT [12332] LOG:  received smart shutdown request
+2020-08-16 16:29:48.078 EDT [12332] LOG:  background worker "logical replication launcher" (PID 12339) exited with exit code 1
+2020-08-16 16:29:48.078 EDT [12334] LOG:  shutting down
+2020-08-16 16:29:48.094 EDT [12332] LOG:  database system is shut down

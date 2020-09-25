@@ -1,0 +1,74 @@
+.big-grey-row.top
+  .col-xs-12
+    %span.inline.big SCI & U'S QUALITY
+.row.title  
+  .col-sm-12  
+    Would you recommend SCI&U to others, do you feel others might benefit from it?
+.row
+  .col-sm-12
+    = f.radio_button(:subjective1, 1)
+    = f.label(:subjective1, "1: Not at all, I would not recommend SCI&U to anyone")
+    %br
+    = f.radio_button(:subjective1, 2)
+    = f.label(:subjective1, "2: There are very few people I would recommend SCI&U to")
+    %br
+    = f.radio_button(:subjective1, 3)
+    = f.label(:subjective1, "3: Maybe, there are some people whom I would recommend it to")
+    %br
+    = f.radio_button(:subjective1, 4)
+    = f.label(:subjective1, "4: There are many people I would recommend SCI&U to")
+    %br
+    = f.radio_button(:subjective1, 5)     
+    = f.label(:subjective1, "Definitely, I would recommend SCI&U to everyone")
+.row.title  
+  .col-sm-12    
+    How many times do you think you would use SCI&U in the next 12 months, assuming it was relevant to your needs?
+.row
+  .col-sm-12   
+    = f.radio_button(:subjective2, 1)
+    = f.label(:subjective2, "1: None")
+    %br
+    = f.radio_button(:subjective2, 2)
+    = f.label(:subjective2, "2: 1-2 times")
+    %br
+    = f.radio_button(:subjective2, 3)
+    = f.label(:subjective2, "3: 3-10 times")
+    %br
+    = f.radio_button(:subjective2, 4)
+    = f.label(:subjective2, "4: 10-50 times")
+    %br
+    = f.radio_button(:subjective2, 5)     
+    = f.label(:subjective2, "5: More than 50 times")
+.row.title  
+  .col-sm-12     
+    Would you pay to use SCI&U?
+.row
+  .col-sm-12   
+    = f.radio_button(:subjective3, 1)
+    = f.label(:subjective3, "No")
+    %br
+    = f.radio_button(:subjective3, 2)
+    = f.label(:subjective3, "Maybe")
+    %br
+    = f.radio_button(:subjective3, 3)
+    = f.label(:subjective3, "Yes")
+.row.title  
+  .col-sm-12  
+    What is your overall star rating ofSCI&U?
+.row
+  .col-sm-12
+    = f.radio_button(:subjective4, 1)
+    = f.label(:subjective4, "1 star: One of the worst online resources I’ve used")
+    %br
+    = f.radio_button(:subjective4, 2)
+    = f.label(:subjective4, "2 stars: Below average")
+    %br
+    = f.radio_button(:subjective4, 3)
+    = f.label(:subjective4, "3 stars: Average")
+    %br
+    = f.radio_button(:subjective4, 4)
+    = f.label(:subjective4, "4 stars: Above average")
+    %br
+    = f.radio_button(:subjective4, 5)     
+    = f.label(:subjective4, "5 stars: One of the best online resources I’ve used")
+

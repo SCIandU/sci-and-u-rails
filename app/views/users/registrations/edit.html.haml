@@ -1,0 +1,57 @@
+.container
+  .row
+    .col-xs-12.col-sm-12.col-md-10.col-lg-10.col-xs-offset-0.col-sm-offset-0.col-md-offset-1.col-lg-offset-1.toppad
+      .panel.panel-info
+        .panel-heading
+          %h3.panel-title Edit Profile
+        .panel-body
+          .row
+            .col-md-4.col-lg-4{:align => "center"}
+              %img.img-circle.img-responsive{:alt => "User Pic", :src => "https://www.drupal.org/files/profile_default.jpg"}/
+            .col-md-8.col-lg-8
+              = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+                = devise_error_messages!
+                / Text input
+                .field
+                  = f.label :first_name, class: "col-sm-4 control-label"
+                  .col-sm-8
+                    = f.text_field :first_name, class: "form-control"
+                / Text input
+                .field
+                  = f.label :last_name, class: "col-sm-4 control-label"
+                  .col-sm-8
+                    = f.text_field :last_name, class: "form-control"
+                / Text input
+                .field
+                  = f.label :email, class: "col-sm-4 control-label"
+                  .col-sm-8
+                    = f.email_field :email, class: "form-control"
+                / Text input
+                .field
+                  = f.label :job_title, class: "col-sm-4 control-label"
+                  .col-sm-8
+                    = f.text_field :job_title, class: "form-control"
+                / Text input
+                .field
+                  = f.label :blurb, class: "col-sm-4 control-label"
+                  .col-sm-8
+                    = f.text_area :blurb, class: "form-control"
+                / Text input
+                .field
+                  = f.label :password, class: "col-sm-4 control-label"
+                  .col-sm-8
+                    = f.password_field :password, class: "form-control", autocomplete: "off"
+                / Text input
+                .field
+                  = f.label :password_confirmation, class: "col-sm-4 control-label"
+                  .col-sm-8
+                    = f.password_field :password_confirmation, class: "form-control", autocomplete: "off"
+                / Text input
+                .field
+                  = f.label :current_password, class: "col-sm-4 control-label"
+                  .col-sm-8
+                    = f.password_field :current_password, class: "form-control", autocomplete: "off"
+                .actions
+                  .col-sm-offset-2.col-sm-10
+                    .pull-right
+                      = f.submit "Update", class: "btn btn-primary"

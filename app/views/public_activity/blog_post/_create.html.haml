@@ -1,0 +1,21 @@
+-if activity.trackable.present?
+  .eventbox.blog
+    .container
+      -if activity.trackable.department
+        .title{:class=>"#{activity.trackable.department.name}"}
+          = link_to "New #{activity.trackable.department.name} Section Blog Post", "/departments/#{activity.trackable.department.id} "
+      .textarea
+        -if activity.trackable.attachment.thumb.url
+          =link_to image_tag(activity.trackable.attachment.thumb.url, :class=>"left"), blog_post_path(activity.trackable) 
+        -else
+          %img{:src => "http://styleguide.europeana.eu/images/fpo_square.png", :class=>"left"}    
+        .right
+          -if activity.trackable.title        
+            .content_name
+              = link_to activity.trackable.title, blog_post_path(activity.trackable)  
+          - if activity.owner
+            .author             
+              by 
+              =link_to "#{activity.owner.first_name} #{activity.owner.last_name}", "/users/#{activity.owner.id}"   
+          .details
+            = activity.trackable.content.truncate(300).html_safe

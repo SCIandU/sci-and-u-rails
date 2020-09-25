@@ -1,0 +1,36 @@
+.big-grey-row
+  %span.inline.big FEEDBACK
+
+%div{:class=> "Bladder"}
+
+  .row
+    .col-xs-12
+      We appreciate your feedback!  If you have ideas as to how we can improve the site, please let us know here.
+
+  .row.spacer
+  .row
+    .col-xs-12
+      = simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f|
+        .title
+          My Name:
+          = f.text_field :name, class: 'form-control', required: true, :value => "#{current_user.first_name} #{current_user.last_name}"
+
+        .title
+          My Email:
+          = f.text_field :email, class: 'form-control', required: true, :value => current_user.email
+
+        .title
+          Message:
+          = f.text_area :message, class: 'form-control', required: true
+
+          .div{:class=> "hidden"}
+            = f.input :form_type, :input_html => {:value => "Feedback"}
+            = f.input :nickname, :hint => 'Leave this field blank!'
+            = f.input :type, :input_html => {:value => "NA"} 
+            = f.input :time, :input_html => {:value => "NA"}    
+            = f.input :day, :input_html => {:value => "NA"} 
+          .div
+            %center
+              %p
+              %p
+              = f.button :submit, 'SUBMIT', :class=> "btn btn-primary"

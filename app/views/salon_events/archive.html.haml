@@ -1,0 +1,16 @@
+.container
+  - @salon_events.each do |salon_event|				
+    .post-wrap
+      %div{:class=> salon_event.department_id}
+        .post-outer
+          .post-content
+            %h4= link_to salon_event.title, salon_event_path(salon_event)
+            .author_name 
+              posted to <a href="/departments/#{salon_event.department_id}"><span class="">BLAH</span></a> 
+              %p
+              %p= salon_event.event_date
+              %p= truncate(salon_event.description, :length => 250).html_safe
+              %p= salon_event.url
+              .post-opaque
+                %p.view
+                %img{:src => salon_event.image}

@@ -1,0 +1,30 @@
+.coach-page.master
+	.container
+		.row
+			.col-xs-12.resource-add-row-grey
+				.title Our SCI & U Health Coaches
+
+		.row
+			.col-xs-12
+				- @users.each do |user|
+					.row.coach
+						.col-xs-12
+							.img_area
+								.container
+									- if user.profile_image.thumb.url
+										%img{:src => "#{user.profile_image.thumb.url}", :class=>"author grey"}
+									- else
+										%img{:src => "/img/user-image.png", :class=>"author grey"}							
+							.body_area
+								.author= link_to full_name_helper(user), user
+								%p
+							.main= truncate(user.blurb, :length => 140)  
+							%p			
+							.button_area
+								My Affiliations			
+							.affiliations
+								.container
+									- user.sponsors.each do |sponsor| 
+										%img{:src => "#{sponsor.logo}", :width => 250}							
+							.button_area
+								= link_to "View My Coaching Profile", user 

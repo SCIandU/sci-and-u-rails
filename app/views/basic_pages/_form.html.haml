@@ -1,0 +1,27 @@
+= form_for @basic_page do |f|
+  = hidden_field_tag :department_id, @department.id
+  - if @basic_page.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@basic_page.errors.count, "error")} prohibited this basic_page from being saved:"
+      %ul
+        - @basic_page.errors.full_messages.each do |msg|
+          %li= msg
+  .panel-body
+    .row
+      .col-md-8.col-lg-8
+        = form_for(@basic_page) do |f|
+          = f.hidden_field :user_id, value: current_user.id
+          / Text input
+          .field
+            = f.label :title, class: "col-sm-4 control-label"
+            .col-sm-8
+              = f.text_field :title, class: "form-control"
+          / Text input
+          .field
+            = f.label :body, class: "col-sm-4 control-label"
+            .col-sm-8
+              = f.text_area :body, rows: 10, class: "form-control"
+          .actions
+            .col-sm-offset-2.col-sm-10
+              .pull-right
+                = f.submit "Save", class: "btn btn-primary"

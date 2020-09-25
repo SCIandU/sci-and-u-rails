@@ -1,0 +1,51 @@
+%div{:id => "Top"}	
+.big-grey-row
+	%span.inline.big SCI & U BLOG
+.stories-nav
+	.container
+		.button.Bladder
+			= link_to "Bladder", "/blog_posts?department_id=4&page=1"  
+		.button.Bowel
+			= link_to "Bowel", "/blog_posts?department_id=1&page=1"
+		.button.Exercise
+			= link_to "Exercise", "/blog_posts?department_id=3&page=1" 
+		.button.Skin
+			= link_to "Skin", "/blog_posts?department_id=2&page=1" 
+		.button.Sexuality
+			= link_to "Sex", "/blog_posts?department_id=7&page=1"  
+		.button.Pain
+			= link_to "Pain", "/blog_posts?department_id=10&page=1" 
+		.button.Diet
+			= link_to "Diet", "/blog_posts?department_id=9&page=1"  
+		.button.Family
+			= link_to "Caring", "/blog_posts?department_id=8&page=1"
+		.button.Health
+			= link_to "Basics", "/blog_posts?department_id=6&page=1" 
+
+-if @blog_posts.count == 0
+	.row  
+		.col-sm-12.center
+			%center
+				%h4 
+					There are no blog posts in this section.  Please check back later!  
+
+- @blog_posts.each do |blog_post|
+	.eventbox.blog
+		.container
+			.title{:class=>"#{blog_post.department.name}"}
+				= link_to "#{blog_post.department.name} Section Blog Post", "/departments/#{blog_post.department.id} "
+			.textarea
+				-if blog_post.attachment.thumb.url
+					=link_to image_tag(blog_post.attachment.thumb.url, :class=>"left"), blog_post_path(blog_post) 
+				-else
+					%img{:src => "http://styleguide.europeana.eu/images/fpo_square.png", :class=>"left"}    
+				.right
+					.content_name
+						= link_to blog_post.title, blog_post_path(blog_post)  
+					.author             
+						by 
+						=link_to "#{blog_post.user.first_name} #{blog_post.user.last_name}", "/users/#{blog_post.user.id}"   
+					.details				
+						= blog_post.content.truncate(300).html_safe
+														
+=will_paginate @blog_posts

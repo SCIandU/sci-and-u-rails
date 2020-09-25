@@ -1,0 +1,35 @@
+.big-grey-row
+  %span.inline.big= @sponsor.name 
+      
+.row.question-panel.white
+  .col-xs-12  
+    %img{:src => "#{@sponsor.logo}", :width => 250}  
+
+- if @health_resources.length > 0 || @blog_posts.length > 0 || @coaches.length > 0 || @salon_events.length > 0
+  .row.question-panel.red
+    .col-xs-12  
+      Our Recent SCI & U Contributions
+
+  .row.bio
+    .col-xs-12     
+      - @health_resources.each do |health_resource| 
+        .news-item.blog-shout{class: health_resource.department.name}
+          %p 
+          %i We posted a resource to the #{health_resource.department.name} Department:
+          %p= link_to health_resource.title, health_resource_path(health_resource)        
+      - @blog_posts.each do |blog_post| 
+        .news-item.blog-shout{class: blog_post.department.name}
+          %p 
+          %i We blogged in the #{blog_post.department.name} Department:
+          %p= link_to blog_post.title, blog_post_path(blog_post)            
+      - @coaches.each do |coach| 
+        .news-item.blog-shout
+          %p       
+          %i= "#{coach.first_name} {coach.first_name}"                  
+      - @salon_events.each do |salon_event| 
+        .news-item.blog-shout{:class=>"#{Department.find(salon_event.department_id).name}"}
+          %p   
+          %i We sponsored an event in the #{Department.find(salon_event.department_id).name} Department:    
+          %p= link_to "#{salon_event.title}" , salon_event_path(salon_event)    
+
+

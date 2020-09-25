@@ -1,0 +1,112 @@
+#top
+
+.col-md-12.intro-page
+  / Main container
+  #header.bloc.sectiona
+    .row
+      .col-sm-12.intro
+        %h2.text-center WELCOME TO SCI & U! 
+        %h3.text-center 
+          -if request.original_url.downcase.include?('.com')
+            %i Online health coaching for Americans with Spinal Cord Injuries 
+            %p
+            %p
+            %br SCI &amp; U is a one-on-one coaching program to help Americans with SCI lead healthy lives. You don’t need to leave home to participate and you don’t need to pay. It’s a research-based program and thanks to funding from the Craig Neilsen Foundation, it’s free for participants.    
+            %br   
+          -else
+            %i Online health coaching for Canadians with Spinal Cord Injuries          
+            %p
+            %p
+            %br SCI &amp; U is a one-on-one coaching program to help Canadians with SCI lead healthy lives. You don’t need to leave home to participate and you don’t need to pay. It’s a research-based program and thanks to our funders, it’s free for participants. 
+            %br     
+        %p.text-center Everyone can sign up to access the information portal for the program, which is this website. But as an SCI &amp; U participant, you additionally have access to:  
+        %p.text-center 
+          %i 1. Regular videoconferences with a trained peer coach to talk about health and behavior-change topics 
+        %p.text-center 
+          %i 2. The SCI &amp; U coaching portal, where you can record and follow your health goals and action plans. 
+        %p.text-center
+          %a.btn{:href => "#basics"} LEARN MORE
+          %a.btn{:href => "/users/sign_up"} REGISTER FOR INFO PORTAL
+          %a.btn{:href => "/contacts/coachform"} INQUIRE ABOUT COACHING
+
+  #partners.bloc.sectione
+    .row
+      .col-sm-12
+        %h2.text-center Partners
+    .row        
+      .col-sm-4.text-center
+        %img{:alt => "RICK HANSEN INSTITUTE LOGO", :src => "https://www.msfhr.org/sites/default/files/pictures/RHI_logo.jpg", :width => "200"}/      
+      .col-sm-4.text-center
+        %img{:alt => "SCI ONTARIO LOGO", :src => "/img/sciologo.png", :width => "200"}/
+      .col-sm-4.text-center
+        %img{:alt => "SCI ACTION CANADA LOGO", :src => "http://image.slidesharecdn.com/sciactioncanada-vancouverpresentation-130206115115-phpapp02/95/sci-action-canada-1-638.jpg?cb=1360151544", :width => "200"}/              
+    .row
+      .col-sm-4.text-center
+        %img{:alt => "TRI LOGO", :src => "http://www.myndtec.com/userImages/TRI-1.jpg", :width => "200"}/
+      .col-sm-4.text-center
+        %img{:alt => "LAWSON HEALTH RESEARCH LOGO", :src => "https://www.lawsonresearch.ca/sites/public/themes/de_theme/logo.png", :width => "200"}/
+      .col-sm-4.text-center
+        %img{:alt => "SCI BC LOGO", :src => "http://icord.org/wp-content/uploads/2013/05/SCI-BC-logo.jpg", :width => "200"}/
+    .row
+      .col-sm-4.text-center
+        %img{:alt => "CIHR LOGO", :src => "http://www.cihr-irsc.gc.ca/images/leaf-cihr-colour-en.jpg", :width => "200"}/      
+      .col-sm-4.text-center
+        %img{:alt => "ONF LOGO", :src => "https://ontarioathletictherapists.wildapricot.org/resources/Pictures/logo-e81ac07fb8c47d7fd209eb7c840b34a2.png", :width => "200"}/
+      .col-sm-4.text-center
+        %img{:alt => "U Toronto LOGO", :src => "https://museummastersreview.files.wordpress.com/2016/10/uoft_logo-svg.png?w=1200", :width => "200"}/            
+    %p.text-center
+      %a.btn{:href => "#top"} BACK TO TOP
+
+  #coaching.bloc.sectionb
+    .row
+      .col-sm-12
+        %h2.text-center.mg-md
+          Peer Coaching
+        %p.text-center.sub-heading All our health coaches are Canadians who are themselves people with SCI. As peers, they know first-hand the experience of the condition. They are selected for their positive communication skills and nonjudgmental, open-minded attitude. Each coach is trained in active listening, action planning, and mental health.
+        %p 
+
+    .row
+      .col-sm-3.col-md-3
+        %a{"data-caption" => "Access to personal self-management stories", "data-lightbox" => "/home-page/Coach.png", :href => "#"}
+          %img.img-responsive.animDelay04.animated.zoomIn{:alt => "portfolio", :src => "/home-page/Coach.png"}/
+      .col-sm-3.col-md-3
+        %a{"data-caption" => "Optimized for Tablet and Smartphone", "data-lightbox" => "/home-page/ipad-iphone.png", :href => "#"}
+          %img.img-responsive.animated.zoomIn{:alt => "portfolio", :src => "/home-page/ipad-iphone.png"}/
+      .col-sm-3.col-md-3
+        %a{"data-caption" => "Desktop Accessible Management Information", "data-lightbox" => "/home-page/productshot.png", :href => "#"}
+          %img.img-responsive.animated.zoomIn{:alt => "portfolio", :src => "/home-page/productshot.png"}/
+      .col-sm-3.col-md-3
+        %a{"data-caption" => "Access to Online Peer Health Coaches", "data-lightbox" => "/home-page/food-widget.png", :href => "#"}
+          %img.img-responsive.animated.zoomIn.animDelay04{:alt => "portfolio", :src => "/home-page/work-11.png"}/
+
+  #basics.bloc.sectionc
+    .row
+      .col-sm-12     
+        %h2.text-center.mg-md
+          Program Basics
+        %p.text-center.sub-heading The SCI &amp; U Program covers health topics like medical issues, stress management, diet, and exercise; and behavior-change topics like problem solving and goal setting.  
+        %p.text-center.sub-heading Most important, no one program looks alike. That’s because each program is designed around you — your health priorities and your health goals. 
+        %p.text-center.sub-heading By the way, we’re a diverse team of specialists, several of us with SCI, who are researchers, clinicians, sports psychologists, designers, health promoters and more. The SCI & U Program is now in its final phase of a multi-year Canadian research project. 
+    .row
+      .col-sm-12
+        %p.text-center.sub-heading 
+          %i Interested in making a change? So are we.  
+
+        %p.text-center.sub-heading 
+          %b Stay Tuned: We’re enrolling Canadians with SCI starting in the Fall 2019! 
+
+        %p.text-center
+          %a.btn{:href => "#top"} BACK TO TOP
+
+  #research.bloc.sectione
+    .row
+      .col-sm-12
+        %h2.text-center
+          More about our Research 
+        %p.text-center The SCI & U Program was pilot tested between 2017 and 2018. We are now in the final phase of this multi-year project. A Canadian randomized control trial will begin in Fall 2019 and continue into 2020. 
+        %p.text-center Pilot testing for American participants will begin in 2020.  
+        %p.text-center You can find a published peer-reviewed research article with our story 
+        .text-center 
+          %a{:href => "https://rehab.jmir.org/2018/1/e6/", :target => "new" } HERE. 
+        %p.text-center 
+          %a.btn{:href => "#top"} BACK TO TOP

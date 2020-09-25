@@ -1,0 +1,51 @@
+.big-grey-row
+  %span.inline.big Share Your Management Story With Us!
+
+.row.question-panel.white
+  We're interested in hearing about your health strategies and routines, and the health problems you have both faced and overcome.  Your stories can help others build the tools and techniques that are required to succeed.
+  %p
+  If you have a story to share, please fill out the contact form below.  One of the SCI & U administrators will be in touch!
+
+.row
+  .col-xs-12
+    = simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f|
+      %p.title
+        Name
+        -if current_user
+          = f.text_field :name, class: 'form-control', required: true, :value => "#{current_user.first_name} #{current_user.last_name}"
+        -else 
+          = f.text_field :name, class: 'form-control', required: true, :value => ""        
+      %p.title
+        Email:
+        -if current_user        
+          = f.text_field :email, class: 'form-control', required: true, :value => current_user.email
+        -else 
+          = f.text_field :email, class: 'form-control', required: true, :value => ""        
+      %p.title
+        My Management Story Relates to:
+        = f.select(:department, options_for_select(Department::DEPARTMENT), {}, class: "form-control")
+      %p
+      If possible, please provide a few details about your story.
+      = f.input :message, :as => :text
+      %p
+      My preference is to be contacted by:
+      = f.select(:type) do
+        = options_for_select([["Email", "Email"], ["Phone", "Phone"]])
+      %p
+      If by phone, the best number to reach me at is
+      = f.text_field :phone, class: 'form-control'
+      %p
+      The best time of day to reach me is the
+      = f.select(:time) do
+        = options_for_select([["AM", "AM"], ["PM", "PM"]])
+      %p
+      I prefer to be contacted on a
+      = f.select(:day) do
+        = options_for_select([["Weekend", "Weekend"], ["Weekday", "Weekday"]])
+
+      .div{:class=> "hidden"}
+        = f.input :form_type, :input_html => {:value => "ManagementStory"}
+        = f.input :nickname, :hint => 'Leave this field blank!'
+      .div
+        %br
+        = f.button :submit, 'Contact Me!', :class=> "btn btn-primary"

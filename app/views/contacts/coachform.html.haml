@@ -1,0 +1,76 @@
+.big-grey-row
+  %span.inline.big INTERESTED IN THE SCI & U COACHING SERVICE?
+
+%div{:class=> "Bladder"}
+  .row
+    .col-xs-4     
+      %p
+      %p
+      %img{:src=>"http://sci-and-u.ca/images/videocall.png"}   
+    .col-xs-8
+      %p
+      %p
+      %p
+      In the Winter of 2019, SCI & U will offer a second round of its online health coaching service.  This will partner Canadian users with trained peers (who are other Canadians with SCI) for 1-on-1 health management counselling and support. 
+      %p
+      If you're interested in being coached, we want to hear from you. Complete the form at the bottom of this page, and we'll reach out. 
+    
+  //.row
+  //  .col-xs-12
+  //    %center
+  //      %img{:src=>"http://sci-and-u.ca/images/videocall.png", :width=>"342", :height=>"213"}      
+  .row.spacer
+  .row
+    .col-xs-12
+      = simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f|
+        .title
+          My Name:
+          -if current_user 
+            = f.text_field :name, class: 'form-control', required: true, :value => "#{current_user.first_name} #{current_user.last_name}"
+          -else 
+            = f.text_field :name, class: 'form-control', required: true, :value => ""
+        .title
+          My Email:
+          -if current_user 
+            = f.text_field :email, class: 'form-control', required: true, :value => current_user.email
+          -else 
+            = f.text_field :email, class: 'form-control', required: true, :value => ""
+          %p
+          My Province:
+          -if current_user 
+            = f.select(:province, options_for_select(User::PROVINCE, current_user.location), {}, class: "form-control" ) 
+          -else 
+            = f.select(:province, options_for_select(User::PROVINCE), {}, class: "form-control" ) 
+          %p
+          How did you hear about us?
+          = f.text_field :message, class: 'form-control'
+          //%p
+          //I am interested in health coaching as it relates to:
+          //= f.select(:department, options_for_select(Department::DEPARTMENT), {}, class: "form-control")
+          //%p
+          //My preference is to be contacted by:
+          //= f.select(:type) do
+          //  = options_for_select([["Email", "Email"], ["Phone", "Phone"]])
+          //%p
+          //If by phone, the best number to reach me at is
+          //= f.text_field :phone, class: 'form-control'
+          //%p
+          //The best time of day to reach me is the
+          //= f.select(:time) do
+          //  = options_for_select([["AM", "AM"], ["PM", "PM"]])
+          //%p
+          //I prefer to be contacted on a
+          //= f.select(:day) do
+          //  = options_for_select([["Weekend", "Weekend"], ["Weekday", "Weekday"]])
+
+          .div{:class=> "hidden"}
+            = f.input :form_type, :input_html => {:value => "CoachForm"}
+            = f.input :type, :input_html => {:value => "NA"} 
+            = f.input :time, :input_html => {:value => "NA"}    
+            = f.input :day, :input_html => {:value => "NA"}           
+            = f.input :nickname, :hint => 'Leave this field blank!'
+          .div
+            %center
+              %p
+              %p
+              = f.button :submit, 'I am Interested', :class=> "btn btn-primary"

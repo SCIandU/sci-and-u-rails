@@ -1,0 +1,51 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//user profile pages
+.container.user { width: 100%; }
+
+img { max-width: 100%; }
+
+.user p{
+    font-family: 'delicious-roman';
+    font-size: 100%;
+}
+
+.user a {
+    color: #fff;
+}
+
+.user .user-info {
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+}
+
+.user img {
+    padding: 0px;
+    border-radius: 50%;
+    border: 15px solid #669966;
+    margin-bottom: 20px;
+}
+
+.portal-icon.user img { margin-bottom: 0px;}
+
+.user .bio{ padding: 30px; }
+
+form #user_profile_image {display: none;}
+
+//expert and coach page
+#Admins, #CAG, #Experts {
+    position: relative;
+    top: -75px;
+}
+
+@media (max-width:768px) {
+    .user .sponsors img { width: 100%; }
+}
+
+.experts .row.question-panel.white .main {text-align: left;}
+
+.experts .row.question-panel.white .main a { color: #c00; }
+

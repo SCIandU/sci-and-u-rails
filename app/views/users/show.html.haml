@@ -1,0 +1,122 @@
+.big-grey-row
+  %span.inline.big= full_name_helper
+      
+.row.question-panel.white.user
+  .col-xs-12       
+    - if @user.profile_image_url
+      = image_tag @user.profile_image_url(:thumb)    
+    - else
+      = image_tag "/img/user-image.png", :height => 250, :width => 250
+    - if @user.age 
+      %p #{@user.age} Years Old
+    - if @user.location
+      %p #{@user.location}                     
+    - if @user.injury_level != "None" and @user.injury_level           
+      %p Injury Level: #{@user.injury_level}            
+
+    - if @user.role == "registered"
+      %p Registered User
+    - elsif @user.role == "coach"
+      %p SCI & U Health Coach  
+    - elsif @user.role == "admin"
+      %p SCI & U Website Administrator  
+    - elsif @user.role == "expert"
+      %p SCI & U Resident Expert  
+    - elsif @user.role == "cagmember"
+      %p SCI & U Advisory Board Member  
+    - else
+      %p= @user.role  
+
+    - if @user.id == current_user.id 
+      %a.btn{:href => "/users/#{@user.id}/edit"} Edit My Profile 
+
+.row.question-panel.red
+  .col-xs-12             
+    - if @user.role == "expert" 
+      Resident Clinical/Research Expert   
+    - elsif @user.role ==  "cagmember"
+      SCI & U Advisor        
+    - elsif @user.role == "coach"  
+      SCI & U Coach   
+    - else 
+      = link_to "Contact Me", "mailto:#{@user.email}"                
+/    - elseif @user.role == "coach"   
+/      = form_for(current_user) do |f|
+/        = hidden_field_tag :id, current_user.id
+/        = hidden_field_tag :coach_id, @user.id
+/        = hidden_field_tag :coach_status, "Pending Approval"
+/        = f.submit "Contact Me About SCI & U Health Coaching", class: "btn btn-primary"     
+- if @user.blurb
+  - if @user.blurb.length > 10    
+    .row.question-panel.whilte  
+      .col-xs-12       
+        User Bio
+        %p= @user.blurb.html_safe
+
+- if @user.sponsors.count > 0
+  - if @user.role == "coach" || @user.role == "expert" || @user.role == "admin"    
+    .row.question-panel.white  
+      .col-xs-12   
+        My Affiliations
+        %p
+        - @sponsors.each do |sponsor| 
+          %img{:src => "#{sponsor.logo}", :width => 250}
+
+- if @user.badges.count > 0
+  .row.question-panel.whilte  
+    .col-xs-12   
+      My SCI & U Badges
+      %p
+      - @user.badges.each_with_index do |badge, index| 
+        - if index % 3 == 2
+          .row 
+            .col-xs-4
+              = image_tag "#{badge.custom_fields[:image]}", :height => 50, :width => 50
+              %p 
+              #{badge.name}
+        - else
+          .col-xs-4
+            = image_tag "#{badge.custom_fields[:image]}", :height => 50, :width => 50
+            %p 
+            #{badge.name}  
+
+- if @favorites.count > 0   
+  .row.question-panel.whilte  
+    .col-xs-12   
+      My Favorite SCI & U Resources
+      %p
+      - @favorites.each do |favorite| 
+        .news-item.blog-shout{class: HealthResource.find(favorite.health_resource_id).department.name}
+          %p 
+            %i= link_to HealthResource.find(favorite.health_resource_id).title, health_resource_path(HealthResource.find(favorite.health_resource_id)) 
+
+- if @health_resources.count > 0 or @blog_posts.count > 0 or @blog_comments.count > 0 or @reviews.count > 0 
+  .row.question-panel.whilte  
+    .col-xs-12   
+      My Recent SCI & U Activity
+      %p
+      - @health_resources.each do |health_resource| 
+        .news-item.blog-shout{class: health_resource.department.name}
+          %p 
+            %i I posted a resource to the #{health_resource.department.name} Department:
+          %p= link_to health_resource.title, health_resource_path(health_resource)        
+      - @blog_posts.each do |blog_post| 
+        .news-item.blog-shout{class: blog_post.department.name}
+          %p 
+            %i I blogged in the #{blog_post.department.name} Department:
+          %p= link_to blog_post.title, blog_post_path(blog_post)
+      - @blog_comments.each do |blog_comment| 
+        .news-item.blog-shout{class: blog_comment.blog_post.department.name}
+          %p 
+            %i I commented in the #{blog_comment.blog_post.department.name} Department:
+          %p= link_to blog_comment.blog_post.title, blog_post_path(blog_comment.blog_post)
+          %p
+            %i= blog_comment.comment              
+      - @reviews.each do |review| 
+        .news-item.blog-shout{class: review.health_resource.department.name}
+          %p 
+            %i I reviewed a resource in the #{review.health_resource.department.name} Department:
+          %p= link_to review.health_resource.title, health_resource_path(review.health_resource)
+          %p
+            %i= review.comment                
+      

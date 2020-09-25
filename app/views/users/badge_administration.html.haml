@@ -1,0 +1,60 @@
+.experts
+
+	%div{:id => "Top"}	
+
+	.big-grey-row
+		%span.inline.big Badge Administration
+
+	.row.spacer
+	.row.jump-nav.top
+		.container
+			.col-xs-6
+				= link_to "Clients", "#Coachees"   
+			.col-xs-6
+				= link_to "Coaches", "#Coaches"     				
+
+	.row.spacer
+	%div{:id => "Coachees"}	
+
+	%div{:class=> "Bladder"}
+		.big-grey-row
+			%span.inline.big Coaching Clients
+
+		.row.question-panel.white
+			.col-xs-2.main  Client 
+			.col-xs-2.main  Coach 
+			- @badges.each do |badge|
+				.col-xs-2.main #{badge.name}
+
+
+		= form_for current_user, url: {action: "add_badges"}, method: :POST, remote: true do |f| 
+			- @coachees.each do |user|
+				.row.question-panel.white
+					.col-xs-2.main              
+						= link_to user.first_name, user
+					.col-xs-2.main               
+						= link_to User.find(user.coach_id).first_name, User.find(user.coach_id) 
+					- @badges.each do |badge|
+						.col-xs-2.main 
+							= hidden_field "hidden-#{user.id}_#{badge.id}", "false"
+							-if user.badges.include? badge
+								= check_box_tag "badge-#{user.id}_#{badge.id}", "true", {:checked => "checked"} 
+							-else
+								= check_box_tag "badge-#{user.id}_#{badge.id}", "false" 							
+			.row
+				.col-sm-12
+					= f.submit "Submit", class: "btn btn-primary"   
+
+	.row.spacer
+	%div{:id => "Coaches"}	
+
+	%div{:class=> "Bowel"}
+		.big-grey-row
+			%span.inline.big Coaches
+
+		- @coaches.each do |user|
+			.row.question-panel.white
+				.col-xs-12                
+					.body_area
+						.main 
+							= link_to full_name_helper(user), user

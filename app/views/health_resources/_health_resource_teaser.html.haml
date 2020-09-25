@@ -1,0 +1,23 @@
+.eventbox
+  .container
+    .title{:class=>"#{resource.department.name}"}      
+    .textarea
+      -if resource.attachment.thumb.url
+        =link_to image_tag(resource.attachment.thumb.url, :class=>"left"), health_resource_path(resource) 
+      -else
+        %img{:src => "http://styleguide.europeana.eu/images/fpo_square.png", :class=>"left"}    
+      .right
+        .content_name
+          = link_to resource.title, health_resource_path(resource)  
+        .stars
+          -if resource.reviews.average(:rating)
+            .review-rating{"data-score" => resource.reviews.count == 0 ? 0 : resource.reviews.average(:rating).round(2)}
+          -else 
+            .review-rating{"data-score" => 0}   
+        .details
+          = truncate(resource.description.html_safe, :length => 300)  
+        BROUGHT TO YOU BY &nbsp;
+        - if resource.sponsor 
+          =link_to image_tag("#{resource.sponsor.logo}", :class => "small"), "/sponsors/#{resource.sponsor.id}"  
+        - else
+          %img{:src => "/logo-dark.png", :class => "small"}     

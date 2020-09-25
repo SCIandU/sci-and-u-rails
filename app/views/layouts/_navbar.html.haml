@@ -1,0 +1,223 @@
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  .container-fluid
+    %ul.nav.navbar-nav.hidden-xs.hidden-sm
+      %li.logo
+        = link_to image_tag( '/images/icons/navbar/small/MainLogoSmall.png', size: "120x40"), "/" 
+    -if user_signed_in?
+      %ul.nav.navbar-nav.hidden-md.hidden-lg.hidden-xl
+        %li.burger-container.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %div.hamburger      
+              %div.stripe
+              %div.stripe
+              %div.stripe              
+          %ul.dropdown-menu.multi-level
+            %li.dropdown-submenu.white
+              %a{:tabindex => 0, :href => "#"}
+                Departments
+              %ul.dropdown-menu
+                %li.Bowel
+                  =link_to "Bowel", "/departments/1"
+                %li.Bladder
+                  =link_to "Bladder", "/departments/4"
+                %li.Skin
+                  =link_to "Skin", "/departments/2"
+                %li.Exercise
+                  =link_to "Exercise", "/departments/3"
+                %li.Sexuality
+                  =link_to "Sex", "/departments/7"
+                %li.Pain
+                  =link_to "Pain", "/departments/10"
+                %li.Diet
+                  =link_to "Diet", "/departments/9"
+                %li.Family
+                  =link_to "Family", "/departments/8"
+                %li.Health
+                  =link_to "Basics", "/departments/6"        
+            %li.dropdown-submenu.white
+              %a{:tabindex => 0, :href => "#"}
+                Features
+              %ul.dropdown-menu
+                %li.Health
+                  =link_to "Stories", "/stories/"
+                %li.Health
+                  =link_to "Events", "/salon_events/"
+                %li.Health
+                  =link_to "Blog", "/blog_posts/"
+                %li.Health
+                  =link_to "Coaching", "/contacts/coachform"
+            %li.Health 
+              = link_to "Give Us Feedback", "/contacts/feedback" 
+            %li.dropdown-submenu.white
+              %a.white{:tabindex => 0, :href => "#"}
+                Your Profile 
+              %ul.dropdown-menu
+                %li.Health
+                  %a{:href => "/users/#{current_user.id}"} View Profile 
+                %li.Health
+                  %a{:href => "/users/#{current_user.id}/edit"} Edit Profile        
+            %li.white
+              %a.btn.btn-danger.btn-block{:href => destroy_user_session_path} Logout   
+    -else
+      %ul.nav.navbar-nav.hidden-md.hidden-lg.hidden-xl
+        %li.burger-container.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %div.hamburger      
+              %div.stripe
+              %div.stripe
+              %div.stripe              
+          %ul.dropdown-menu
+            %li.Health
+              =link_to "The SCI&U Service", "/users/sign_in#service"
+            %li.Health
+              =link_to "Partners", "/users/sign_in#partners"
+            %li.Health
+              =link_to "Coaching", "/users/sign_in#coaching"
+            %li.Health
+              =link_to "Basics", "/users/sign_in#basics"
+            %li.Health
+              =link_to "SAAGE", "/users/sign_in#research"              
+            %li.Health
+              =link_to "Sign Up", "/users/sign_up"
+            %li.Health
+              %a{:class=>"btn login", "data-toggle"=>"modal", "data-target"=>"#LoginModal"}Log In
+    -if user_signed_in?
+      .collapse.navbar-collapse{:id => "navbar"}
+        .btn-group.hidden-xs.hidden-sm
+          %button{:class=>"btn btn-default dropdown-toggle", :type=>"button", "data-toggle"=>"dropdown"}Departments
+          %ul{:class => "dropdown-menu"}
+            %li.Bowel
+              =link_to "Bowel", "/departments/1"
+            %li.Bladder
+              =link_to "Bladder", "/departments/4"
+            %li.Skin
+              =link_to "Skin", "/departments/2"
+            %li.Exercise
+              =link_to "Exercise", "/departments/3"
+            %li.Sexuality
+              =link_to "Sex", "/departments/7"
+            %li.Pain
+              =link_to "Pain", "/departments/10"
+            %li.Diet
+              =link_to "Diet", "/departments/9"
+            %li.Family
+              =link_to "Family", "/departments/8"
+            %li.Health
+              =link_to "Basics", "/departments/6"     
+        .btn-group.hidden-xs.hidden-sm              
+          %button{:class=>"btn btn-default dropdown-toggle", :type=>"button", "data-toggle"=>"dropdown"}Features
+          %ul{:class => "dropdown-menu"}
+            %li.Health
+              =link_to "Stories", "/stories/"
+            %li.Health
+              =link_to "Events", "/salon_events/"
+            %li.Health
+              =link_to "Blog", "/blog_posts/"
+            %li.Health
+              =link_to "Coaching", "/contacts/coachform"
+        .btn-group.hidden-xs.hidden-sm              
+          %button{:class=>"btn btn-default dropdown-toggle", :type=>"button", "data-toggle"=>"dropdown"}About
+          %ul{:class => "dropdown-menu"}
+            %li.Health
+              =link_to "Team", "/users/experts"
+            %li.Health
+              =link_to "Partners", "/sponsors/"
+
+    %ul.nav.navbar-nav.navbar-right.hidden-md.hidden-lg.hidden-xl
+      %li.logo
+        = link_to image_tag( '/images/icons/navbar/small/MainLogoSmall.png', size: "120x40"), "/"  
+
+    -if user_signed_in?
+      %ul.nav.navbar-nav.navbar-right.hidden-xs.hidden-sm
+        %li.search
+          //= form_tag "/home/search", :class => "navbar-search", :method => :get do
+          //  = text_field_tag :q, nil, :class => "search-query", :placeholder => "Search"
+        %li
+          %a{:href => "/"}
+            %i.fa.fa-home.fa-2x.fa-inverse{"aria-hidden" => "true"}
+            %p
+              %b HOME
+        %li
+          %a{:href => "/contacts/feedback"}
+            %i.fa.fa-bullhorn.fa-2x.fa-inverse{"aria-hidden" => "true"}
+            %p
+              %b FEEDBACK
+        %li              
+          %button.navbar-top-button{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
+            %i.fa.fa-question.fa-2x.fa-inverse{"aria-hidden" => "true"}
+            %p
+              %b HELP
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %i.fa.fa-user.fa-2x.fa-inverse{"aria-hidden" => "true"}
+            %span.glyphicon.glyphicon-chevron-down
+            %p
+              %b PROFILE
+          %ul.dropdown-menu
+            %li
+              .navbar-login
+                .row
+                  .col-lg-4
+                    - if current_user.profile_image.thumb.url
+                      =image_tag current_user.profile_image.thumb.url
+                    - else
+                      = image_tag "/img/user-image.png", :height => 50, :width => 50
+                  .col-lg-8
+                    %p.text-left
+                      - if current_user.first_name
+                        %strong Hello #{current_user.first_name}
+                    %p.text-left
+                      %a.btn.btn-primary.btn-block.btn-sm{:href => "/users/#{current_user.id}"} View Profile                        
+                    %p.text-left
+                      %a.btn.btn-primary.btn-block.btn-sm{:href => "/users/#{current_user.id}/edit"} Edit Profile
+            %li.divider.navbar-login-session-bg
+            %li.navbar-login-session-bg
+              .navbar-login.navbar-login-session
+                .row
+                  .col-lg-12
+                    %p
+                      %a.btn.btn-danger.btn-block{:href => destroy_user_session_path} Logout 
+
+    - elsif !@portalflag && !@forgot_password_flag
+      .center-container-big.hidden-xs.hidden-sm
+        %a.btn.big{:href => "/users/sign_in#service"} The SCI &amp; U Service
+        %a.btn.big{:href => "/users/sign_in#partners"} Partners
+        %a.btn.big{:href => "/users/sign_in#coaching"} Coaching
+        %a.btn.big{:href => "/users/sign_in#basics"} Basics
+        %a.btn.big{:href => "/users/sign_in#research"} Research         
+        %a.btn{:href => "/users/sign_up"} Sign Me Up
+        %button{:type=>"button", :class=>"btn login", "data-toggle"=>"modal", "data-target"=>"#LoginModal"}Log In
+
+-if !user_signed_in? && (@portalflag == false or !@portalflag) && !@forgot_password_flag
+  %div{:id => "LoginModal", :class=>"modal fade", :tabindex=>"-1", :role=>"dialog"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}x
+          %h4 Log into SCI & U
+        .modal-body
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            %fieldset
+              .form-group
+                = f.text_field :email, class: "form-control", placeholder: "E-mail (or Username)", autofocus: true
+              .form-group
+                = f.password_field :password, class: "form-control", placeholder: "Password", value: "", autocomplete: "off"
+              - if devise_mapping.rememberable?
+                .form-group
+                  = f.check_box :remember_me
+                  = f.label :remember_me
+              .actions
+                = f.submit "Log in", class: "btn btn-sm btn-success"
+                = render "devise/shared/links"
+            = link_to "I forgot my password", home_forgot_password_path
+
+-if user_signed_in? && !@portalflag
+  #Feedback{:class=>"modal fade", :tabindex=>"-1", :role=>"dialog"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}x
+          %h4 Tell Us What You Think!
+        .modal-body
+          = link_to 'Feedback Form', contacts_feedback_path
+

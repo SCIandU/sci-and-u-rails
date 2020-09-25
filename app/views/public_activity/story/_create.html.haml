@@ -1,0 +1,30 @@
+-if activity.trackable.present?
+  .eventbox.story
+    .container
+      .title{:class=>"#{activity.trackable.department.name}"}
+        =link_to "New Story in the #{activity.trackable.department.name} Section", "/departments/#{activity.trackable.department.id} "
+      .textarea
+        .container
+          -if activity.trackable.attachment.thumb.url
+            %input{:type => "image", :src => "#{activity.trackable.attachment.thumb.url}", "data-toggle"=>"modal", "data-target"=>"#Box#{activity.id}", "aria-label"=>"New Story on SCI and U."}
+          -else
+            %input{:type => "image", :src => "/images/fpo_square.png", "data-toggle"=>"modal", "data-target"=>"#Box#{activity.id}", "aria-label"=>"New Story on SCI and U."}    
+          .right          
+            %button{:type=>"button", :class=>"btn btn-info btn-lg", "data-toggle"=>"modal", "data-target"=>"#Box#{activity.trackable.id}"}#{activity.trackable.title} 
+            %p
+            BROUGHT TO YOU BY &nbsp;
+            %img{:src => "/logo-dark.png", :class => "small"}  
+      .footer
+        =link_to "See More Community Stories >", "/stories"
+   
+  %div{:id => "Box#{activity.id}", :class=>"modal fade", :tabindex=>"-1", :role=>"dialog"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}x
+          .title= "#{activity.trackable.title}" 
+        .modal-body
+          .embed-responsive.embed-responsive-16by9          
+            %iframe.embed-responsive-item.async-iframe{:allowfullscreen => "", :frameborder => "0", :src => "#{activity.trackable.youtube_link.gsub(/watch\?v=/, "embed/")}?autoplay=0"}
+        .modal-footer
+          %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}Close 

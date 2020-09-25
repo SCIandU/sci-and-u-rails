@@ -1,0 +1,92 @@
+%div.container.salon-events.Health
+  .big-grey-row
+    %span.inline.big Live Events and Podcasts
+
+  .row
+    .col-xs-12
+      %p
+      %p    
+      SCI & U's Live Events are free to virtually attend and hosted online using 
+      =link_to "Adobe Connect video conferencing software", "http://www.adobe.com/products/adobeconnect.html"
+      courtesy of the           
+      =link_to "Toronto Rehabilitation Institute.", "/sponsors/4"  
+      Events discuss issues relevant to self management, like communicating with clinicians or connecting with peers. 
+      To take part, you must have 
+      %a{:href=>"https://get.adobe.com/flashplayer/"} Adobe Flash installed 
+      and a good internet connection.      
+      %p             
+      If you can't attent in person, no worries.  All events are archived and re-broadcast as SCI & U 
+      %a{"data-toggle" => "tab", :href => "#podcasts"} Podcasts. 
+      You can download these to your desktop or mobile device, and listen on the go.
+      %p
+      %p
+
+  .row.department-tabs
+    %ul.nav.nav-tabs
+      %li.active
+        %a{"data-toggle" => "tab", :href => "#live"} Live Events
+      %li.inactive
+        %a{"data-toggle" => "tab", :href => "#podcasts"} Podcasts              
+    
+    .row.tab-content
+      #live.tab-pane.fade.in.active 
+        - if @upcoming.count == 0
+          .row  
+            .col-sm-12.center
+              %center
+                %h4 
+                  There are no upcoming events scheduled.  Please check back later!  In the meantime why not
+                  %p
+                  %a{"data-toggle" => "tab", :href => "#podcasts"} Click to Listen To Our Podcasts of Past Events!        
+        - else 
+          - @upcoming.each do |salon_event|
+            %div{:class=> "Padded #{Department.find(salon_event.department_id).name}"}            
+              .row-title
+                .col-xs-6.column-title
+                  %h4= link_to salon_event.title, "/salon_events/#{salon_event.id}"
+                .col-xs-6
+                  &nbsp;
+              .row.question-panel 
+                .column.left
+                  = link_to image_tag(salon_event.attachment.thumb.url), salon_event_path(salon_event)
+                .column.right           
+                  .time
+                    #{salon_event.event_date.strftime("%b")} 
+                    #{salon_event.event_date.strftime("%d")} 
+                    #{salon_event.event_date.strftime("%l:%M %p")}
+                  %p                                            
+                  %p= truncate_html(salon_event.description, :length => 150).html_safe
+                  -if salon_event.department_id
+                    %p
+                      Posted to The <a href="/departments/#{salon_event.department_id}">#{Department.find(salon_event.department_id).name} Department</a>        
+
+              .row-signup.upcoming                                             
+                %p=  link_to "VIEW EVENT DETAILS", "/salon_events/#{salon_event.id}"
+
+                                  
+      #podcasts.tab-pane.fade
+        - @archived.each do |archive|
+          %div{:class=> "Padded #{Department.find(archive.department_id).name}"}
+            .row-title
+              .col-xs-6.column-title
+                %h4= link_to archive.title, "/salon_events/#{archive.id}"
+              .col-xs-6
+                &nbsp;       
+                
+            .row.question-panel 
+              .column.left
+                = link_to image_tag(archive.attachment.thumb.url), salon_event_path(archive)
+              .column.right      
+                -if archive.department_id
+                  %p
+                  Posted to The <a href="/departments/#{archive.department_id}">#{Department.find(archive.department_id).name} Department</a>  
+                  %p  
+                %p= truncate_html(archive.description, :length => 150).html_safe
+                
+            .row
+              .col-xs-12  
+                LISTEN TO THE PODCAST              
+                %audio{ :controls => 'controls' }
+                  %source{ :src => "#{archive.podcast}" }                    
+
+

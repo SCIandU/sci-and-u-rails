@@ -1,0 +1,92 @@
+%div{:class=> @solution_category.department.name}
+  .department-title
+    #{@solution_category.name}
+
+  .department-area-video.container
+    .col-xs-12
+      .title
+        About
+        =@solution_category.name
+        %button{"data-toggle" => "collapse", "data-target" => "#video"} X
+      #video.collapse.in 
+        - if @solution_category.video_link.to_s != ""
+          .embed-responsive.embed-responsive-16by9          
+            %iframe.embed-responsive-item.async-iframe{:allowfullscreen => "", :frameborder => "0", :src => @solution_category.video_link.to_s}
+        -if @solution_category.pdf_link
+          %p
+          = link_to "Learn more about ", @solution_category.pdf_link
+          = link_to @solution_category.name, @solution_category.pdf_link           
+
+  .row.department-tabs
+    %ul.nav.nav-tabs
+      %li.active
+        %a{"data-toggle" => "tab", :href => "#resources"} Resources
+      %li.inactive
+        %a{"data-toggle" => "tab", :href => "#stories"} Stories     
+        
+  .row.tab-content
+    #resources.tab-pane.fade.in.active
+      .top-section.container
+        .col-xs-6.add-resource-col
+          = link_to "Add a Resource", new_department_health_resource_path(@department)
+        .col-xs-6.resource-filter-col
+          .dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+              Topics &nbsp; &nbsp;  
+              %span.caret
+              %ul.dropdown-menu   
+                - if @solution_categories.count > 0
+                  %li.title Topics:          
+                - @solution_categories.each do |category|
+                  %li= link_to "-- #{category.name}", solution_category_path(category)
+                - if @problems.count > 0
+                  %li.title Problems:       
+                - @problems.each do |category|
+                  %li= link_to "-- #{category.name}", problem_path(category)                  
+      .row
+        .col-xs-12
+          - if @health_resources.count == 0
+            %center
+              %h4 
+                There are no resources to display.  Got ont to suggest for this section?
+                %p
+                %a{:href => "#{new_department_health_resource_path(@department)}"} Do It Here!      
+
+          - @health_resources.each do |resource|
+            = render "health_resources/health_resource_teaser", resource: resource
+                           
+    #stories.tab-pane.fade
+      - if @stories.count == 0
+        .row  
+          .col-sm-12.center
+            %center
+              %h4 
+                There are no stories in this department. Please check back later or
+                %p
+                %a{:href=>"http://localhost:3000/contacts/new"} Click to Share Your #{@department.name} Story With Us!
+      - else       
+        - @stories.in_groups_of(3) do |subset|  
+          .row              
+            - subset.each do |story|
+              -if story
+                .col-sm-4.story-col.eventbox 
+                  .container 
+                    .title{class: @department.name}  
+                      #{@department.name} Story
+                    .imagearea       
+                      %input{:type => "image", :src => "#{story.attachment.thumb.url}", "data-toggle"=>"modal", "data-target"=>"#Box#{story.id}"}
+                      %br
+                      %button{:type=>"button", :class=>"btn btn-info btn-lg", "data-toggle"=>"modal", "data-target"=>"#Box#{story.id}"}#{story.title}
+
+                %div{:id => "Box#{story.id}", :class=>"modal fade", :tabindex=>"-1", :role=>"dialog"}
+                  .modal-dialog
+                    .modal-content
+                      .modal-header
+                        %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}x
+                        .title= "#{story.title}" 
+                      .modal-body
+                        .embed-responsive.embed-responsive-16by9                  
+                          %iframe.embed-responsive-item.async-iframe{:allowfullscreen => "", :frameborder => "0", :src => "#{story.youtube_link.gsub(/watch\?v=/, "embed/")}?autoplay=0"}
+                      .modal-footer
+                        %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}Close  
+     

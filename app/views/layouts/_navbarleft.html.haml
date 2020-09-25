@@ -1,0 +1,72 @@
+-if user_signed_in?  
+
+  %nav.navbar.left
+    %ul.box.top
+      -if request.original_fullpath == '/'
+        %li.chosen= link_to "Home", "/" 
+      -else
+        %li= link_to "Home", "/"            
+      -if request.original_fullpath == '/stories/'
+        %li.chosen= link_to "Stories", "/stories/" 
+      -else
+        %li= link_to "Stories", "/stories/"  
+      //-if request.original_fullpath == '/surveys/'
+      //  %li.chosen= link_to "Quizzes", "/surveys/" 
+      //-else
+      //  %li= link_to "Quizzes", "/surveys/"          
+      -if request.original_fullpath == '/salon_events/'
+        %li.chosen= link_to "Events/Podcasts", "/salon_events/" 
+      -else
+        %li= link_to "Events/Podcasts", "/salon_events/"          
+      -if request.original_fullpath == '/contacts/coachform'
+        %li.chosen= link_to "Coaching", "/contacts/coachform" 
+      -else
+        %li= link_to "Coaching", "/contacts/coachform"       
+      -if request.original_fullpath == '/blog_posts/'
+        %li.chosen= link_to "Blog", "/blog_posts/" 
+      -else
+        %li= link_to "Blog", "/blog_posts/"                
+
+    %div.row
+      %div.rect.Bladder
+        =link_to "Bladder", "/departments/4"   
+      %div.rect.middle.Bowel
+        =link_to "Bowel", "/departments/1"   
+      %div.rect.Exercise
+        =link_to "Exercise", "/departments/3"   
+
+    %div.row
+      %div.rect.Skin
+        =link_to "Skin", "/departments/2" 
+      %div.rect.middle.Sexuality
+        =link_to "Sex", "/departments/7" 
+      %div.rect.Pain
+        =link_to "Pain", "/departments/10" 
+
+    %div.row
+      %div.rect.Diet
+        =link_to "Diet", "/departments/9" 
+      %div.rect.middle.Family
+        =link_to "Caring", "/departments/8" 
+      %div.rect.Health
+        =link_to "Basics", "/departments/6" 
+
+    //%button{:type=>"button", :class=>"btn btn-info btn-lg", "data-toggle"=>"modal", "data-target"=>"#myModal"}Site Tutorial  
+    %ul.box.bottom
+      -if request.original_fullpath == '/users/experts'
+        %li.chosen= link_to "Team", "/users/experts" 
+      -else
+        %li= link_to "Team", "/users/experts"        
+      -if request.original_fullpath == '/sponsors/'
+        %li.chosen= link_to "Partners", "/sponsors/" 
+      -else
+        %li= link_to "Partners", "/sponsors/"     
+      -if request.original_fullpath == '/mars_ratings/new'
+        %li.chosen= link_to "Complete Survey", "/mars_ratings/new" 
+      -else
+        %li= link_to "Complete Survey", "/mars_ratings/new" 
+      %li         
+        =link_to image_tag("http://pie.med.utoronto.ca/LapChole/content/assets/images/UofTlogo.png", size: "125x162"),"/sponsors/7"      
+      %li     
+        =link_to image_tag("https://6de1e3d744-custmedia.vresp.com/8d92ddd2f9/RickHansenInstitute_Logo_4c_RGB%202.jpg", size: "150x40"),"/sponsors/6"       
+

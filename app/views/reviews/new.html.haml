@@ -1,0 +1,6 @@
+%div{:class=> @health_resource.department.name}
+ = render 'form'
+ .row.question-panel.white
+  .col-xs-12 
+   %a.btn{:href=>"/departments/#{@health_resource.department.id}"} Back to #{@health_resource.department.name} Department
+  

@@ -1,0 +1,62 @@
+.big-grey-row
+  %span.inline.big Search Results for "#{@search_request}"
+-if @blog_post_results.count > 0    
+  .row
+    .col-xs-12
+      - @blog_post_results.each do |blog_post_result|
+        .eventbox.blog
+          .container        
+            .title{:class=>"#{blog_post_result.department.name}"}
+              = link_to "#{blog_post_result.department.name} Section Blog Post", "/departments/#{blog_post_result.department.id} "
+            .textarea
+              .content_name
+                = link_to blog_post_result.title, blog_post_path(blog_post_result)                
+              .author             
+                by 
+                =link_to "#{blog_post_result.user.first_name} #{blog_post_result.user.last_name}", "/users/#{blog_post_result.user.id}" 
+              .details
+                = blog_post_result.content.truncate(300).html_safe    
+
+-if @health_resource_results.count > 0  
+  .row
+    .col-xs-12
+      - @health_resource_results.each do |health_resource_results|
+        .eventbox.blog
+          .container        
+            .title{:class=>"#{health_resource_results.department.name}"}
+              = link_to "#{health_resource_results.department.name} Section Resource", "/departments/#{health_resource_results.department.id} "
+            .textarea
+              .content_name
+                = link_to health_resource_results.title, health_resource_path(health_resource_results) 
+              .details
+                = health_resource_results.description.truncate(300).html_safe            
+
+-if @salon_event_results.count > 0  
+  .row
+    .col-xs-12
+      - @salon_event_results.each do |salon_event_result|
+        .eventbox.blog
+          .container        
+            .title{:class=>"#{Department.find(salon_event_result.department_id).name}"}
+              = link_to "#{Department.find(salon_event_result.department_id).name} Section Event", "/departments/#{salon_event_result.department_id} "
+            .textarea
+              .content_name
+                = link_to salon_event_result.title, salon_event_path(salon_event_result) 
+              .details
+                = salon_event_result.description.truncate(300).html_safe  
+
+-if @story_results.count > 0  
+  .row
+    .col-xs-12
+      - @story_results.each do |story_result|
+        .eventbox.blog
+          .container        
+            .title{:class=>"#{Department.find(story_result.department_id).name}"}
+              = link_to "#{Department.find(story_result.department_id).name} Story", "/departments/#{story_result.department_id} "
+            .textarea
+              .content_name
+                = link_to story_result.title, story_path(story_result) 
+.big-grey-row
+  %span.inline.big= link_to "BACK TO HOME PAGE", "/"
+
+        

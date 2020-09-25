@@ -1,0 +1,9 @@
+.rating-wrapper
+    .row
+        .col-xs-12
+            - if question.user.profile_image.thumb.url 
+                %img{:src => "#{question.user.profile_image.thumb.url}", :height => 80, :width => 80, :class=>"author grey"}    
+            - else
+                %img{:src => "/img/user-image.png", :height => 80, :width => 80, :class=>"author"}      
+            %br= link_to "#{question.user.first_name} #{question.user.last_name}", "/users/#{question.user.id}"   
+            #{question.userquestion}

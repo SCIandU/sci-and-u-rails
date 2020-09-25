@@ -1,0 +1,28 @@
+= form_for @health_resource do |f|
+  = hidden_field_tag :department_id, @department.id
+  - if @health_resource.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@health_resource.errors.count, "error")} prohibited this health_resource from being saved:"
+      %ul
+        - @health_resource.errors.full_messages.each do |msg|
+          %li= msg
+  .panel-body
+    .row
+      .col-sm-12
+        = form_for @health_resource, :html => {:multipart => true} do |f|
+          = f.hidden_field :user_id, value: current_user.id
+          = f.hidden_field :department_id, value: @department.id
+          %p
+          = f.label :title, class: "col-sm-4 control-label"
+          = f.text_field :title, class: "form-control"
+          %p
+          = f.label :url, "Link to Resource",  class: "col-sm-4 control-label"
+          = f.url_field :url, class: "form-control"          
+          %p
+          = f.label :description, "Why Do You Like This Resource?", class: "col-sm-12 control-label"
+          = f.text_area :description, rows: 10, class: "form-control"
+          %p
+          %p
+
+          %center
+            = f.submit "Submit this Resource for Review", class: "btn btn-primary"

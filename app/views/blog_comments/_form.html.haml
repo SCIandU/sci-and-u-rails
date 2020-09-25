@@ -1,0 +1,11 @@
+%center
+  Add Your Comment
+  %p
+  = form_for @blog_comment, :url => create_blog_post_blog_comment_path(blog_post), :html => {:method => :post} do |f|
+    = f.hidden_field :user_id, value: current_user.id
+    = f.hidden_field :blog_post_id, value: blog_post.id
+    = f.text_area :comment, cols: 50, rows: 4, required: true
+    %p
+    .actions
+      .col-sm-12
+        = f.submit "Submit", class: "btn btn-primary"    

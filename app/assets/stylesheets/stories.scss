@@ -1,0 +1,13 @@
+// Place all the styles related to the StoriesController controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//stories page
+.stories.share form label, .coaching form label { display: none; }
+
+.stories.share form input, .stories.share form textarea, .StoryForm .title {
+    width: 100%;
+    color: #333;
+    margin-top: 20px;
+}

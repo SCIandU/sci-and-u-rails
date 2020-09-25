@@ -1,0 +1,13 @@
+%h1 Users
+
+%table
+	%tr
+		%td NAME
+		%td &nbsp;
+		%td APPROVED
+
+	- @users.each do |user|
+		%tr
+			%td= user.email
+			%td &nbsp;
+			%td= user.approved

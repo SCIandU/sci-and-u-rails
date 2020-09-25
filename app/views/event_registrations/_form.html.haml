@@ -1,0 +1,46 @@
+- if @event_registration
+  = form_for(@event_registration) do |f|
+    = hidden_field_tag :user_id, current_user.id
+    = hidden_field_tag :salon_event_id, @salon_event.id      
+    .row
+      .col-sm-12.resource-row-grey
+        - if @salon_event.event_registrations.count <= 10  
+          .title Register for "#{@salon_event.title}"
+        - else
+          .title Sign Up for the "#{@salon_event.title}" Waitlist       
+    .row 
+      .col-sm-12  
+        - if @salon_event.event_registrations.count > 10 
+          This event is currently over subscribed.  If you would like to be added to the waitlist for the event, however, please indicate this by clicking the button below.
+          %p
+          Events are hosted using 
+          =link_to "Adobe Connect video conferencing software", "http://www.adobe.com/products/adobeconnect.html"
+          courtesy of the           
+          =link_to "Toronto Rehabilitation Institute.", "/sponsors/4"  
+          There is no cost to addend an event but you must however have flash installed and a good internet connection.   
+          %p
+          If you would like an SCI & U administrator to contact you to verify your computer connection or provide other technical support, you can indicate this by checking the box below.
+          %p
+        - if @salon_event.event_registrations.count <= 10 
+          Once you sign up you will be added to the event's list of attendees.  We will email you a reminder 24 hours before the event begins.
+          %p
+          We look forward to seeing you at #{@salon_event.title}!
+          %p
+    .row      
+      .col-sm-12.resource-row-grey
+        - if @salon_event.event_registrations.count < 10  
+          = hidden_field_tag :waitlist, false  
+          .title Are you sure you want to register?  
+        - else
+          = hidden_field_tag :waitlist, true
+          .title Would you like to be added to the waiting list for "#{@salon_event.title}"?      
+
+      .actions
+        .salon-event-action
+          I would like an SCI & U administrator to contact me for technical support
+          = f.check_box :tech_help
+          %p
+          - if @salon_event.event_registrations.count < 10  
+            = f.submit "Yes, Sign Me Up!", class: "btn btn-primary"
+          - else
+            = f.submit "Add me to the Wait List!", class: "btn btn-primary"              

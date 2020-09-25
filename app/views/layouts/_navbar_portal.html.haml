@@ -1,0 +1,70 @@
+.nav.navbar.navbar-portal.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+  .navbar
+    %button.navbar-toggle.collapsed{"data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}    
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar 
+
+    .logo-container
+      = link_to image_tag( '/images/icons/navbar/small/MainLogoSmall.png', size: "120x50"), '/'   
+
+    .portal-icons
+      .portal-icon.accessibility
+        %span.accessibility.small=link_to "A-", "/"          
+        %span.accessibility.big=link_to "A+", "/"        
+      .portal-icon
+        .button      
+          %a{:href => "/"}
+            %i.fa.fa-question.fa-inverse{"aria-hidden" =>"true"}            
+        %br
+        %span=link_to "Help", "/"  
+      .portal-icon
+        .button
+          %a{:href => "/"}
+            %i.fa.fa-bell.fa-inverse{"aria-hidden" =>"true"}   
+            %span.button__badge 2
+        %br
+        %span=link_to "Notifications", "/"  
+      .portal-icon
+        .button
+          %a{:href => "/"}
+            %i.fa.fa-bullhorn.fa-inverse{"aria-hidden" =>"true"}  
+        %br
+        %span=link_to "Feedback", "/"  
+      .portal-icon
+        .button
+          %a{:href => "/"}
+            %i.fa.fa-user.fa-inverse{"aria-hidden" =>"true"}   
+        %br
+        %span=link_to "About Me", "/"  
+      .portal-icon
+        .button
+          %a{:href => "/"}
+            %i.fa.fa-wrench.fa-inverse{"aria-hidden" =>"true"}  
+        %br
+        %span=link_to "Tools 4 U", "/"  
+      .portal-icon
+        .button
+          %a{:href => "/"}
+            %i.fa.fa-envelope.fa-inverse{"aria-hidden" =>"true"} 
+        %br
+        %span=link_to "Messages", "/"   
+      .portal-icon
+        .button
+          %a{:href => "/"}
+            %i.fa.fa-home.fa-inverse{"aria-hidden" =>"true"}
+        %br
+        %span=link_to "Home", "/"          
+        
+        
+  .collapse.navbar-collapse{:id => "navbar"}
+    %ul.nav.navbar-nav
+      %li
+        =link_to "Home", "/"     
+      //%li        
+      //  =link_to "My Profile", "/users/#{current_user.id}"  
+      //%li        
+      //  =link_to "Log Out", destroy_user_session_path            
+
+

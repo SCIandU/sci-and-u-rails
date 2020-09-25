@@ -1,0 +1,255 @@
+.coachportal
+
+	%div{:class => "alert"}
+		.alert-holder
+			.alert-icon
+				%i.fa.fa-bell.fa-inverse{"aria-hidden" =>"true"}   
+			.alert-content
+				You have been matched with Coach Susan Jaglal!
+			.alert-close
+				%a{:href => "#"}X			
+
+	.header
+		.spacer
+			&nbsp;
+		%ul.nav.nav-pills.nav-horizontal.nav-tabs
+			%li.active
+				%a{"data-toggle" => "tab", :href => "#intro"}Introduction
+			%li
+				%a{"data-toggle" => "tab", :href => "#intake0"}Basics	
+			%li
+				%a{"data-toggle" => "tab", :href => "#intake1"}1
+			%li
+				%a{"data-toggle" => "tab", :href => "#intake2"}2		
+			%li
+				%a{"data-toggle" => "tab", :href => "#intake3"}3	
+			%li
+				%a{"data-toggle" => "tab", :href => "#intake4"}4		
+			%li
+				%a{"data-toggle" => "tab", :href => "#intake5"}5
+			%li
+				%a{"data-toggle" => "tab", :href => "#intake6"}6	
+			%li
+				%a{"data-toggle" => "tab", :href => "#intake7"}7	
+			%li
+				%a{"data-toggle" => "tab", :href => "#intake8"}8
+			%li
+				%a{"data-toggle" => "tab", :href => "#schedule"}Next Session
+
+	.main
+		%ul.nav.nav-pills.nav-stacked
+			%li.active
+				%a{:href => "#"}Intake
+			%li
+				%a{:href => "#"}Session 1		
+			%li
+				%a{:href => "#"}Session 2	
+			%li
+				%a{:href => "#"}Session 3		
+			%li
+				%a{:href => "#"}Session 4	
+			%li
+				%a{:href => "#"}Session 5		
+			%li
+				%a{:href => "#"}Session 6	
+			%li
+				%a{:href => "#"}Exit
+
+		.portal-content
+			.interior
+				.tab-content
+					#intro.tab-pane.fade.in.active
+						.title Welcome to SCI & U
+						.body Before you begin, you must complete the intake process.  When this is complete, you can begin your first session.
+						.button 
+							%a{:href => "#"}LET'S GO!
+
+					#intake0.tab-pane.fade  
+						.title Demographis
+						.body Content 	
+
+					#intake1.tab-pane.fade  
+						.title UW-SES Scale
+						.body Content 					
+                            
+					#intake2.tab-pane.fade  
+						.title HeiQ Scale
+						.body Content 					
+                            
+					#intake3.tab-pane.fade  
+						.title PHQ-8 Scale
+						.body Content 					
+                            
+					#intake4.tab-pane.fade  
+						.title SCI-FI Scale
+						.body Content 					
+                            
+					#intake5.tab-pane.fade  
+						.title SCI-QOL-R Scale
+						.body Content 					
+
+					#intake6.tab-pane.fade  
+						.title SCI-SCS Scale
+						.body Content 
+
+					#intake7.tab-pane.fade  
+						.title eHealth Literacy Scale
+						.body Content   
+
+					#intake8.tab-pane.fade  
+						.title Basic Data Set
+						.body Content   
+
+					#schedule.tab-pane.fade  
+						.title Schedule Next Session
+						.body Content   
+
+
+.breaker
+
+.coachportal
+
+	.header
+		.spacer
+			&nbsp;
+		%ul.nav.nav-pills.nav-horizontal.nav-tabs
+			%li.active
+				%a{"data-toggle" => "tab", :href => "#intro"}Introduction
+			%li
+				%a{"data-toggle" => "tab", :href => "#goal"}My Goal	
+			%li
+				%a{"data-toggle" => "tab", :href => "#actionplan"}My Action Plan		
+			%li
+				%a{"data-toggle" => "tab", :href => "#currentgoal"}Current Goals/Plans		
+			%li
+				%a{"data-toggle" => "tab", :href => "#tools"}Session Tools
+			%li
+				%a{"data-toggle" => "tab", :href => "#schedule2"}Next Session			
+								
+	.main
+		%ul.nav.nav-pills.nav-stacked
+			%li.completed
+				%a{:href => "#"}Intake
+			%li.active
+				%a{:href => "#"}Session 1		
+			%li
+				%a{:href => "#"}Session 2	
+			%li
+				%a{:href => "#"}Session 3		
+			%li
+				%a{:href => "#"}Session 4	
+			%li
+				%a{:href => "#"}Session 5		
+			%li
+				%a{:href => "#"}Session 6	
+			%li
+				%a{:href => "#"}Exit
+
+		.portal-content
+			.interior
+				.tab-content
+					#intro.tab-pane.fade.in.active
+						.content-section
+							.title Welcome to Session 1 - Introduction
+							.intro-top 
+								.middle
+									.user-circle									
+										%i.fa.fa-user.fa-4x.fa-inverse{"aria-hidden" =>"true"}   
+									.details
+										Your session is on Tues April 18 at 6 p.m. with Coach Susan Jaglal. 
+							.circle-button
+								.container
+									%a{:href => "#"}
+										%i.fa.fa-video-camera.fa-inverse.fa-3x{"aria-hidden" =>"true"}
+										%br
+										%span Connect
+								%br
+								Before you begin be sure to connect the Connect Button.
+							.count-down
+								Session starts in
+							.count-down-middle.container
+								.time-block
+									%span.number 7
+									%br
+									%span days
+								.time-block
+									%span.number 21
+									%br
+									%span hours				
+								.time-block
+									%span.number 2
+									%br
+									%span minutes		
+								.time-block
+									%span.number 53
+									%br
+									%span seconds	
+							.getready
+								%a{:href => "#"}Review some material on Getting Started in advance of your session by clicking here or going to the "Session Tools."
+						.tips-section
+							.current-goal-title.big Let's review your progress!
+							.current-goal-title Current Goal  	
+							.current-goal-text You have not yet set a goal to work on.   
+							.current-goal-title Current Plan  		
+							.current-goal-text You have not yet set a plan to work on.
+							.current-goal-title Sessions Completed
+							.current-goal-text 
+								%i.fa.fa-star-o.fa-1x{"aria-hidden" =>"true"}
+								%i.fa.fa-star-o.fa-1x{"aria-hidden" =>"true"}
+								%i.fa.fa-star-o.fa-1x{"aria-hidden" =>"true"}
+								%i.fa.fa-star-o.fa-1x{"aria-hidden" =>"true"}
+								%i.fa.fa-star-o.fa-1x{"aria-hidden" =>"true"}
+								%i.fa.fa-star-o.fa-1x{"aria-hidden" =>"true"}	
+							.current-goal-title Completed Goal/Plan Count
+							.current-goal-text 
+								%i.fa.fa-star-o.fa-1x{"aria-hidden" =>"true"}
+								%i.fa.fa-star-o.fa-1x{"aria-hidden" =>"true"}
+								%i.fa.fa-star-o.fa-1x{"aria-hidden" =>"true"}
+								%i.fa.fa-star-o.fa-1x{"aria-hidden" =>"true"}
+								%i.fa.fa-star-o.fa-1x{"aria-hidden" =>"true"}
+								%i.fa.fa-star-o.fa-1x{"aria-hidden" =>"true"}			
+							.current-goal-title 
+								%span.number 2 
+								Minutes Connected
+
+					#intake0.tab-pane.fade  
+						.title Demographis
+						.body Content 	
+
+					#intake1.tab-pane.fade  
+						.title UW-SES Scale
+						.body Content 					
+                            
+					#intake2.tab-pane.fade  
+						.title HeiQ Scale
+						.body Content 					
+                            
+					#intake3.tab-pane.fade  
+						.title PHQ-8 Scale
+						.body Content 					
+                            
+					#intake4.tab-pane.fade  
+						.title SCI-FI Scale
+						.body Content 					
+                            
+					#intake5.tab-pane.fade  
+						.title SCI-QOL-R Scale
+						.body Content 					
+
+					#intake6.tab-pane.fade  
+						.title SCI-SCS Scale
+						.body Content 
+
+					#intake7.tab-pane.fade  
+						.title eHealth Literacy Scale
+						.body Content   
+
+					#intake8.tab-pane.fade  
+						.title Basic Data Set
+						.body Content   
+
+					#schedule.tab-pane.fade  
+						.title Schedule Next Session
+						.body Content   
+
+

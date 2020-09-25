@@ -1,0 +1,31 @@
+%div{:class=> @story.department.name}
+  .blog-post
+    .row
+      .col-xs-12.resource-title-row
+        .title= "#{@story.title}"   
+    
+    %br
+    .row 
+      .col-xs-12
+        .container 
+          %center    
+            %input{:type => "image", :src => "#{@story.attachment.thumb.url}", "data-toggle"=>"modal", "data-target"=>"#storyModal"}
+            %br
+            Click to Play Video          
+
+%div{:id => "storyModal", :class=>"modal fade", :tabindex=>"-1", :role=>"dialog"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}x
+        .title= "#{@story.title}" 
+      .modal-body
+        .embed-responsive.embed-responsive-16by9
+          %iframe.embed-responsive-item.async-iframe{:allowfullscreen => "", :frameborder => "0", :src => "#{story.youtube_link.gsub(/watch\?v=/, "embed/")}?autoplay=0"}
+      .modal-footer
+        %button{:type => "button", :class =>"close", "data-dismiss" => "modal"}Close    
+
+  
+
+ 
+
